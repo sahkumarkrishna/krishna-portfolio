@@ -1,52 +1,42 @@
-import nodemailer from "nodemailer";
-import dotenv from "dotenv";
+const Contact = require("../model/Contact");
+const sendMail = require("../utils/mailer");
 
-dotenv.config();
-
-export const sendContactEmail = async (req, res) => {
-  const { name, email, description } = req.body;
-
-  if (!name || !email || !description) {
-    return res.status(400).json({ message: "All fields are required" });
-  }
-
+exports.addContact = async (req, res) => {
   try {
-    const transporter = nodemailer.createTransport({
-      host: "smtp.gmail.com",
-      port: 587, // Use 587 for STARTTLS
-      secure: false, // TLS
-      auth: {
-        user: process.env.NODE_CODE_SENDING_EMAIL_ADDRESS,
-        pass: process.env.NODE_CODE_SENDING_EMAIL_PASSWORD,
-      },
-      tls: {
-        rejectUnauthorized: false, // Allow self-signed certificates
-      },
-    });
+    const { name, email, description } = req.body;
 
-    await transporter.verify((error, success) => {
-      if (error) {
-        console.error("Transporter Error:", error);
-        return res
-          .status(500)
-          .json({ message: "SMTP Connection Failed", error });
-      } else {
-        console.log("✅ Server Ready to Send Emails!");
-      }
-    });
+    // Check if email already exists
+    const existingContact = await Contact.findOne({ email });
+    if (existingContact) {
+      return res
+        .status(400)
+        .json({ message: "Email has already been used to contact." });
+    }
 
-    await transporter.sendMail({
-      from: process.env.NODE_CODE_SENDING_EMAIL_ADDRESS,
-      to: process.env.NODE_CODE_SENDING_EMAIL_ADDRESS,
-      subject: `New Contact Form Submission from ${name}`,
-      text: `Name: ${name}\nEmail: ${email}\nMessage: ${description}`,
-    });
+    const contact = new Contact({ name, email, description });
+    await contact.save();
 
-    res.status(200).json({ message: "✅ Email sent successfully!" });
+    // Send confirmation email
+    await sendMail(
+      email,
+      "Portfolio Contact",
+      `Hello ${name}, thank you for contacting us.`,
+      `<html>
+        <body style="font-family: Arial, sans-serif; color: #333; line-height: 1.6;">
+          <div style="max-width: 600px; margin: auto; padding: 20px; border: 1px solid #ddd; border-radius: 8px; background-color: #fff;">
+            <p style="font-size: 18px;">Hello <b style="color: #4CAF50;">${name}</b>,</p>
+            <p style="font-size: 16px;">Thank you for reaching out. We will get back to you soon.</p>
+            <footer style="margin-top: 30px; font-size: 14px; color: #777;">
+              <p>Best regards,</p>
+              <p>Your Portfolio Team</p>
+            </footer>
+          </div>
+        </body>
+      </html>`
+    );
+
+    res.status(201).json({ message: "Contact added & email sent", contact });
   } catch (error) {
-    console.error("Email Sending Error:", error);
-    res
-      .status(500)
-      .json({ message: "❌ Error sending email", error: error.message });
+    res.status(500).json({ error: error.message });
   }
 };

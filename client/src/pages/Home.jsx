@@ -9,6 +9,7 @@ import {
   FaJava,
   FaGithub,
   FaLinkedin,
+  
 } from "react-icons/fa";
 import {
   SiNextdotjs,
@@ -21,40 +22,52 @@ import {
   SiFigma,
   SiRedux,
   SiBootstrap,
-  SiPostman,
+  
   SiIntellijidea,
   SiDocker,
 } from "react-icons/si";
 import { AiOutlineFilePdf } from "react-icons/ai";
-import profileImage from "../assets/image/image.jpg";
+import profileImage from "../assets/image/font.gif";
 
 const techData = {
-  Technologies: [
+  "Programming Languages": [
+    {
+      name: "JavaScript",
+      link: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+      icon: FaCode,
+      color: "text-yellow-500",
+    },
+    {
+      name: "TypeScript",
+      link: "https://www.typescriptlang.org/",
+      icon: SiTypescript,
+      color: "text-blue-600",
+    },
+    {
+      name: "Core Java",
+      link: "https://www.oracle.com/java/",
+      icon: FaJava,
+      color: "text-red-600",
+    },
     {
       name: "HTML",
-
       link: "https://developer.mozilla.org/en-US/docs/Web/HTML",
       icon: FaCode,
       color: "text-orange-600",
     },
     {
       name: "CSS",
-
       link: "https://developer.mozilla.org/en-US/docs/Web/CSS",
       icon: FaCss3Alt,
       color: "text-blue-500",
     },
+  ],
+  "Libraries & Frameworks": [
     {
-      name: "React",
+      name: "React.js",
       link: "https://react.dev/",
       icon: FaReact,
       color: "text-blue-500",
-    },
-    {
-      name: "Redux",
-      link: "https://redux.js.org/",
-      icon: SiRedux,
-      color: "text-purple-600",
     },
     {
       name: "Next.js",
@@ -63,10 +76,10 @@ const techData = {
       color: "text-black dark:text-white",
     },
     {
-      name: "Express.js",
-      link: "https://expressjs.com/",
-      icon: SiExpress,
-      color: "text-gray-700 dark:text-gray-300",
+      name: "Redux",
+      link: "https://redux.js.org/",
+      icon: SiRedux,
+      color: "text-purple-600",
     },
     {
       name: "Node.js",
@@ -75,16 +88,22 @@ const techData = {
       color: "text-green-600",
     },
     {
-      name: "Tailwind CSS",
-      link: "https://tailwindcss.com/",
-      icon: FaCss3Alt,
-      color: "text-blue-400",
+      name: "Express.js",
+      link: "https://expressjs.com/",
+      icon: SiExpress,
+      color: "text-gray-700 dark:text-gray-300",
     },
     {
       name: "Bootstrap",
       link: "https://getbootstrap.com/",
       icon: SiBootstrap,
       color: "text-purple-500",
+    },
+    {
+      name: "Tailwind CSS",
+      link: "https://tailwindcss.com/",
+      icon: FaCss3Alt,
+      color: "text-blue-400",
     },
   ],
   Database: [
@@ -101,56 +120,50 @@ const techData = {
       color: "text-blue-600",
     },
     {
-      name: "Firestore",
-      link: "https://firebase.google.com/products/firestore",
+      name: "Firebase",
+      link: "https://firebase.google.com/",
       icon: SiFirebase,
       color: "text-yellow-500",
     },
   ],
-  Languages: [
+  "Cloud Platforms": [
     {
-      name: "TypeScript",
-      link: "https://www.typescriptlang.org/",
-      icon: SiTypescript,
-      color: "text-blue-600",
-    },
-    {
-      name: "JavaScript",
-      link: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
-      icon: FaCode,
+      name: "AWS",
+      link: "https://aws.amazon.com/",
+      icon: SiDocker,
       color: "text-yellow-500",
     },
     {
-      name: "Java",
-      link: "https://www.java.com/",
-      icon: FaJava,
-      color: "text-red-600",
-    },
-  ],
-  Tools: [
-    {
-      name: "VS Code",
-      link: "https://code.visualstudio.com/",
-      icon: FaTools,
+      name: "Google Cloud Platform (GCP)",
+      link: "https://cloud.google.com/",
+      icon: SiDocker,
       color: "text-blue-500",
     },
     {
-      name: "GitHub",
+      name: "Firebase",
+      link: "https://firebase.google.com/",
+      icon: SiFirebase,
+      color: "text-yellow-500",
+    },
+  ],
+  "Tools & Platforms": [
+    {
+      name: "Git & GitHub",
       link: "https://github.com/",
       icon: SiGithub,
       color: "text-black dark:text-white",
     },
     {
-      name: "Figma",
-      link: "https://www.figma.com/",
-      icon: SiFigma,
-      color: "text-purple-500",
+      name: "Docker",
+      link: "https://www.docker.com/",
+      icon: SiDocker,
+      color: "text-blue-500",
     },
     {
-      name: "Postman",
-      link: "https://www.postman.com/",
-      icon: SiPostman,
-      color: "text-orange-500",
+      name: "Visual Studio Code",
+      link: "https://code.visualstudio.com/",
+      icon: FaTools,
+      color: "text-blue-500",
     },
     {
       name: "IntelliJ IDEA",
@@ -159,12 +172,13 @@ const techData = {
       color: "text-blue-600",
     },
     {
-      name: "Docker",
-      link: "https://www.docker.com/",
-      icon: SiDocker,
-      color: "text-blue-500",
+      name: "Figma (UI/UX)",
+      link: "https://www.figma.com/",
+      icon: SiFigma,
+      color: "text-purple-500",
     },
   ],
+
 };
 
 const HomePage = () => {
@@ -178,12 +192,15 @@ const HomePage = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className="text-4xl font-bold mt-12 md:mt-0">
-            Hello, I'm a Frontend Developer & Designer
+          <h1 className="font-sacramento font-bold text-4xl font-bold mt-20 md:mt-0">
+            Hello, I'm Full-stack Developer{" "}
           </h1>
-          <p className="mt-4 text-lg">
-            I'm Krishna Kumar, a frontend developer passionate about crafting
-            outstanding web and mobile apps.
+          <p className="mt-4 text-lg text-gray-500 dark:text-gray-400 text-left">
+            I'm Krishna Kumar, a Full Stack Developer driven by a passion for
+            crafting scalable, efficient, and intuitive digital solutions. I
+            combine technical expertise with a deep understanding of user needs
+            to build seamless applications that empower users and fuel business
+            growth.
           </p>
 
           {/* Social Links */}
@@ -191,7 +208,7 @@ const HomePage = () => {
             <motion.div whileHover={{ scale: 1.1 }}>
               <Link
                 to="https://github.com/sahkumarkrishna"
-                className="flex items-center gap-2 hover:text-blue-500"
+                className="font-sacramento font-bold flex items-center gap-2 hover:text-blue-500"
               >
                 <FaGithub size={24} />
                 <span>GitHub</span>
@@ -201,7 +218,7 @@ const HomePage = () => {
             <motion.div whileHover={{ scale: 1.1 }}>
               <Link
                 to="https://www.linkedin.com/in/krishna-kumar-8b28492a6/"
-                className="flex items-center gap-2 hover:text-blue-500"
+                className="font-sacramento font-bold flex items-center gap-2 hover:text-blue-500"
               >
                 <FaLinkedin size={24} />
                 <span>LinkedIn</span>
@@ -211,8 +228,9 @@ const HomePage = () => {
             <motion.div whileHover={{ scale: 1.1 }}>
               <Link
                 to="/resume.pdf"
-                download
-                className="flex items-center gap-2 hover:text-blue-500"
+                target="_blank" // open in new tab
+                rel="noopener noreferrer" // security best practice
+                className="font-sacramento font-bold flex items-center gap-2 hover:text-blue-500"
               >
                 <AiOutlineFilePdf size={24} />
                 <span>Resume</span>
@@ -231,7 +249,7 @@ const HomePage = () => {
           <img
             src={profileImage}
             alt="Profile"
-            className="rounded-lg shadow-lg w-full md:w-[350px] h-[350px] object-cover"
+            className="rounded-lg shadow-lg w-full md:w-[400px] h-[400px]  mt-10"
           />
         </motion.div>
       </div>
@@ -243,17 +261,17 @@ const HomePage = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
       >
-        <h3 className="text-3xl font-semibold pb-4 text-gray-800 dark:text-gray-200">
-          Usage
+        <h3 className="font-sacramento  text-3xl font-semibold pb-4 text-gray-800 dark:text-gray-200">
+          Tools & Technologies
         </h3>
-        <p>
-          Tools, technologies and gadgets I use on a daily basis but not limited
-          to.
+        <p className="text-gray-500 dark:text-gray-400">
+          A curated list of the tools, technologies, and gadgets I regularly use
+          to bring my projects to life, though my toolkit is ever-evolving.
         </p>
 
         {Object.entries(techData).map(([category, items]) => (
           <div key={category} className="mt-6">
-            <h4 className="text-xl font-medium text-gray-700 dark:text-gray-300">
+            <h4 className="font-sacramento  text-xl font-medium text-gray-700 dark:text-gray-300">
               {category}
             </h4>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 mt-3">
@@ -265,7 +283,7 @@ const HomePage = () => {
                 >
                   <Link to={link} className="flex flex-col items-center">
                     <Icon className={`${color} text-3xl mb-2`} />
-                    <span className="text-gray-800 dark:text-gray-200 font-medium">
+                    <span className="text-gray-500 dark:text-gray-400font-medium">
                       {name}
                     </span>
                   </Link>

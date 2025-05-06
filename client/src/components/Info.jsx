@@ -9,7 +9,7 @@ const Info = () => {
       <motion.div whileHover={{ scale: 1.1 }}>
         <Link
           to="https://github.com/sahkumarkrishna" // Ensure this route exists in your app
-          className="flex items-center gap-2 hover:text-blue-500"
+          className="font-sacramento  flex items-center gap-2 hover:text-blue-500"
         >
           <FaGithub size={24} />
           <span>GitHub</span>
@@ -19,7 +19,7 @@ const Info = () => {
       <motion.div whileHover={{ scale: 1.1 }}>
         <Link
           to="https://www.linkedin.com/in/krishna-kumar-8b28492a6/" // Ensure this route exists in your app
-          className="flex items-center gap-2 hover:text-blue-500"
+          className="font-sacramento  flex items-center gap-2 hover:text-blue-500"
         >
           <FaLinkedin size={24} />
           <span>LinkedIn</span>
