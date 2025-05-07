@@ -3,8 +3,10 @@ require("dotenv").config(); // Load environment variables from .env file
 require("./config/dbConnect"); // Connect to MongoDB using dbConnect.js
 const cors = require("cors"); // Import CORS
 const contactRoutes = require("./routes/contactRoutes"); // Import the contact routes
+const path =require ("path")
 
 const app = express();
+const _dirname=path.resolve()
 
 // Middleware
 app.use(express.json()); // Parse incoming requests with JSON payloads
@@ -18,6 +20,7 @@ app.use(
 
 // Mount contact routes
 app.use("/api/contacts", contactRoutes);
+app.use(express.static(path.join(_dirname,"/client/dist")))
 
 // Set the server to listen on the specified port
 const PORT = process.env.PORT || 5000;
