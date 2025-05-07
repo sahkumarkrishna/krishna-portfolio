@@ -3,12 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
- "dev": "nodemon backend/server.js",
+    "dev": "nodemon backend/server.js",
     "build": "npm install && npm install --prefix client && npm run build --prefix client",
     "start": "nodemon backend/server.js"
- 
-}
-,
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
