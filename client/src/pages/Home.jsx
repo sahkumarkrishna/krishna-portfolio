@@ -227,7 +227,7 @@ const HomePage = () => {
 
             <motion.div whileHover={{ scale: 1.1 }}>
               <Link
-                to="/resume.pdf"
+                to="/krishna resume.pdf"
                 target="_blank" // open in new tab
                 rel="noopener noreferrer" // security best practice
                 className="font-sacramento font-bold flex items-center gap-2 hover:text-blue-500"
