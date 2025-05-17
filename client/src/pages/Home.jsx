@@ -9,7 +9,6 @@ import {
   FaJava,
   FaGithub,
   FaLinkedin,
-  
 } from "react-icons/fa";
 import {
   SiNextdotjs,
@@ -22,12 +21,29 @@ import {
   SiFigma,
   SiRedux,
   SiBootstrap,
-  
   SiIntellijidea,
   SiDocker,
 } from "react-icons/si";
 import { AiOutlineFilePdf } from "react-icons/ai";
 import profileImage from "../assets/image/font.gif";
+
+// Custom Link component for external links opening in new tab without <a>
+const ExternalLink = ({ to, children }) => {
+  const handleClick = (e) => {
+    e.preventDefault();
+    window.open(to, "_blank", "noopener,noreferrer");
+  };
+
+  return (
+    <Link
+      to={to}
+      onClick={handleClick}
+      className="font-sacramento font-bold flex items-center gap-2 hover:text-blue-500"
+    >
+      {children}
+    </Link>
+  );
+};
 
 const techData = {
   "Programming Languages": [
@@ -50,13 +66,13 @@ const techData = {
       color: "text-red-600",
     },
     {
-      name: "HTML",
+      name: "HTML5",
       link: "https://developer.mozilla.org/en-US/docs/Web/HTML",
       icon: FaCode,
       color: "text-orange-600",
     },
     {
-      name: "CSS",
+      name: "CSS3",
       link: "https://developer.mozilla.org/en-US/docs/Web/CSS",
       icon: FaCss3Alt,
       color: "text-blue-500",
@@ -128,11 +144,12 @@ const techData = {
   ],
   "Cloud Platforms": [
     {
-      name: "AWS",
+      name: "AWS (EC2)",
       link: "https://aws.amazon.com/",
       icon: SiDocker,
       color: "text-yellow-500",
     },
+
     {
       name: "Google Cloud Platform (GCP)",
       link: "https://cloud.google.com/",
@@ -178,10 +195,9 @@ const techData = {
       color: "text-purple-500",
     },
   ],
-
 };
 
-const HomePage = () => {
+const Home = () => {
   return (
     <div className="container mx-auto px-6 py-10">
       <div className="flex flex-col md:flex-row items-center gap-8">
@@ -192,10 +208,10 @@ const HomePage = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className="font-sacramento font-bold text-4xl font-bold mt-20 md:mt-0">
-            Hello, I'm Full-stack Developer{" "}
+          <h1 className="font-sacramento text-4xl font-bold mt-20 md:mt-0">
+            Hello, I'm Full-stack Developer
           </h1>
-          <p className="mt-4 text-lg text-gray-500 dark:text-gray-400 text-left">
+          <p className="mt-4 text-lg text-gray-700 dark:text-gray-400 text-left">
             I'm Krishna Kumar, a Full Stack Developer driven by a passion for
             crafting scalable, efficient, and intuitive digital solutions. I
             combine technical expertise with a deep understanding of user needs
@@ -206,35 +222,24 @@ const HomePage = () => {
           {/* Social Links */}
           <div className="flex justify-center md:justify-start gap-6 mt-6">
             <motion.div whileHover={{ scale: 1.1 }}>
-              <Link
-                to="https://github.com/sahkumarkrishna"
-                className="font-sacramento font-bold flex items-center gap-2 hover:text-blue-500"
-              >
+              <ExternalLink to="https://github.com/sahkumarkrishna">
                 <FaGithub size={24} />
                 <span>GitHub</span>
-              </Link>
+              </ExternalLink>
             </motion.div>
 
             <motion.div whileHover={{ scale: 1.1 }}>
-              <Link
-                to="https://www.linkedin.com/in/krishna-kumar-8b28492a6/"
-                className="font-sacramento font-bold flex items-center gap-2 hover:text-blue-500"
-              >
+              <ExternalLink to="https://www.linkedin.com/in/krishna-kumar-8b28492a6/">
                 <FaLinkedin size={24} />
                 <span>LinkedIn</span>
-              </Link>
+              </ExternalLink>
             </motion.div>
 
             <motion.div whileHover={{ scale: 1.1 }}>
-              <Link
-                to="/krishna resume.pdf"
-                target="_blank" // open in new tab
-                rel="noopener noreferrer" // security best practice
-                className="font-sacramento font-bold flex items-center gap-2 hover:text-blue-500"
-              >
+              <ExternalLink to="/krishna resume.pdf">
                 <AiOutlineFilePdf size={24} />
                 <span>Resume</span>
-              </Link>
+              </ExternalLink>
             </motion.div>
           </div>
         </motion.div>
@@ -249,7 +254,7 @@ const HomePage = () => {
           <img
             src={profileImage}
             alt="Profile"
-            className="rounded-lg shadow-lg w-full md:w-[400px] h-[400px]  mt-10"
+            className="rounded-lg shadow-lg w-full md:w-[400px] h-[400px] mt-10"
           />
         </motion.div>
       </div>
@@ -261,17 +266,17 @@ const HomePage = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
       >
-        <h3 className="font-sacramento  text-3xl font-semibold pb-4 text-gray-800 dark:text-gray-200">
+        <h3 className="font-sacramento text-3xl font-semibold pb-4 ">
           Tools & Technologies
         </h3>
-        <p className="text-gray-500 dark:text-gray-400">
+        <p className="text-gray-700 dark:text-gray-400">
           A curated list of the tools, technologies, and gadgets I regularly use
           to bring my projects to life, though my toolkit is ever-evolving.
         </p>
 
         {Object.entries(techData).map(([category, items]) => (
           <div key={category} className="mt-6">
-            <h4 className="font-sacramento  text-xl font-medium text-gray-700 dark:text-gray-300">
+            <h4 className="font-sacramento text-xl font-medium text-gray-700 dark:text-gray-300">
               {category}
             </h4>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 mt-3">
@@ -279,14 +284,16 @@ const HomePage = () => {
                 <motion.div
                   key={name}
                   whileHover={{ scale: 1.1 }}
-                  className="flex flex-col items-center p-4 bg-gray-100 dark:bg-gray-800 rounded-lg shadow-md transition-transform duration-300"
+                  className="flex flex-col items-center p-4 bg-gray-100 dark:bg-gray-800 rounded-lg cursor-pointer"
                 >
-                  <Link to={link} className="flex flex-col items-center">
-                    <Icon className={`${color} text-3xl mb-2`} />
-                    <span className="text-gray-500 dark:text-gray-400font-medium">
-                      {name}
-                    </span>
-                  </Link>
+                  <ExternalLink to={link}>
+                    <Icon
+                      className={`${color} text-5xl mb-2`}
+                      title={name}
+                      aria-label={name}
+                    />
+                    <span className="font-sacramento text-lg">{name}</span>
+                  </ExternalLink>
                 </motion.div>
               ))}
             </div>
@@ -297,4 +304,4 @@ const HomePage = () => {
   );
 };
 
-export default HomePage;
+export default Home;

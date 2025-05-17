@@ -25,6 +25,8 @@ const Info = () => {
           <span>LinkedIn</span>
         </Link>
       </motion.div>
+
+      
     </div>
   );
 };

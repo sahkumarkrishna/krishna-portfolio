@@ -6,23 +6,21 @@ import {
   FaUser,
   FaProjectDiagram,
   FaEnvelope,
-  FaPenNib,
+  FaCogs,
 } from "react-icons/fa";
 import { ModeToggle } from "./ModeToggle";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const location = useLocation(); // Get the current location (pathname)
+  const location = useLocation();
 
-  // Function to check if the current route is active
   const isActive = (path) => (location.pathname === path ? "underline" : "");
 
   return (
     <nav className="fixed top-0 left-0 w-full p-4 flex items-center justify-between z-50 transition-all bg-white text-black dark:bg-black dark:text-white">
-      {/* ✅ Logo */}
       <Link
         to="/"
-        className="font-sacramento text-3xl dark:text-white text-zinc-600 hover:text-zinc-900 border-2 px-6 py-2"
+        className="font-sacramento text-2xl dark:text-white text-zinc-700 hover:text-zinc-900 border-2 px-6 py-2"
       >
         Krishna Kumar
       </Link>
@@ -48,6 +46,16 @@ const Navbar = () => {
               )} hover:opacity-75`}
             >
               Projects
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/Services"
+              className={`font-sacramento ${isActive(
+                "/Services"
+              )} hover:opacity-75`}
+            >
+              Services
             </Link>
           </li>
           <li>
@@ -110,7 +118,16 @@ const Navbar = () => {
               <FaProjectDiagram className="text-xl" /> Projects
             </Link>
           </li>
-         
+          <li>
+            <Link
+              to="/Services"
+              onClick={() => setMenuOpen(false)}
+              className={`flex items-center gap-3 ${isActive("/Services")}`}
+            >
+              <FaCogs className="text-xl" /> Services
+            </Link>
+          </li>
+
           <li>
             <Link
               to="/contact"
