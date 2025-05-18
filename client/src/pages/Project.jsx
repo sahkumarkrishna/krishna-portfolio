@@ -28,7 +28,7 @@ const Project = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="font-sacramento text-xl sm:text-2xl font-bold mb-2 dark:text-white lg:mt-16">
+          <h2 className="text-xl sm:text-2xl font-bold mb-2 dark:text-white lg:mt-16">
             Learning Management System{" "}
             <Link
               to="https://github.com/sahkumarkrishna/LMS"
@@ -44,7 +44,7 @@ const Project = () => {
             Enhances the learning experience through intuitive tools for course creation, engagement, and performance analysis. Includes personalized feedback, notifications, forums, and assignment submissions.
           </p>
 
-          <h3 className="font-sacramento text-lg sm:text-xl font-semibold mb-2 dark:text-white">
+          <h3 className=" text-lg sm:text-xl font-semibold mb-2 dark:text-white">
             Key Features:
           </h3>
           <ul className="list-disc list-inside text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
@@ -57,7 +57,7 @@ const Project = () => {
             <li>Mobile-friendly design</li>
           </ul>
 
-          <h3 className="font-sacramento text-lg sm:text-xl font-semibold mb-2 dark:text-white">
+          <h3 className=" text-lg sm:text-xl font-semibold mb-2 dark:text-white">
             Technologies Used:
           </h3>
           <ul className="list-disc list-inside text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
@@ -69,7 +69,7 @@ const Project = () => {
             <li>Additional: Firebase (optional)</li>
           </ul>
 
-          <h3 className="font-sacramento text-lg sm:text-xl font-semibold mb-2 dark:text-white">
+          <h3 className=" text-lg sm:text-xl font-semibold mb-2 dark:text-white">
             Project Architecture:
           </h3>
           <p className="text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
@@ -99,7 +99,7 @@ const Project = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="font-sacramento text-xl sm:text-2xl font-bold mb-2 dark:text-white">
+          <h2 className=" text-xl sm:text-2xl font-bold mb-2 dark:text-white">
             Hospital Appointment System{" "}
             <Link
               to="https://github.com/sahkumarkrishna/Hospital_management_system"
@@ -116,7 +116,7 @@ const Project = () => {
             Patients can manage appointments; doctors can manage availability and patient records. Admins oversee system activity with dashboards.
           </p>
 
-          <h3 className="font-sacramento text-lg sm:text-xl font-semibold mb-2 dark:text-white">
+          <h3 className=" text-lg sm:text-xl font-semibold mb-2 dark:text-white">
             Key Features:
           </h3>
           <ul className="list-disc list-inside text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
@@ -129,7 +129,7 @@ const Project = () => {
             <li>Mobile-Responsive UI</li>
           </ul>
 
-          <h3 className="font-sacramento text-lg sm:text-xl font-semibold mb-2 dark:text-white">
+          <h3 className=" text-lg sm:text-xl font-semibold mb-2 dark:text-white">
             Technologies Used:
           </h3>
           <ul className="list-disc list-inside text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
@@ -140,7 +140,7 @@ const Project = () => {
             <li>Auth: Firebase Auth, Bcrypt.js</li>
           </ul>
 
-          <h3 className="font-sacramento text-lg sm:text-xl font-semibold mb-2 dark:text-white">
+          <h3 className=" text-lg sm:text-xl font-semibold mb-2 dark:text-white">
             Project Architecture:
           </h3>
           <p className="text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">

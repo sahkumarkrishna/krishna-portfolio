@@ -208,9 +208,11 @@ const Home = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className="font-sacramento text-4xl font-bold mt-20 md:mt-0">
-            Hello, I'm Full-stack Developer
+          <h1 className="text-4xl font-bold mt-20 md:mt-0">Hello,</h1>
+          <h1 className="text-4xl font-bold mt-4 md:mt-0">
+            I'm <span className="text-green-500">Full-stack</span> Developer
           </h1>
+
           <p className="mt-4 text-lg text-gray-700 dark:text-gray-400 text-left">
             I'm Krishna Kumar, a Full Stack Developer driven by a passion for
             crafting scalable, efficient, and intuitive digital solutions. I
@@ -266,9 +268,7 @@ const Home = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
       >
-        <h3 className="font-sacramento text-3xl font-semibold pb-4 ">
-          Tools & Technologies
-        </h3>
+        <h3 className=" text-3xl font-semibold pb-4 ">Tools & Technologies</h3>
         <p className="text-gray-700 dark:text-gray-400">
           A curated list of the tools, technologies, and gadgets I regularly use
           to bring my projects to life, though my toolkit is ever-evolving.
@@ -276,7 +276,7 @@ const Home = () => {
 
         {Object.entries(techData).map(([category, items]) => (
           <div key={category} className="mt-6">
-            <h4 className="font-sacramento text-xl font-medium text-gray-700 dark:text-gray-300">
+            <h4 className=" text-xl font-medium text-gray-700 dark:text-gray-300">
               {category}
             </h4>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 mt-3">
@@ -292,7 +292,7 @@ const Home = () => {
                       title={name}
                       aria-label={name}
                     />
-                    <span className="font-sacramento text-lg">{name}</span>
+                    <span className=" text-lg">{name}</span>
                   </ExternalLink>
                 </motion.div>
               ))}

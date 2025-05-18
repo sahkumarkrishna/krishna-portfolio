@@ -1,11 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion"; // Import motion
+import PageNotFound from "../src/assets/image/pageNotFound.png";
 
 const NotFound = () => {
   return (
     <motion.div
-      className="min-h-screen flex flex-col items-center justify-center bg-gray-100 dark:bg-gray-900 text-center p-6"
+      className="min-h-screen flex flex-col items-center justify-center  text-center p-6"
       initial={{ opacity: 0 }} // Initial state
       animate={{ opacity: 1 }} // End state
       transition={{ duration: 0.5 }} // Duration of the animation
@@ -29,7 +30,7 @@ const NotFound = () => {
       </motion.p>
 
       <motion.img
-        src="https://i.imgur.com/qIufhof.png"
+         src={PageNotFound}
         alt="Funny 404"
         className="w-72 my-6"
         initial={{ scale: 0.8 }}

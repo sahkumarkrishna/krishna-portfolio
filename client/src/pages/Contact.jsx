@@ -55,6 +55,7 @@ const ContactForm = () => {
             I love collaborating with creative folks, so don't hesitate to reach out and say hi! 👋
           </p>
         </div>
+        <h2 className="text-xl font-bold mb-8">Get In Touch</h2>
         <div className="bg-gray-100 dark:bg-gray-800 p-6 rounded-xl shadow-md space-y-4 text-gray-700 dark:text-gray-300">
           <div className="flex items-center gap-3">
             <FaPhoneAlt className="text-blue-600" />
@@ -66,14 +67,14 @@ const ContactForm = () => {
           </div>
           <div className="flex items-center gap-3">
             <FaMapMarkerAlt className="text-red-500" />
-            <span><strong>Location:</strong> Mullana, Ambala, Haryana</span>
+            <span><strong>Location:</strong>  Haryana, India</span>
           </div>
         </div>
       </div>
 
       {/* Contact Form */}
       <div className="w-full lg:w-2/5">
-        <h2 className="text-xl font-bold mb-8">Get In Touch</h2>
+        
         <form
           className="w-full space-y-4 shadow-lg p-6 rounded-md border dark:border-gray-600 text-gray-700 dark:text-gray-400"
           onSubmit={handleSubmit(onSubmit)}

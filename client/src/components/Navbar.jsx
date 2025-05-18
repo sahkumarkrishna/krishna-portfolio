@@ -20,7 +20,7 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 w-full p-4 flex items-center justify-between z-50 transition-all bg-white text-black dark:bg-black dark:text-white">
       <Link
         to="/"
-        className="font-sacramento text-2xl dark:text-white text-zinc-700 hover:text-zinc-900 border-2 px-6 py-2"
+        className="text-2xl dark:text-white text-zinc-700 hover:text-zinc-900 border-2 px-6 py-2"
       >
         Krishna Kumar
       </Link>
@@ -31,9 +31,7 @@ const Navbar = () => {
           <li>
             <Link
               to="/about"
-              className={`font-sacramento ${isActive(
-                "/about"
-              )} hover:opacity-75`}
+              className={`${isActive("/about")} hover:opacity-75`}
             >
               About
             </Link>
@@ -41,9 +39,7 @@ const Navbar = () => {
           <li>
             <Link
               to="/projects"
-              className={`font-sacramento ${isActive(
-                "/projects"
-              )} hover:opacity-75`}
+              className={` ${isActive("/projects")} hover:opacity-75`}
             >
               Projects
             </Link>
@@ -51,9 +47,7 @@ const Navbar = () => {
           <li>
             <Link
               to="/Services"
-              className={`font-sacramento ${isActive(
-                "/Services"
-              )} hover:opacity-75`}
+              className={`${isActive("/Services")} hover:opacity-75`}
             >
               Services
             </Link>
@@ -61,9 +55,7 @@ const Navbar = () => {
           <li>
             <Link
               to="/contact"
-              className={`font-sacramento ${isActive(
-                "/contact"
-              )} hover:opacity-75`}
+              className={`${isActive("/contact")} hover:opacity-75`}
             >
               Contact
             </Link>

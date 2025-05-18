@@ -8,23 +8,24 @@ import About from "./pages/About";
 import Project from "./pages/Project";
 import Services from "./pages/Services";
 import Contact from "./pages/Contact";
-
 import NotFound from "./NotFound";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Hero />, // Acts as a layout component with Navbar
+    element: <Hero />,
     children: [
-      { path: "/", element: <Home /> },
+      { index: true, element: <Home /> },
       { path: "about", element: <About /> },
       { path: "projects", element: <Project /> },
-
+      { path: "services", element: <Services /> },
       { path: "contact", element: <Contact /> },
-      { path: "Services", element: <Services /> },
-      // Catch-all route (404 page)
-      { path: "*", element: <NotFound /> },
     ],
+  },
+  // This is now outside of <Hero />
+  {
+    path: "*",
+    element: <NotFound />,
   },
 ]);
 

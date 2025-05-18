@@ -107,12 +107,12 @@ const About = () => {
           transition={{ duration: 0.8 }}
         >
           <div className="mt-16">
-            <h1 className="font-sacramento text-3xl md:text-4xl font-extrabold text-left">
+            <h1 className=" text-3xl md:text-4xl font-extrabold text-left">
               About Me
             </h1>
             <p className="mt-4 text-lg text-gray-700 dark:text-gray-400 text-left">
               👋 Hi, I'm{" "}
-              <span className="font-semibold text-gray-700 dark:text-gray-400">
+              <span className=" text-gray-700 dark:text-gray-400">
                 Krishna Kumar
               </span>
               , a self-driven, career-oriented full-stack developer passionate
@@ -155,7 +155,7 @@ const About = () => {
                 to="/krishna resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-sacramento flex items-center gap-2 text-gray-800 dark:text-white font-semibold text-lg border px-4 py-2 rounded-lg transition-all"
+                className=" flex items-center gap-2 text-gray-800 dark:text-white font-semibold text-lg border px-4 py-2 rounded-lg transition-all"
               >
                 <AiOutlineExport size={24} />
                 <span>View Resume</span>
@@ -165,7 +165,7 @@ const About = () => {
             <motion.button
               whileHover={{ scale: 1.1 }}
               onClick={handleDownload}
-              className="font-sacramento w-full sm:w-auto dark:text-white text-gray-800 py-2 px-4 rounded-lg flex items-center gap-2 text-lg font-semibold shadow-md border transition-all"
+              className=" w-full sm:w-auto dark:text-white text-gray-800 py-2 px-4 rounded-lg flex items-center gap-2 text-lg font-semibold shadow-md border transition-all"
             >
               <IoMdDownload size={24} />
               <span>Download Resume</span>
@@ -175,14 +175,14 @@ const About = () => {
       </div>
 
       {/* Qualifications */}
-      <h2 className="font-sacramento text-3xl font-semibold mb-6 mt-12">
+      <h2 className=" text-3xl font-semibold mb-6 mt-12">
         Qualification
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {qualifications.map((qual, index) => (
           <div
             key={index}
-            className="font-sacramento font-bold p-6 border-l-4 text-gray-700 dark:text-gray-400 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
+            className=" font-bold p-6 border-l-4 text-gray-700 dark:text-gray-400 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
           >
             <h3 className="text-xl font-bold text-gray-700 dark:text-white">
               {qual.institution}
@@ -195,14 +195,14 @@ const About = () => {
       </div>
 
       {/* What I'm Doing */}
-      <h2 className="font-sacramento text-3xl font-semibold mb-8 mt-16">
+      <h2 className=" text-3xl font-semibold mb-8 mt-16">
         What I'm Doing
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {services.map((service) => (
           <div
             key={service.id}
-            className="font-sacramento font-bold p-6 border-l-4 text-gray-700 dark:text-gray-400 dark:bg-gray-700 rounded-lg shadow-lg flex items-start gap-4"
+            className=" font-bold p-6 border-l-4 text-gray-700 dark:text-gray-400 dark:bg-gray-700 rounded-lg shadow-lg flex items-start gap-4"
           >
             <div className="text-yellow-400 text-4xl">{service.icon}</div>
             <div>
@@ -216,14 +216,14 @@ const About = () => {
       </div>
 
       {/* Work Experience */}
-      <h2 className="font-sacramento text-3xl font-semibold mb-6 mt-12">
+      <h2 className=" text-3xl font-semibold mb-6 mt-12">
         Work Experience
       </h2>
       <div className="space-y-8">
         {experiences.map((exp, index) => (
           <div
             key={index}
-            className="font-sacramento font-bold p-6 border-l-4 border-gray-600 bg-gray-50 dark:bg-gray-700 rounded-lg shadow-lg flex gap-6 items-center"
+            className=" font-bold p-6 border-l-4 border-gray-600 bg-gray-50 dark:bg-gray-700 rounded-lg shadow-lg flex gap-6 items-center"
           >
             <img
               src={exp.image}
@@ -231,7 +231,7 @@ const About = () => {
               className="w-20 h-20 object-cover rounded-lg border-2"
             />
             <div className="flex flex-col">
-              <h3 className="font-semibold text-xl text-gray-100 dark:text-white">
+              <h3 className=" text-xl text-gray-100 dark:text-white">
                 <span
                   onClick={() =>
                     window.open(exp.link, "_blank", "noopener,noreferrer")
