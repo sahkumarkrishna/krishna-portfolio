@@ -1,22 +1,21 @@
-const Contact = require("../model/Contact"); // Make sure to import your Contact model
+const Contact = require("../model/Contact"); // Make sure this path is correct
 
-exports.addContact = async (req, res) => {
+const addContact = async (req, res) => {
   try {
-    const { name, email, message } = req.body;  // use "message" for consistency
+    const { name, email, message } = req.body;
 
-    // Check if email already exists
-    const existingContact = await Contact.findOne({ email });
-    if (existingContact) {
-      return res
-        .status(400)
-        .json({ message: "Email has already been used to contact." });
+    if (!name || !email || !message) {
+      return res.status(400).json({ error: "All fields are required." });
     }
 
-    const contact = new Contact({ name, email, message });
-    await contact.save();
+    const newContact = new Contact({ name, email, message });
+    await newContact.save();
 
-    res.status(201).json({ message: "Contact added successfully", contact });
+    res.status(201).json({ message: "Contact added successfully." });
   } catch (error) {
-    res.status(500).json({ error: error.message });
+    console.error("Error in addContact:", error); // This will show in Vercel logs
+    res.status(500).json({ error: "Server error." });
   }
 };
+
+module.exports = { addContact };

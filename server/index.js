@@ -9,16 +9,18 @@ const app = express();
 // Middleware
 app.use(express.json());
 
+// CORS configuration
 app.use(
   cors({
     origin: process.env.FRONTEND_URL,
+    credentials: true, // allow cookies/auth if needed
   })
 );
 
-// Mount contact routes
+// Routes
 app.use("/api/contacts", contactRoutes);
 
-// Set the server to listen on the specified port
+// Server listener
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`🚀 Server running on port ${PORT}`);
