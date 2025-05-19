@@ -6,12 +6,22 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { toast } from "react-toastify";
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 const contactSchema = z.object({
   name: z.string().min(4, "Name must be at least 4 characters"),
   email: z.string().email("Invalid email address"),
   message: z.string().min(10, "Message must be at least 10 characters"),
 });
+
+const fadeIn = {
+  hidden: { opacity: 0, y: 40 },
+  visible: (delay = 0) => ({
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, delay },
+  }),
+};
 
 const ContactForm = () => {
   const {
@@ -23,11 +33,10 @@ const ContactForm = () => {
     resolver: zodResolver(contactSchema),
   });
 
-  const apiUrl = import.meta.env.VITE_API_URL;
 
   const onSubmit = async (data) => {
     try {
-      const response = await fetch(apiUrl, {
+      const response = await fetch(import.meta.env.VITE_API_URL, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
@@ -46,9 +55,18 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center px-4 gap-10 py-10">
+    <motion.div
+      className="min-h-screen flex flex-col items-center justify-center px-4 gap-10 py-10"
+      initial="hidden"
+      animate="visible"
+      variants={fadeIn}
+    >
       {/* Contact Info */}
-      <div className="w-full lg:w-2/5">
+      <motion.div
+        className="w-full lg:w-2/5"
+        custom={0.2}
+        variants={fadeIn}
+      >
         <div className="text-center mb-6">
           <h1 className="text-3xl font-bold mt-16 capitalize">Contact</h1>
           <p className="max-w-md mx-auto text-gray-700 dark:text-gray-400 mb-8">
@@ -67,14 +85,17 @@ const ContactForm = () => {
           </div>
           <div className="flex items-center gap-3">
             <FaMapMarkerAlt className="text-red-500" />
-            <span><strong>Location:</strong>  Haryana, India</span>
+            <span><strong>Location:</strong> Haryana, India</span>
           </div>
         </div>
-      </div>
+      </motion.div>
 
       {/* Contact Form */}
-      <div className="w-full lg:w-2/5">
-        
+      <motion.div
+        className="w-full lg:w-2/5"
+        custom={0.4}
+        variants={fadeIn}
+      >
         <form
           className="w-full space-y-4 shadow-lg p-6 rounded-md border dark:border-gray-600 text-gray-700 dark:text-gray-400"
           onSubmit={handleSubmit(onSubmit)}
@@ -102,8 +123,8 @@ const ContactForm = () => {
             {isSubmitting ? "Sending..." : "Submit"}
           </Button>
         </form>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 };
 
