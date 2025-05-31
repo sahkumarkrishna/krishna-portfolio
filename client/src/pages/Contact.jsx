@@ -55,7 +55,7 @@ const ContactForm = () => {
       reset();
     } catch (error) {
       console.error("Error submitting form:", error);
-      toast.error("Email already exists. Please try again later.");
+      toast.error("Server error. Please try again later.");
     }
   };
 
@@ -105,8 +105,8 @@ const ContactForm = () => {
             <h2 className="text-2xl font-bold">Congratulations! 🎉</h2>
             <p>Your response has been recorded.</p>
           </div>
-          <Button onClick={() => setSuccessMessage(false)}>
-            Submit another response
+          <Button className="bg-violet-700" onClick={() => setSuccessMessage(false)}>
+          Submit another response
           </Button>
         </div>
       ) : (
@@ -158,7 +158,7 @@ const ContactForm = () => {
               )}
             </div>
 
-            <Button className="w-full" type="submit" disabled={isSubmitting}>
+            <Button className="w-full bg-violet-700" type="submit" disabled={isSubmitting}>
               {isSubmitting ? "Sending..." : "Submit"}
             </Button>
           </form>

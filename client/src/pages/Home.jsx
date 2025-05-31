@@ -208,9 +208,9 @@ const Home = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className="text-4xl font-bold mt-20 md:mt-0">Hello,</h1>
-          <h1 className="text-4xl font-bold mt-4 md:mt-0">
-            I'm <span className="text-green-500">Full-stack</span> Developer
+          <h1 className="text-3xl md:text-4xl font-bold text-center md:text-left mt-20 md:mt-0">
+            Hello, I'm <span className="text-green-500">Full-stack</span>{" "}
+            Developer
           </h1>
 
           <p className="mt-4 text-lg text-gray-700 dark:text-gray-400 text-left">
@@ -279,7 +279,7 @@ const Home = () => {
             <h4 className=" text-xl font-medium text-gray-700 dark:text-gray-300">
               {category}
             </h4>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 mt-3">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 mt-5">
               {items.map(({ name, icon: Icon, color, link }) => (
                 <motion.div
                   key={name}
@@ -288,11 +288,13 @@ const Home = () => {
                 >
                   <ExternalLink to={link}>
                     <Icon
-                      className={`${color} text-5xl mb-2`}
+                      className={`${color} text-2xl mb-2`}
                       title={name}
                       aria-label={name}
                     />
-                    <span className=" text-lg">{name}</span>
+                    <span className=" text-xl text-gray-800 dark:text-white">
+                      {name}
+                    </span>
                   </ExternalLink>
                 </motion.div>
               ))}

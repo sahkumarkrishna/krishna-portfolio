@@ -10,6 +10,7 @@ import {
 } from "react-icons/fa";
 import { ModeToggle } from "./ModeToggle";
 
+
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
@@ -20,9 +21,8 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 w-full p-4 flex items-center justify-between z-50 transition-all bg-white text-black dark:bg-black dark:text-white">
       <Link
         to="/"
-        className="text-2xl dark:text-white text-zinc-700 hover:text-zinc-900 border-2 px-6 py-2"
+        className="text-2xl dark:text-white text-zinc-700 hover:text-zinc-900 border-2 px-6 py-2 "
       >
-        
         Krishna Kumar
       </Link>
 
@@ -32,9 +32,7 @@ const Navbar = () => {
           <li>
             <Link
               to="/about"
-              className={`${isActive(
-                "/about"
-              )} hover:opacity-75`}
+              className={`${isActive("/about")} hover:opacity-75`}
             >
               About
             </Link>
@@ -42,9 +40,7 @@ const Navbar = () => {
           <li>
             <Link
               to="/projects"
-              className={` ${isActive(
-                "/projects"
-              )} hover:opacity-75`}
+              className={` ${isActive("/projects")} hover:opacity-75`}
             >
               Projects
             </Link>
@@ -52,9 +48,7 @@ const Navbar = () => {
           <li>
             <Link
               to="/Services"
-              className={`${isActive(
-                "/Services"
-              )} hover:opacity-75`}
+              className={`${isActive("/Services")} hover:opacity-75`}
             >
               Services
             </Link>
@@ -62,9 +56,7 @@ const Navbar = () => {
           <li>
             <Link
               to="/contact"
-              className={`${isActive(
-                "/contact"
-              )} hover:opacity-75`}
+              className={`${isActive("/contact")} hover:opacity-75`}
             >
               Contact
             </Link>
