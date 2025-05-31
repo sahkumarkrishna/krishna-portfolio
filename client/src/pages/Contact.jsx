@@ -105,7 +105,7 @@ const ContactForm = () => {
             <h2 className="text-2xl font-bold">Congratulations! 🎉</h2>
             <p>Your response has been recorded.</p>
           </div>
-          <Button className="bg-violet-700" onClick={() => setSuccessMessage(false)}>
+          <Button className="bg-violet-700 dark:text-white" onClick={() => setSuccessMessage(false)}>
           Submit another response
           </Button>
         </div>
@@ -158,7 +158,7 @@ const ContactForm = () => {
               )}
             </div>
 
-            <Button className="w-full bg-violet-700" type="submit" disabled={isSubmitting}>
+            <Button className="w-full bg-violet-700 dark:text-white" type="submit" disabled={isSubmitting}>
               {isSubmitting ? "Sending..." : "Submit"}
             </Button>
           </form>

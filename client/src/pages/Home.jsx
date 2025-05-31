@@ -292,7 +292,7 @@ const Home = () => {
                       title={name}
                       aria-label={name}
                     />
-                    <span className=" text-xl text-gray-800 dark:text-white">
+                    <span className="  text-gray-800 dark:text-white">
                       {name}
                     </span>
                   </ExternalLink>
