@@ -13,12 +13,9 @@ app.use(express.json());
 app.use(
   cors({
     origin: process.env.FRONTEND_URL,
-    credentials: true, // allow cookies/auth if needed
+    // credentials: true, // allow cookies/auth if needed
   })
 );
-
-// Handle preflight requests for all routes
-app.options('*', cors());
 
 // Routes
 app.use("/api/contacts", contactRoutes);
