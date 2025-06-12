@@ -205,7 +205,7 @@ const Project = () => {
           <h2 className="text-lg sm:text-xl font-semibold mb-2 dark:text-white">
             Language Exchange Platform{" "}
             <Link
-              to="https://github.com/yourusername/language-exchange"
+              to="https://github.com/sahkumarkrishna/streamify-video-calls-App"
               className="text-blue-600 hover:underline dark:text-blue-400"
             >
               [GitHub]
