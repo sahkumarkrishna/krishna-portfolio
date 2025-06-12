@@ -24,6 +24,7 @@ import {
   SiIntellijidea,
   SiDocker,
 } from "react-icons/si";
+
 import { AiOutlineFilePdf } from "react-icons/ai";
 import profileImage from "../assets/image/font.gif";
 
@@ -193,6 +194,12 @@ const techData = {
       link: "https://www.figma.com/",
       icon: SiFigma,
       color: "text-purple-500",
+    },
+    {
+      name: "Postman",
+      link: "https://www.postman.com/",
+      icon: FaCode,
+      color: "text-orange-600",
     },
   ],
 };

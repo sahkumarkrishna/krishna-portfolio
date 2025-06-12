@@ -3,14 +3,34 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import Lms from "../assets/image/LMS.jpg";
 import Hospital from "../assets/image/HAS.jpg";
+import Video from "../assets/image/video.png";
 
 const Project = () => {
   return (
     <div>
+      <div className="flex flex-col md:flex-row items-end md:items-start p-3 sm:p-4 gap-6">
+  <motion.div
+    className="w-full flex flex-col justify-center md:justify-start sm:mt-40 md:mt-28"
+    initial={{ opacity: 0, x: -100 }}
+    animate={{ opacity: 1, x: 0 }}
+    transition={{ duration: 0.8 }}
+  >
+    <h2 className="text-3xl sm:text-5xl w-full md:w-1/2 flex justify-start md:justify-start mt-20 sm:mt-8 md:mt-10">
+      Project
+    </h2>
+    <p className="text-gray-700 dark:text-gray-400 text-xl xl:text-base text-left md:text-left">
+      I've worked on tons of little projects over the years, but these are
+      the ones that I'm most proud of. Many of them are open-source, so
+      check out the code and contribute.
+    </p>
+  </motion.div>
+</div>
+
+
       {/* LMS Project */}
       <div className="flex flex-col md:flex-row-reverse items-center md:items-start p-3 sm:p-4 gap-6">
         <motion.div
-          className="w-full md:w-1/2 flex justify-center md:justify-start mt-20 sm:mt-8 md:mt-20"
+          className="w-full md:w-1/2 flex justify-center md:justify-start mt-20 sm:mt-8 md:mt-10"
           initial={{ opacity: 0, x: -100 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
@@ -38,14 +58,19 @@ const Project = () => {
             </Link>
           </h2>
           <p className="text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
-            A Learning Management System (LMS) built using the MERN stack. It enables seamless student-teacher interaction, course management, real-time progress tracking, and a user-friendly dashboard.
+            A Learning Management System (LMS) built using the MERN stack. It
+            enables seamless student-teacher interaction, course management,
+            real-time progress tracking, and a user-friendly dashboard.
           </p>
           <p className="text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
-            Enhances the learning experience through intuitive tools for course creation, engagement, and performance analysis. Includes personalized feedback, notifications, forums, and assignment submissions.
+            Enhances the learning experience through intuitive tools for course
+            creation, engagement, and performance analysis. Includes
+            personalized feedback, notifications, forums, and assignment
+            submissions.
           </p>
 
           <h3 className=" text-lg sm:text-xl font-semibold mb-2 dark:text-white">
-            Key Features:
+            🔑 Key Features:
           </h3>
           <ul className="list-disc list-inside text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
             <li>User Authentication with JWT</li>
@@ -58,7 +83,7 @@ const Project = () => {
           </ul>
 
           <h3 className=" text-lg sm:text-xl font-semibold mb-2 dark:text-white">
-            Technologies Used:
+            ⚙️ Technologies Used:
           </h3>
           <ul className="list-disc list-inside text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
             <li>Frontend: React.js, Redux, Tailwind CSS, Axios</li>
@@ -73,7 +98,9 @@ const Project = () => {
             Project Architecture:
           </h3>
           <p className="text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
-            Follows a modular MERN stack architecture with REST APIs. React handles the UI, Node/Express manages backend logic, and MongoDB stores course and user data.
+            Follows a modular MERN stack architecture with REST APIs. React
+            handles the UI, Node/Express manages backend logic, and MongoDB
+            stores course and user data.
           </p>
         </motion.div>
       </div>
@@ -110,14 +137,17 @@ const Project = () => {
           </h2>
 
           <p className="text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
-            A MERN-based system to streamline hospital operations—patient registration, doctor scheduling, real-time notifications, and analytics.
+            A MERN-based system to streamline hospital operations—patient
+            registration, doctor scheduling, real-time notifications, and
+            analytics.
           </p>
           <p className="text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
-            Patients can manage appointments; doctors can manage availability and patient records. Admins oversee system activity with dashboards.
+            Patients can manage appointments; doctors can manage availability
+            and patient records. Admins oversee system activity with dashboards.
           </p>
 
           <h3 className=" text-lg sm:text-xl font-semibold mb-2 dark:text-white">
-            Key Features:
+            🔑 Key Features:
           </h3>
           <ul className="list-disc list-inside text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
             <li>Doctor & Patient Registration</li>
@@ -130,7 +160,7 @@ const Project = () => {
           </ul>
 
           <h3 className=" text-lg sm:text-xl font-semibold mb-2 dark:text-white">
-            Technologies Used:
+            ⚙️ Technologies Used:
           </h3>
           <ul className="list-disc list-inside text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
             <li>Frontend: React.js, Redux, Tailwind CSS, Axios</li>
@@ -144,7 +174,81 @@ const Project = () => {
             Project Architecture:
           </h3>
           <p className="text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
-            MERN-based modular app with REST APIs. MongoDB stores user & appointment data. Secure authentication using JWT and Firebase.
+            MERN-based modular app with REST APIs. MongoDB stores user &
+            appointment data. Secure authentication using JWT and Firebase.
+          </p>
+        </motion.div>
+      </div>
+
+      {/* Language Exchange Platform */}
+      <div className="flex flex-col md:flex-row-reverse items-center md:items-start p-3 sm:p-4 gap-6 ml-4">
+        <motion.div
+          className="w-full md:w-1/2 flex justify-center md:justify-start mt-20 sm:mt-8 md:mt-20"
+          initial={{ opacity: 0, x: -100 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <img
+            src={Video}
+            alt="Language Exchange Platform"
+            className="w-11/12 sm:w-4/5 md:w-3/4 lg:w-2/3 h-auto rounded-xl shadow-lg"
+          />
+        </motion.div>
+
+        {/* Text Left */}
+        <motion.div
+          className="w-full md:w-1/2 text-left"
+          initial={{ opacity: 0, x: -80 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.7 }}
+        >
+          <h2 className="text-lg sm:text-xl font-semibold mb-2 dark:text-white">
+            Language Exchange Platform{" "}
+            <Link
+              to="https://github.com/yourusername/language-exchange"
+              className="text-blue-600 hover:underline dark:text-blue-400"
+            >
+              [GitHub]
+            </Link>
+          </h2>
+
+          <p className="text-gray-700 dark:text-gray-400 text-sm sm:text-base">
+            A real-time platform for global users to practice languages through
+            chat and video calls — featuring beautiful themes, secure login, and
+            modern technology.
+          </p>
+          <p className="text-gray-700 dark:text-gray-400 text-sm mt-4 sm:text-base">
+            Features include AI-powered conversation suggestions, multilingual
+            support, and cross-device syncing.
+          </p>
+
+          <h3 className="text-md sm:text-lg font-semibold mb-2 dark:text-white">
+            Features:
+          </h3>
+          <ul className="list-disc list-inside text-gray-700 dark:text-gray-400 text-sm sm:text-base mb-4">
+            <li>Real-time video chat & messaging</li>
+            <li>Language exchange matching</li>
+            <li>Interactive practice exercises</li>
+            <li>User profiles and feedback</li>
+            <li>Mobile-friendly design</li>
+          </ul>
+
+          <h3 className="text-md sm:text-lg font-semibold mb-2 dark:text-white">
+            Technologies:
+          </h3>
+          <ul className="list-disc list-inside text-gray-700 dark:text-gray-400 text-sm sm:text-base">
+            <li>React.js, Redux, Tailwind CSS</li>
+            <li>Node.js, Express, MongoDB, Socket.io</li>
+            <li>WebRTC for video streaming</li>
+            <li>JWT Authentication</li>
+          </ul>
+
+          <h3 className="text-lg sm:text-xl font-semibold mb-2 mt-4 dark:text-white">
+            Project Architecture:
+          </h3>
+          <p className="text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
+            MERN-based modular app with REST APIs. MongoDB stores user &
+            appointment data. Secure authentication using JWT and Firebase.
           </p>
         </motion.div>
       </div>
