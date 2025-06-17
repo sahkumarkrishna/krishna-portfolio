@@ -122,6 +122,13 @@ const techData = {
       icon: FaCss3Alt,
       color: "text-blue-400",
     },
+    {
+  name: "Metrical UI",
+  link: "https://metrical-ui.com/",
+  icon: FaTools,
+  color: "text-purple-500",
+}
+
   ],
   Database: [
     {
@@ -245,7 +252,7 @@ const Home = () => {
             </motion.div>
 
             <motion.div whileHover={{ scale: 1.1 }}>
-              <ExternalLink to="/krishna resume.pdf">
+              <ExternalLink to="/My resume.pdf">
                 <AiOutlineFilePdf size={24} />
                 <span>Resume</span>
               </ExternalLink>
