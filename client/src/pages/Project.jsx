@@ -180,29 +180,28 @@ const Project = () => {
         </motion.div>
       </div>
 
-      {/* Language Exchange Platform */}
-      <div className="flex flex-col md:flex-row-reverse items-center md:items-start p-3 sm:p-4 gap-6 ml-4">
+        {/* Language Exchange Platform */}
+      <div className="flex flex-col md:flex-row-reverse items-center md:items-start p-3 sm:p-4 gap-6">
         <motion.div
           className="w-full md:w-1/2 flex justify-center md:justify-start mt-20 sm:mt-8 md:mt-20"
           initial={{ opacity: 0, x: -100 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <img
+           <img
             src={Video}
             alt="Language Exchange Platform"
             className="w-11/12 sm:w-4/5 md:w-3/4 lg:w-2/3 h-auto rounded-xl shadow-lg"
           />
         </motion.div>
 
-        {/* Text Left */}
         <motion.div
-          className="w-full md:w-1/2 text-left"
-          initial={{ opacity: 0, x: -80 }}
+          className="w-full md:w-1/2 text-left mt-8 sm:mt-8 md:mt-16 px-4"
+          initial={{ opacity: 0, x: 100 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.7 }}
+          transition={{ duration: 0.8 }}
         >
-          <h2 className="text-lg sm:text-xl font-semibold mb-2 dark:text-white">
+          <h2 className=" text-xl sm:text-2xl font-bold mb-2 dark:text-white">
             Language Exchange Platform{" "}
             <Link
               to="https://github.com/sahkumarkrishna/streamify-video-calls-App"
@@ -212,46 +211,49 @@ const Project = () => {
             </Link>
           </h2>
 
-          <p className="text-gray-700 dark:text-gray-400 text-sm sm:text-base">
+          <p className="text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
             A real-time platform for global users to practice languages through
             chat and video calls — featuring beautiful themes, secure login, and
             modern technology.
           </p>
-          <p className="text-gray-700 dark:text-gray-400 text-sm mt-4 sm:text-base">
-            Features include AI-powered conversation suggestions, multilingual
+          <p className="text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
+             Features include AI-powered conversation suggestions, multilingual
             support, and cross-device syncing.
           </p>
 
-          <h3 className="text-md sm:text-lg font-semibold mb-2 dark:text-white">
-            Features:
+          <h3 className=" text-lg sm:text-xl font-semibold mb-2 dark:text-white">
+            🔑 Key Features:
           </h3>
-          <ul className="list-disc list-inside text-gray-700 dark:text-gray-400 text-sm sm:text-base mb-4">
-            <li>Real-time video chat & messaging</li>
+          <ul className="list-disc list-inside text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
+           <li>Real-time video chat & messaging</li>
             <li>Language exchange matching</li>
             <li>Interactive practice exercises</li>
             <li>User profiles and feedback</li>
             <li>Mobile-friendly design</li>
           </ul>
 
-          <h3 className="text-md sm:text-lg font-semibold mb-2 dark:text-white">
-            Technologies:
+          <h3 className=" text-lg sm:text-xl font-semibold mb-2 dark:text-white">
+            ⚙️ Technologies Used:
           </h3>
-          <ul className="list-disc list-inside text-gray-700 dark:text-gray-400 text-sm sm:text-base">
+          <ul className="list-disc list-inside text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
             <li>React.js, Redux, Tailwind CSS</li>
             <li>Node.js, Express, MongoDB, Socket.io</li>
             <li>WebRTC for video streaming</li>
             <li>JWT Authentication</li>
           </ul>
 
-          <h3 className="text-lg sm:text-xl font-semibold mb-2 mt-4 dark:text-white">
+          <h3 className=" text-lg sm:text-xl font-semibold mb-2 dark:text-white">
             Project Architecture:
           </h3>
           <p className="text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
-            MERN-based modular app with REST APIs. MongoDB stores user &
-            appointment data. Secure authentication using JWT and Firebase.
+           MERN-based modular app with REST APIs. MongoDB stores user &
+            Language Exchange Platform data. Secure authentication using JWT and Firebase.
           </p>
         </motion.div>
       </div>
+
+      {/* Language Exchange Platform */}
+      
     </div>
   );
 };
