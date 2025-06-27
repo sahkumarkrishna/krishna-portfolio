@@ -4,29 +4,191 @@ import { motion } from "framer-motion";
 import Lms from "../assets/image/LMS.jpg";
 import Hospital from "../assets/image/HAS.jpg";
 import Video from "../assets/image/video.png";
+import job from "../assets/image/job.webp";
+import code from "../assets/image/codeCompare.webp";
 
 const Project = () => {
   return (
     <div>
       <div className="flex flex-col md:flex-row items-end md:items-start p-3 sm:p-4 gap-6">
-  <motion.div
-    className="w-full flex flex-col justify-center md:justify-start sm:mt-40 md:mt-28"
-    initial={{ opacity: 0, x: -100 }}
-    animate={{ opacity: 1, x: 0 }}
-    transition={{ duration: 0.8 }}
-  >
-    <h2 className="text-3xl sm:text-5xl w-full md:w-1/2 flex justify-start md:justify-start mt-20 sm:mt-8 md:mt-10">
-      Project
-    </h2>
-    <p className="text-gray-700 dark:text-gray-400 text-xl xl:text-base text-left md:text-left">
-      I've worked on tons of little projects over the years, but these are
-      the ones that I'm most proud of. Many of them are open-source, so
-      check out the code and contribute.
-    </p>
-  </motion.div>
-</div>
+        <motion.div
+          className="w-full flex flex-col justify-center md:justify-start sm:mt-40 md:mt-28"
+          initial={{ opacity: 0, x: -100 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <h2 className="text-3xl sm:text-5xl w-full md:w-1/2 flex justify-start md:justify-start mt-20 sm:mt-8 md:mt-10">
+            Project
+          </h2>
+          <p className="text-gray-700 dark:text-gray-400 text-xl xl:text-base text-left md:text-left">
+            I've worked on tons of little projects over the years, but these are
+            the ones that I'm most proud of. Many of them are open-source, so
+            check out the code and contribute.
+          </p>
+        </motion.div>
+      </div>
 
+      {/* Compile Code Platform */}
+      <div className="flex flex-col md:flex-row-reverse items-center md:items-start p-3 sm:p-4 gap-6">
+        <motion.div
+          className="w-full md:w-1/2 flex justify-center md:justify-start mt-20 sm:mt-8 md:mt-20"
+          initial={{ opacity: 0, x: -100 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <img
+            src={code}
+            alt="Language Exchange Platform"
+            className="w-11/12 sm:w-4/5 md:w-3/4 lg:w-2/3 h-auto rounded-xl shadow-lg"
+          />
+        </motion.div>
 
+        <motion.div
+          className="w-full md:w-1/2 text-left mt-8 sm:mt-8 md:mt-16 px-4"
+          initial={{ opacity: 0, x: 100 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <h2 className=" text-xl sm:text-2xl font-bold mb-2 dark:text-white">
+            Compile Code Platform{" "}
+            <Link
+              to="https://github.com/sahkumarkrishna/CompileCode"
+              className="text-blue-600 hover:underline dark:text-blue-400"
+            >
+              [GitHub]
+            </Link>
+            <Link
+              to="https://compile-code-qzk2.vercel.app/"
+              className="text-blue-600 hover:underline dark:text-blue-400"
+            >
+              [Live]
+            </Link>
+          </h2>
+
+          <p className="text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
+            The compile code platform allows users to write, compile, and run
+            code in multiple programming languages directly in the browser. It
+            provides real-time feedback, syntax highlighting, and supports code
+            execution through backend APIs.
+          </p>
+          <p className="text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
+            A compile code platform enables users to write, compile, and execute
+            code online with real-time output and multi-language support.
+          </p>
+
+          <h3 className=" text-lg sm:text-xl font-semibold mb-2 dark:text-white">
+            🔑 Key Features:
+          </h3>
+          <ul className="list-disc list-inside text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
+            <li>Online code editor with syntax highlighting</li>
+            <li>Support for multiple programming languages</li>
+            <li>Real-time code execution and output display</li>
+            <li>User authentication and code history saving</li>
+            <li>Role-based access for users and admins</li>
+          </ul>
+
+          <h3 className=" text-lg sm:text-xl font-semibold mb-2 dark:text-white">
+            ⚙️ Technologies Used:
+          </h3>
+          <ul className="list-disc list-inside text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
+            <li>React.js, Tailwind CSS</li>
+            <li>Node.js, Express, MongoDB, </li>
+            <li>Third-party Compiler APIs</li>
+            <li>JWT Authentication</li>
+          </ul>
+
+          <h3 className=" text-lg sm:text-xl font-semibold mb-2 dark:text-white">
+            Project Architecture:
+          </h3>
+          <p className="text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
+            The project follows a layered MERN stack architecture with separate
+            components for frontend, backend, and database. Code execution is
+            handled via backend integration with third-party compiler APIs,
+            ensuring secure and scalable performance.
+          </p>
+        </motion.div>
+      </div>
+
+      {/* Job portal Platform */}
+      <div className="flex flex-col md:flex-row-reverse items-center md:items-start p-3 sm:p-4 gap-6">
+        <motion.div
+          className="w-full md:w-1/2 flex justify-center md:justify-start mt-20 sm:mt-8 md:mt-20"
+          initial={{ opacity: 0, x: -100 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <img
+            src={job}
+            alt="Language Exchange Platform"
+            className="w-11/12 sm:w-4/5 md:w-3/4 lg:w-2/3 h-auto rounded-xl shadow-lg"
+          />
+        </motion.div>
+
+        <motion.div
+          className="w-full md:w-1/2 text-left mt-8 sm:mt-8 md:mt-16 px-4"
+          initial={{ opacity: 0, x: 100 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <h2 className=" text-xl sm:text-2xl font-bold mb-2 dark:text-white">
+            Job Portal Platform{" "}
+            <Link
+              to="https://github.com/sahkumarkrishna/Job-Portal"
+              className="text-blue-600 hover:underline dark:text-blue-400"
+            >
+              [GitHub]
+            </Link>
+            <Link
+              to="https://job-portal-osf5.vercel.app/login"
+              className="text-blue-600 hover:underline dark:text-blue-400"
+            >
+              [Live]
+            </Link>
+          </h2>
+
+          <p className="text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
+            A job portal platform is an online system that connects job seekers
+            with employers, allowing users to search, apply, and manage job
+            applications efficiently. It streamlines the hiring process through
+            features like resume uploads, job alerts, and recruiter tools.
+          </p>
+          <p className="text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
+            A job portal platform connects job seekers with employers,
+            simplifying the job search and hiring process online.
+          </p>
+
+          <h3 className=" text-lg sm:text-xl font-semibold mb-2 dark:text-white">
+            🔑 Key Features:
+          </h3>
+          <ul className="list-disc list-inside text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
+            <li>User authentication (Sign Up/Login)</li>
+            <li>Job posting and application system</li>
+            <li>Role-based dashboards for employers and job seekers</li>
+            <li>Resume upload and job search filters</li>
+            <li>Real-time application tracking and notifications</li>
+          </ul>
+
+          <h3 className=" text-lg sm:text-xl font-semibold mb-2 dark:text-white">
+            ⚙️ Technologies Used:
+          </h3>
+          <ul className="list-disc list-inside text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
+            <li>React.js, Tailwind CSS</li>
+            <li>Node.js, Express, MongoDB, </li>
+            <li>Cloudinary</li>
+            <li>JWT Authentication</li>
+          </ul>
+
+          <h3 className=" text-lg sm:text-xl font-semibold mb-2 dark:text-white">
+            Project Architecture:
+          </h3>
+          <p className="text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
+            The project follows a modular MERN stack architecture, separating
+            frontend, backend, and database layers for scalability and
+            maintainability. Cloudinary is integrated into the backend for
+            secure file uploads and media management.
+          </p>
+        </motion.div>
+      </div>
       {/* LMS Project */}
       <div className="flex flex-col md:flex-row-reverse items-center md:items-start p-3 sm:p-4 gap-6">
         <motion.div
@@ -180,7 +342,7 @@ const Project = () => {
         </motion.div>
       </div>
 
-        {/* Language Exchange Platform */}
+      {/* Language Exchange Platform */}
       <div className="flex flex-col md:flex-row-reverse items-center md:items-start p-3 sm:p-4 gap-6">
         <motion.div
           className="w-full md:w-1/2 flex justify-center md:justify-start mt-20 sm:mt-8 md:mt-20"
@@ -188,7 +350,7 @@ const Project = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
         >
-           <img
+          <img
             src={Video}
             alt="Language Exchange Platform"
             className="w-11/12 sm:w-4/5 md:w-3/4 lg:w-2/3 h-auto rounded-xl shadow-lg"
@@ -217,7 +379,7 @@ const Project = () => {
             modern technology.
           </p>
           <p className="text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
-             Features include AI-powered conversation suggestions, multilingual
+            Features include AI-powered conversation suggestions, multilingual
             support, and cross-device syncing.
           </p>
 
@@ -225,7 +387,7 @@ const Project = () => {
             🔑 Key Features:
           </h3>
           <ul className="list-disc list-inside text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
-           <li>Real-time video chat & messaging</li>
+            <li>Real-time video chat & messaging</li>
             <li>Language exchange matching</li>
             <li>Interactive practice exercises</li>
             <li>User profiles and feedback</li>
@@ -246,14 +408,12 @@ const Project = () => {
             Project Architecture:
           </h3>
           <p className="text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
-           MERN-based modular app with REST APIs. MongoDB stores user &
-            Language Exchange Platform data. Secure authentication using JWT and Firebase.
+            MERN-based modular app with REST APIs. MongoDB stores user &
+            Language Exchange Platform data. Secure authentication using JWT and
+            Firebase.
           </p>
         </motion.div>
       </div>
-
-      {/* Language Exchange Platform */}
-      
     </div>
   );
 };
