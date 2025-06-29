@@ -6,6 +6,7 @@ import Hospital from "../assets/image/HAS.jpg";
 import Video from "../assets/image/video.png";
 import job from "../assets/image/job.webp";
 import code from "../assets/image/codeCompare.webp";
+import Blog from "../assets/image/BlogApp.webp";
 
 const Project = () => {
   return (
@@ -24,6 +25,93 @@ const Project = () => {
             I've worked on tons of little projects over the years, but these are
             the ones that I'm most proud of. Many of them are open-source, so
             check out the code and contribute.
+          </p>
+        </motion.div>
+      </div>
+
+      {/* Compile Code Platform */}
+      <div className="flex flex-col md:flex-row-reverse items-center md:items-start p-3 sm:p-4 gap-6">
+        <motion.div
+          className="w-full md:w-1/2 flex justify-center md:justify-start mt-20 sm:mt-8 md:mt-20"
+          initial={{ opacity: 0, x: -100 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <img
+            src={Blog}
+            alt="Language Exchange Platform"
+            className="w-11/12 sm:w-4/5 md:w-3/4 lg:w-2/3 h-auto rounded-xl shadow-lg"
+          />
+        </motion.div>
+
+        <motion.div
+          className="w-full md:w-1/2 text-left mt-8 sm:mt-8 md:mt-16 px-4"
+          initial={{ opacity: 0, x: 100 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <h2 className=" text-xl sm:text-2xl font-bold mb-2 dark:text-white">
+            Blog App{" "}
+            <Link
+              to="https://github.com/sahkumarkrishna/Blog-App"
+              className="text-blue-600 hover:underline dark:text-blue-400"
+            >
+              [GitHub]
+            </Link>
+            <Link
+              to="https://blog-app-zosx.vercel.app/"
+              className="text-blue-600 hover:underline dark:text-blue-400"
+            >
+              [Live]
+            </Link>
+          </h2>
+
+          <p className="text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
+            Share your thoughts and stories effortlessly with our blog app.
+            Express your creativity and connect with readers around the globe.
+            Whether it’s a personal journey or professional insights, your voice
+            matters. Start blogging today and build your own community of
+            followers.
+          </p>
+          <p className="text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
+            Write, publish, and share your stories with ease using our blog app.
+            Engage with readers through comments and likes. Turn your ideas into
+            impactful posts that inspire and inform.
+          </p>
+
+          <h3 className=" text-lg sm:text-xl font-semibold mb-2 dark:text-white">
+            🔑 Key Features:
+          </h3>
+          <ul className="list-disc list-inside text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
+            <li>Easy-to-use Editor: Write and format posts effortlessly.</li>
+            <li>Real-time Feedback: See updates and changes instantly.</li>
+            <li>Multi-language Support: Share content in any language.</li>
+            <li>
+              Community Engagement: Connect with readers through comments and
+              likes.
+            </li>
+            <li>Responsive Design: Enjoy seamless blogging on any device.</li>
+          </ul>
+
+          <h3 className=" text-lg sm:text-xl font-semibold mb-2 dark:text-white">
+            ⚙️ Technologies Used:
+          </h3>
+          <ul className="list-disc list-inside text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
+            <li>React.js,Axois, Tailwind CSS, shadcn/ui</li>
+            <li>Node.js, Express, MongoDB, </li>
+            <li>Cloudinary</li>
+            <li>JWT Authentication</li>
+          </ul>
+
+          <h3 className=" text-lg sm:text-xl font-semibold mb-2 dark:text-white">
+            Project Architecture:
+          </h3>
+          <p className="text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
+            The application follows a modular architecture using the MERN stack.
+            The backend (Node.js, Express) manages APIs, authentication, and
+            database operations with MongoDB. The frontend (React) handles user
+            interface and state management, using shadcn/ui for components.
+            Cloudinary is integrated for image storage and retrieval.
           </p>
         </motion.div>
       </div>
@@ -91,7 +179,7 @@ const Project = () => {
             ⚙️ Technologies Used:
           </h3>
           <ul className="list-disc list-inside text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
-            <li>React.js, Tailwind CSS</li>
+            <li>React.js, Axois Tailwind CSS</li>
             <li>Node.js, Express, MongoDB, </li>
             <li>Third-party Compiler APIs</li>
             <li>JWT Authentication</li>
@@ -172,7 +260,7 @@ const Project = () => {
             ⚙️ Technologies Used:
           </h3>
           <ul className="list-disc list-inside text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
-            <li>React.js, Tailwind CSS</li>
+            <li>React.js,Axois, Tailwind CSS</li>
             <li>Node.js, Express, MongoDB, </li>
             <li>Cloudinary</li>
             <li>JWT Authentication</li>
@@ -398,7 +486,7 @@ const Project = () => {
             ⚙️ Technologies Used:
           </h3>
           <ul className="list-disc list-inside text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
-            <li>React.js, Redux, Tailwind CSS</li>
+            <li>React.js, Redux,Axois, Tailwind CSS</li>
             <li>Node.js, Express, MongoDB, Socket.io</li>
             <li>WebRTC for video streaming</li>
             <li>JWT Authentication</li>
