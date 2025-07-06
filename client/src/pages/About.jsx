@@ -8,7 +8,7 @@ import goklyn from "../assets/image/goklyn.png";
 
 const About = () => {
   const handleDownload = () => {
-    const resumeUrl = "/My resume.pdf";
+    const resumeUrl = "/Resume.pdf";
     const link = document.createElement("a");
     link.href = resumeUrl;
     link.download = "resume.pdf";

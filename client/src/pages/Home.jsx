@@ -86,12 +86,7 @@ const techData = {
       icon: FaReact,
       color: "text-blue-500",
     },
-    {
-      name: "Next.js",
-      link: "https://nextjs.org/",
-      icon: SiNextdotjs,
-      color: "text-black dark:text-white",
-    },
+   
     {
       name: "Redux",
       link: "https://redux.js.org/",
@@ -252,7 +247,7 @@ const Home = () => {
             </motion.div>
 
             <motion.div whileHover={{ scale: 1.1 }}>
-              <ExternalLink to="/My resume.pdf">
+              <ExternalLink to="/Resume.pdf">
                 <AiOutlineFilePdf size={24} />
                 <span>Resume</span>
               </ExternalLink>
