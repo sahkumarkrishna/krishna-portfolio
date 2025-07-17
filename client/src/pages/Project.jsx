@@ -7,6 +7,7 @@ import Video from "../assets/image/video.png";
 import job from "../assets/image/job.webp";
 import code from "../assets/image/codeCompare.webp";
 import Blog from "../assets/image/BlogApp.webp";
+import Help from "../assets/image/HelpCode.jpg";
 
 const Project = () => {
   return (
@@ -29,7 +30,167 @@ const Project = () => {
         </motion.div>
       </div>
 
+      {/* Help Code Platform */}
+      <div className="flex flex-col md:flex-row-reverse items-center md:items-start p-3 sm:p-4 gap-6">
+        <motion.div
+          className="w-full md:w-1/2 flex justify-center md:justify-start mt-20 sm:mt-8 md:mt-20"
+          initial={{ opacity: 0, x: -100 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <img
+            src={Help}
+            alt="Language Exchange Platform"
+            className="w-11/12 sm:w-4/5 md:w-3/4 lg:w-2/3 h-auto rounded-xl shadow-lg"
+          />
+        </motion.div>
+
+        <motion.div
+          className="w-full md:w-1/2 text-left mt-8 sm:mt-8 md:mt-16 px-4"
+          initial={{ opacity: 0, x: 100 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <h2 className=" text-xl sm:text-2xl font-bold mb-2 dark:text-white">
+            Help Code{" "}
+            <Link
+              to="https://github.com/sahkumarkrishna/Help-code"
+              className="text-blue-600 hover:underline dark:text-blue-400"
+            >
+              [GitHub]
+            </Link>
+            <Link
+              to="https://help-code-omega.vercel.app/"
+              className="text-blue-600 hover:underline dark:text-blue-400"
+            >
+              [Live]
+            </Link>
+          </h2>
+
+          <p className="text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
+            Help Code AI Powered offers intelligent code review with AI
+            assistance. It features syntax highlighting and a smooth,
+            user-friendly editor. Markdown support ensures clean, readable
+            review formatting.
+          </p>
+          <p className="text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
+            The backend is built with Node.js and Express, connecting to Gemini
+            AI for smart code reviews.
+          </p>
+
+          <h3 className=" text-lg sm:text-xl font-semibold mb-2 dark:text-white">
+          🔑 Key Features:
+          </h3>
+          <ul className="list-disc list-inside text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
+            <li>AI-Powered Code Review</li>
+            <li>Syntax Highlighting</li>
+            <li>User-Friendly Code Editor</li>
+            <li>Markdown Support</li>
+          </ul>
+
+          <h3 className=" text-lg sm:text-xl font-semibold mb-2 dark:text-white">
+          ⚙️ Technologies Used:
+          </h3>
+          <ul className="list-disc list-inside text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
+            <li>React.js, Prism.js, Markdown, Axois Tailwind CSS</li>
+            <li>Node.js, Express, MongoDB, </li>
+            <li>AI Integration</li>
+          </ul>
+
+          <h3 className=" text-lg sm:text-xl font-semibold mb-2 dark:text-white">
+            Project Architecture:
+          </h3>
+          <p className="text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
+            Help Code AI Powered uses a React frontend with Prism.js and
+            Markdown for an intuitive coding interface. The backend is built
+            with Node.js and Express, connecting to Gemini AI for smart code
+            reviews. Code flows from user input to AI feedback, displayed with
+            syntax highlighting and markdown formatting.
+          </p>
+        </motion.div>
+      </div>
+
       {/* Compile Code Platform */}
+      <div className="flex flex-col md:flex-row-reverse items-center md:items-start p-3 sm:p-4 gap-6">
+        <motion.div
+          className="w-full md:w-1/2 flex justify-center md:justify-start mt-20 sm:mt-8 md:mt-20"
+          initial={{ opacity: 0, x: -100 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <img
+            src={code}
+            alt="Language Exchange Platform"
+            className="w-11/12 sm:w-4/5 md:w-3/4 lg:w-2/3 h-auto rounded-xl shadow-lg"
+          />
+        </motion.div>
+
+        <motion.div
+          className="w-full md:w-1/2 text-left mt-8 sm:mt-8 md:mt-16 px-4"
+          initial={{ opacity: 0, x: 100 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <h2 className=" text-xl sm:text-2xl font-bold mb-2 dark:text-white">
+            Compile Code Platform{" "}
+            <Link
+              to="https://github.com/sahkumarkrishna/CompileCode"
+              className="text-blue-600 hover:underline dark:text-blue-400"
+            >
+              [GitHub]
+            </Link>
+            <Link
+              to="https://compile-code-qzk2.vercel.app/"
+              className="text-blue-600 hover:underline dark:text-blue-400"
+            >
+              [Live]
+            </Link>
+          </h2>
+
+          <p className="text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
+            The compile code platform allows users to write, compile, and run
+            code in multiple programming languages directly in the browser. It
+            provides real-time feedback, syntax highlighting, and supports code
+            execution through backend APIs.
+          </p>
+          <p className="text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
+            A compile code platform enables users to write, compile, and execute
+            code online with real-time output and multi-language support.
+          </p>
+
+          <h3 className=" text-lg sm:text-xl font-semibold mb-2 dark:text-white">
+          🔑 Key Features:
+          </h3>
+          <ul className="list-disc list-inside text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
+            <li>Online code editor with syntax highlighting</li>
+            <li>Support for multiple programming languages</li>
+            <li>Real-time code execution and output display</li>
+            <li>User authentication and code history saving</li>
+          </ul>
+
+          <h3 className=" text-lg sm:text-xl font-semibold mb-2 dark:text-white">
+          ⚙️ Technologies Used:
+          </h3>
+          <ul className="list-disc list-inside text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
+            <li>React.js, Axois Tailwind CSS</li>
+            <li>Node.js, Express, MongoDB, </li>
+            <li>Third-party Compiler APIs</li>
+            <li>JWT Authentication</li>
+          </ul>
+
+          <h3 className=" text-lg sm:text-xl font-semibold mb-2 dark:text-white">
+            Project Architecture:
+          </h3>
+          <p className="text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
+            The project follows a layered MERN stack architecture with separate
+            components for frontend, backend, and database. Code execution is
+            handled via backend integration with third-party compiler APIs,
+            ensuring secure and scalable performance.
+          </p>
+        </motion.div>
+      </div>
+
+      {/* Blog Platform */}
       <div className="flex flex-col md:flex-row-reverse items-center md:items-start p-3 sm:p-4 gap-6">
         <motion.div
           className="w-full md:w-1/2 flex justify-center md:justify-start mt-20 sm:mt-8 md:mt-20"
@@ -112,87 +273,6 @@ const Project = () => {
             database operations with MongoDB. The frontend (React) handles user
             interface and state management, using shadcn/ui for components.
             Cloudinary is integrated for image storage and retrieval.
-          </p>
-        </motion.div>
-      </div>
-
-      {/* Compile Code Platform */}
-      <div className="flex flex-col md:flex-row-reverse items-center md:items-start p-3 sm:p-4 gap-6">
-        <motion.div
-          className="w-full md:w-1/2 flex justify-center md:justify-start mt-20 sm:mt-8 md:mt-20"
-          initial={{ opacity: 0, x: -100 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-        >
-          <img
-            src={code}
-            alt="Language Exchange Platform"
-            className="w-11/12 sm:w-4/5 md:w-3/4 lg:w-2/3 h-auto rounded-xl shadow-lg"
-          />
-        </motion.div>
-
-        <motion.div
-          className="w-full md:w-1/2 text-left mt-8 sm:mt-8 md:mt-16 px-4"
-          initial={{ opacity: 0, x: 100 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-        >
-          <h2 className=" text-xl sm:text-2xl font-bold mb-2 dark:text-white">
-            Compile Code Platform{" "}
-            <Link
-              to="https://github.com/sahkumarkrishna/CompileCode"
-              className="text-blue-600 hover:underline dark:text-blue-400"
-            >
-              [GitHub]
-            </Link>
-            <Link
-              to="https://compile-code-qzk2.vercel.app/"
-              className="text-blue-600 hover:underline dark:text-blue-400"
-            >
-              [Live]
-            </Link>
-          </h2>
-
-          <p className="text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
-            The compile code platform allows users to write, compile, and run
-            code in multiple programming languages directly in the browser. It
-            provides real-time feedback, syntax highlighting, and supports code
-            execution through backend APIs.
-          </p>
-          <p className="text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
-            A compile code platform enables users to write, compile, and execute
-            code online with real-time output and multi-language support.
-          </p>
-
-          <h3 className=" text-lg sm:text-xl font-semibold mb-2 dark:text-white">
-            🔑 Key Features:
-          </h3>
-          <ul className="list-disc list-inside text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
-            <li>Online code editor with syntax highlighting</li>
-            <li>Support for multiple programming languages</li>
-            <li>Real-time code execution and output display</li>
-            <li>User authentication and code history saving</li>
-            <li>Role-based access for users and admins</li>
-          </ul>
-
-          <h3 className=" text-lg sm:text-xl font-semibold mb-2 dark:text-white">
-            ⚙️ Technologies Used:
-          </h3>
-          <ul className="list-disc list-inside text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
-            <li>React.js, Axois Tailwind CSS</li>
-            <li>Node.js, Express, MongoDB, </li>
-            <li>Third-party Compiler APIs</li>
-            <li>JWT Authentication</li>
-          </ul>
-
-          <h3 className=" text-lg sm:text-xl font-semibold mb-2 dark:text-white">
-            Project Architecture:
-          </h3>
-          <p className="text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
-            The project follows a layered MERN stack architecture with separate
-            components for frontend, backend, and database. Code execution is
-            handled via backend integration with third-party compiler APIs,
-            ensuring secure and scalable performance.
           </p>
         </motion.div>
       </div>

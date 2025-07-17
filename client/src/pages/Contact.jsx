@@ -92,7 +92,7 @@ const ContactForm = () => {
           <div className="flex items-center gap-3">
             <FaMapMarkerAlt className="text-red-500" />
             <span>
-              <strong>Location:</strong> Abmala, Haryana, India
+              <strong>Location:</strong> Ambala, Haryana, India
             </span>
           </div>
         </div>
