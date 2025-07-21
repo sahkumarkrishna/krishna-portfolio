@@ -79,7 +79,7 @@ const Project = () => {
           </p>
 
           <h3 className=" text-lg sm:text-xl font-semibold mb-2 dark:text-white">
-          🔑 Key Features:
+            🔑 Key Features:
           </h3>
           <ul className="list-disc list-inside text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
             <li>AI-Powered Code Review</li>
@@ -89,7 +89,7 @@ const Project = () => {
           </ul>
 
           <h3 className=" text-lg sm:text-xl font-semibold mb-2 dark:text-white">
-          ⚙️ Technologies Used:
+            ⚙️ Technologies Used:
           </h3>
           <ul className="list-disc list-inside text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
             <li>React.js, Prism.js, Markdown, Axois Tailwind CSS</li>
@@ -110,7 +110,7 @@ const Project = () => {
         </motion.div>
       </div>
 
-      {/* Compile Code Platform */}
+      {/*  Online Code Compiler*/}
       <div className="flex flex-col md:flex-row-reverse items-center md:items-start p-3 sm:p-4 gap-6">
         <motion.div
           className="w-full md:w-1/2 flex justify-center md:justify-start mt-20 sm:mt-8 md:mt-20"
@@ -132,7 +132,7 @@ const Project = () => {
           transition={{ duration: 0.8 }}
         >
           <h2 className=" text-xl sm:text-2xl font-bold mb-2 dark:text-white">
-            Compile Code Platform{" "}
+             Online Code Compiler{" "}
             <Link
               to="https://github.com/sahkumarkrishna/CompileCode"
               className="text-blue-600 hover:underline dark:text-blue-400"
@@ -159,7 +159,7 @@ const Project = () => {
           </p>
 
           <h3 className=" text-lg sm:text-xl font-semibold mb-2 dark:text-white">
-          🔑 Key Features:
+            🔑 Key Features:
           </h3>
           <ul className="list-disc list-inside text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
             <li>Online code editor with syntax highlighting</li>
@@ -169,7 +169,7 @@ const Project = () => {
           </ul>
 
           <h3 className=" text-lg sm:text-xl font-semibold mb-2 dark:text-white">
-          ⚙️ Technologies Used:
+            ⚙️ Technologies Used:
           </h3>
           <ul className="list-disc list-inside text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
             <li>React.js, Axois Tailwind CSS</li>
@@ -186,6 +186,87 @@ const Project = () => {
             components for frontend, backend, and database. Code execution is
             handled via backend integration with third-party compiler APIs,
             ensuring secure and scalable performance.
+          </p>
+        </motion.div>
+      </div>
+
+      {/* Job portal Platform */}
+      <div className="flex flex-col md:flex-row-reverse items-center md:items-start p-3 sm:p-4 gap-6">
+        <motion.div
+          className="w-full md:w-1/2 flex justify-center md:justify-start mt-20 sm:mt-8 md:mt-20"
+          initial={{ opacity: 0, x: -100 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <img
+            src={job}
+            alt="Language Exchange Platform"
+            className="w-11/12 sm:w-4/5 md:w-3/4 lg:w-2/3 h-auto rounded-xl shadow-lg"
+          />
+        </motion.div>
+
+        <motion.div
+          className="w-full md:w-1/2 text-left mt-8 sm:mt-8 md:mt-16 px-4"
+          initial={{ opacity: 0, x: 100 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <h2 className=" text-xl sm:text-2xl font-bold mb-2 dark:text-white">
+            Job Portal Platform{" "}
+            <Link
+              to="https://github.com/sahkumarkrishna/job-portal"
+              className="text-blue-600 hover:underline dark:text-blue-400"
+            >
+              [GitHub]
+            </Link>
+            <Link
+              to="https://job-portal-okc2.onrender.com/"
+              className="text-blue-600 hover:underline dark:text-blue-400"
+            >
+              [Live]
+            </Link>
+          </h2>
+
+          <p className="text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
+            A job portal platform is an online system that connects job seekers
+            with employers, allowing users to search, apply, and manage job
+            applications efficiently. It streamlines the hiring process through
+            features like resume uploads, job alerts, and recruiter tools.
+          </p>
+          <p className="text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
+            A job portal platform connects job seekers with employers,
+            simplifying the job search and hiring process online.
+          </p>
+
+          <h3 className=" text-lg sm:text-xl font-semibold mb-2 dark:text-white">
+            🔑 Key Features:
+          </h3>
+          <ul className="list-disc list-inside text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
+            <li>User authentication (Sign Up/Login)</li>
+            <li>Job posting and application system</li>
+            <li>Role-based dashboards for employers and job seekers</li>
+            <li>Resume upload and job search filters</li>
+            <li>Real-time application tracking and notifications</li>
+          </ul>
+
+          <h3 className=" text-lg sm:text-xl font-semibold mb-2 dark:text-white">
+            ⚙️ Technologies Used:
+          </h3>
+          <ul className="list-disc list-inside text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
+            <li>React.js,Axois, Tailwind CSS</li>
+            <li>Node.js, Express, MongoDB, </li>
+            <li>Cloudinary</li>
+            <li>JWT Authentication</li>
+          </ul>
+
+          <h3 className=" text-lg sm:text-xl font-semibold mb-2 dark:text-white">
+            Project Architecture:
+          </h3>
+          <p className="text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
+            The project follows a modular MERN stack architecture, separating
+            frontend, backend, and database layers for scalability and
+            maintainability. Cloudinary is integrated into the backend for
+            secure file uploads and media management.
           </p>
         </motion.div>
       </div>
@@ -277,86 +358,6 @@ const Project = () => {
         </motion.div>
       </div>
 
-      {/* Job portal Platform */}
-      <div className="flex flex-col md:flex-row-reverse items-center md:items-start p-3 sm:p-4 gap-6">
-        <motion.div
-          className="w-full md:w-1/2 flex justify-center md:justify-start mt-20 sm:mt-8 md:mt-20"
-          initial={{ opacity: 0, x: -100 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-        >
-          <img
-            src={job}
-            alt="Language Exchange Platform"
-            className="w-11/12 sm:w-4/5 md:w-3/4 lg:w-2/3 h-auto rounded-xl shadow-lg"
-          />
-        </motion.div>
-
-        <motion.div
-          className="w-full md:w-1/2 text-left mt-8 sm:mt-8 md:mt-16 px-4"
-          initial={{ opacity: 0, x: 100 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-        >
-          <h2 className=" text-xl sm:text-2xl font-bold mb-2 dark:text-white">
-            Job Portal Platform{" "}
-            <Link
-              to="https://github.com/sahkumarkrishna/Job-Portal"
-              className="text-blue-600 hover:underline dark:text-blue-400"
-            >
-              [GitHub]
-            </Link>
-            <Link
-              to="https://job-portal-osf5.vercel.app/login"
-              className="text-blue-600 hover:underline dark:text-blue-400"
-            >
-              [Live]
-            </Link>
-          </h2>
-
-          <p className="text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
-            A job portal platform is an online system that connects job seekers
-            with employers, allowing users to search, apply, and manage job
-            applications efficiently. It streamlines the hiring process through
-            features like resume uploads, job alerts, and recruiter tools.
-          </p>
-          <p className="text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
-            A job portal platform connects job seekers with employers,
-            simplifying the job search and hiring process online.
-          </p>
-
-          <h3 className=" text-lg sm:text-xl font-semibold mb-2 dark:text-white">
-            🔑 Key Features:
-          </h3>
-          <ul className="list-disc list-inside text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
-            <li>User authentication (Sign Up/Login)</li>
-            <li>Job posting and application system</li>
-            <li>Role-based dashboards for employers and job seekers</li>
-            <li>Resume upload and job search filters</li>
-            <li>Real-time application tracking and notifications</li>
-          </ul>
-
-          <h3 className=" text-lg sm:text-xl font-semibold mb-2 dark:text-white">
-            ⚙️ Technologies Used:
-          </h3>
-          <ul className="list-disc list-inside text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
-            <li>React.js,Axois, Tailwind CSS</li>
-            <li>Node.js, Express, MongoDB, </li>
-            <li>Cloudinary</li>
-            <li>JWT Authentication</li>
-          </ul>
-
-          <h3 className=" text-lg sm:text-xl font-semibold mb-2 dark:text-white">
-            Project Architecture:
-          </h3>
-          <p className="text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
-            The project follows a modular MERN stack architecture, separating
-            frontend, backend, and database layers for scalability and
-            maintainability. Cloudinary is integrated into the backend for
-            secure file uploads and media management.
-          </p>
-        </motion.div>
-      </div>
       {/* LMS Project */}
       <div className="flex flex-col md:flex-row-reverse items-center md:items-start p-3 sm:p-4 gap-6">
         <motion.div
