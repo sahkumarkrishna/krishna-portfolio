@@ -247,7 +247,7 @@ const Home = () => {
             </motion.div>
 
             <motion.div whileHover={{ scale: 1.1 }}>
-              <ExternalLink to="Jake_s_Resume__Anonymous___1_.pdf">
+              <ExternalLink to="Jake_s_Resume__Anonymous_.pdf">
                 <AiOutlineFilePdf size={24} />
                 <span>Resume</span>
               </ExternalLink>

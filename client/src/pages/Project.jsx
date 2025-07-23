@@ -140,7 +140,7 @@ const Project = () => {
               [GitHub]
             </Link>
             <Link
-              to="https://compile-code-qzk2.vercel.app/"
+              to="https://online-compile-code-1.onrender.com/"
               className="text-blue-600 hover:underline dark:text-blue-400"
             >
               [Live]
