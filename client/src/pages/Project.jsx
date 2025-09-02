@@ -54,13 +54,13 @@ const Project = () => {
           <h2 className=" text-xl sm:text-2xl font-bold mb-2 dark:text-white">
             Help Code{" "}
             <Link
-              to="https://github.com/sahkumarkrishna/Help-code"
+              to="https://github.com/sahkumarkrishna/HelpCode"
               className="text-blue-600 hover:underline dark:text-blue-400"
             >
               [GitHub]
             </Link>
             <Link
-              to="https://help-code-omega.vercel.app/"
+              to="https://helpcode-1.onrender.com/"
               className="text-blue-600 hover:underline dark:text-blue-400"
             >
               [Live]
@@ -134,7 +134,7 @@ const Project = () => {
           <h2 className=" text-xl sm:text-2xl font-bold mb-2 dark:text-white">
              Online Code Compiler{" "}
             <Link
-              to="https://github.com/sahkumarkrishna/CompileCode"
+              to="https://github.com/sahkumarkrishna/Online-Compile-Code"
               className="text-blue-600 hover:underline dark:text-blue-400"
             >
               [GitHub]
@@ -190,7 +190,7 @@ const Project = () => {
         </motion.div>
       </div>
 
-      {/* Job portal Platform */}
+      {/* GrowX Platform */}
       <div className="flex flex-col md:flex-row-reverse items-center md:items-start p-3 sm:p-4 gap-6">
         <motion.div
           className="w-full md:w-1/2 flex justify-center md:justify-start mt-20 sm:mt-8 md:mt-20"
@@ -212,15 +212,15 @@ const Project = () => {
           transition={{ duration: 0.8 }}
         >
           <h2 className=" text-xl sm:text-2xl font-bold mb-2 dark:text-white">
-            Job Portal Platform{" "}
+            GrowX Platform{" "}
             <Link
-              to="https://github.com/sahkumarkrishna/job-portal"
+              to="https://github.com/sahkumarkrishna/GrowX"
               className="text-blue-600 hover:underline dark:text-blue-400"
             >
               [GitHub]
             </Link>
             <Link
-              to="https://job-portal-okc2.onrender.com/"
+              to="https://growx.onrender.com/"
               className="text-blue-600 hover:underline dark:text-blue-400"
             >
               [Live]
@@ -301,7 +301,7 @@ const Project = () => {
               [GitHub]
             </Link>
             <Link
-              to="https://blog-app-zosx.vercel.app/"
+              to="https://blog-app-xqmy.onrender.com/"
               className="text-blue-600 hover:underline dark:text-blue-400"
             >
               [Live]
