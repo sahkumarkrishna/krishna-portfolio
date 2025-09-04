@@ -8,7 +8,7 @@ import goklyn from "../assets/image/goklyn.png";
 
 const About = () => {
   const handleDownload = () => {
-    const resumeUrl = "/Jake_s_Resume__Anonymous_.pdf";
+    const resumeUrl = "/Krishna Resume.pdf";
     const link = document.createElement("a");
     link.href = resumeUrl;
     link.download = "krishna_Resume.pdf";
@@ -152,7 +152,7 @@ const About = () => {
               className="w-full sm:w-auto"
             >
               <Link
-                to="/Jake_s_Resume__Anonymous_.pdf"
+                to="/Krishna Resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className=" flex items-center gap-2 text-gray-800 dark:text-white font-semibold text-lg border px-4 py-2 rounded-lg transition-all"

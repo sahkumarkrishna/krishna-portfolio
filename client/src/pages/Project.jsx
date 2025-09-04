@@ -190,86 +190,84 @@ const Project = () => {
         </motion.div>
       </div>
 
-      {/* GrowX Platform */}
-      <div className="flex flex-col md:flex-row-reverse items-center md:items-start p-3 sm:p-4 gap-6">
-        <motion.div
-          className="w-full md:w-1/2 flex justify-center md:justify-start mt-20 sm:mt-8 md:mt-20"
-          initial={{ opacity: 0, x: -100 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-        >
-          <img
-            src={job}
-            alt="Language Exchange Platform"
-            className="w-11/12 sm:w-4/5 md:w-3/4 lg:w-2/3 h-auto rounded-xl shadow-lg"
-          />
-        </motion.div>
+     {/* GrowX Platform */}
+<div className="flex flex-col md:flex-row-reverse items-center md:items-start p-3 sm:p-4 gap-6">
+  <motion.div
+    className="w-full md:w-1/2 flex justify-center md:justify-start mt-20 sm:mt-8 md:mt-20"
+    initial={{ opacity: 0, x: -100 }}
+    animate={{ opacity: 1, x: 0 }}
+    transition={{ duration: 0.8 }}
+  >
+    <img
+      src={job}
+      alt="GrowX Career Platform"
+      className="w-11/12 sm:w-4/5 md:w-3/4 lg:w-2/3 h-auto rounded-xl shadow-lg"
+    />
+  </motion.div>
 
-        <motion.div
-          className="w-full md:w-1/2 text-left mt-8 sm:mt-8 md:mt-16 px-4"
-          initial={{ opacity: 0, x: 100 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-        >
-          <h2 className=" text-xl sm:text-2xl font-bold mb-2 dark:text-white">
-            GrowX Platform{" "}
-            <Link
-              to="https://github.com/sahkumarkrishna/GrowX"
-              className="text-blue-600 hover:underline dark:text-blue-400"
-            >
-              [GitHub]
-            </Link>
-            <Link
-              to="https://growx.onrender.com/"
-              className="text-blue-600 hover:underline dark:text-blue-400"
-            >
-              [Live]
-            </Link>
-          </h2>
+  <motion.div
+    className="w-full md:w-1/2 text-left mt-8 sm:mt-8 md:mt-16 px-4"
+    initial={{ opacity: 0, x: 100 }}
+    animate={{ opacity: 1, x: 0 }}
+    transition={{ duration: 0.8 }}
+  >
+    <h2 className="text-xl sm:text-2xl font-bold mb-2 dark:text-white">
+      GrowX Platform{" "}
+      <Link
+        to="https://github.com/sahkumarkrishna/GrowX"
+        className="text-blue-600 hover:underline dark:text-blue-400"
+      >
+        [GitHub]
+      </Link>
+      <Link
+        to="https://growx.onrender.com/"
+        className="text-blue-600 hover:underline dark:text-blue-400 ml-2"
+      >
+        [Live]
+      </Link>
+    </h2>
 
-          <p className="text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
-            A job portal platform is an online system that connects job seekers
-            with employers, allowing users to search, apply, and manage job
-            applications efficiently. It streamlines the hiring process through
-            features like resume uploads, job alerts, and recruiter tools.
-          </p>
-          <p className="text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
-            A job portal platform connects job seekers with employers,
-            simplifying the job search and hiring process online.
-          </p>
+    <p className="text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
+      GrowX is a full-stack career platform integrating{" "}
+      <span className="font-semibold">Learning, Quiz, Internship, and Job modules</span>,
+      designed to serve 500+ users monthly. It empowers job seekers, learners,
+      and employers with tools for career growth, skill development, and efficient hiring.
+    </p>
 
-          <h3 className=" text-lg sm:text-xl font-semibold mb-2 dark:text-white">
-            🔑 Key Features:
-          </h3>
-          <ul className="list-disc list-inside text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
-            <li>User authentication (Sign Up/Login)</li>
-            <li>Job posting and application system</li>
-            <li>Role-based dashboards for employers and job seekers</li>
-            <li>Resume upload and job search filters</li>
-            <li>Real-time application tracking and notifications</li>
-          </ul>
+    <h3 className="text-lg sm:text-xl font-semibold mb-2 dark:text-white">
+      🔑 Key Features:
+    </h3>
+    <ul className="list-disc list-inside text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
+      <li>Role-based authentication & secure access control</li>
+      <li>Learning & Quiz modules for skill enhancement</li>
+      <li>Internship & job posting with application tracking</li>
+      <li>Interactive dashboards for employers and seekers</li>
+      <li>Real-time updates, resume uploads, and notifications</li>
+    </ul>
 
-          <h3 className=" text-lg sm:text-xl font-semibold mb-2 dark:text-white">
-            ⚙️ Technologies Used:
-          </h3>
-          <ul className="list-disc list-inside text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
-            <li>React.js,Axois, Tailwind CSS</li>
-            <li>Node.js, Express, MongoDB, </li>
-            <li>Cloudinary</li>
-            <li>JWT Authentication</li>
-          </ul>
+    <h3 className="text-lg sm:text-xl font-semibold mb-2 dark:text-white">
+      ⚙️ Tech Stack:
+    </h3>
+    <ul className="list-disc list-inside text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
+      <li>Frontend: React.js, Axios, Tailwind CSS, Redux</li>
+      <li>Backend: Node.js, Express.js, MongoDB</li>
+      <li>Cloud & Media: Cloudinary</li>
+      <li>Authentication: JWT</li>
+    </ul>
 
-          <h3 className=" text-lg sm:text-xl font-semibold mb-2 dark:text-white">
-            Project Architecture:
-          </h3>
-          <p className="text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
-            The project follows a modular MERN stack architecture, separating
-            frontend, backend, and database layers for scalability and
-            maintainability. Cloudinary is integrated into the backend for
-            secure file uploads and media management.
-          </p>
-        </motion.div>
-      </div>
+    <h3 className="text-lg sm:text-xl font-semibold mb-2 dark:text-white">
+     Project Architecture:
+    </h3>
+    <p className="text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
+      Built with a modular MERN stack architecture, GrowX separates frontend,
+      backend, and database layers for scalability. Redux is integrated for
+      state management, while Cloudinary ensures secure media storage. The
+      platform is deployed on Render with scalable APIs, maintaining 99.9%
+      uptime.
+    </p>
+  </motion.div>
+</div>
+
 
       {/* Blog Platform */}
       <div className="flex flex-col md:flex-row-reverse items-center md:items-start p-3 sm:p-4 gap-6">
