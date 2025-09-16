@@ -12,7 +12,7 @@ app.use(express.json());
 // CORS configuration
 app.use(
   cors({
-    origin: process.env.FRONTEND_URL,
+    origin: process.env.FRONTEND_URL|| "https://krishna-portfolio-fbv8.vercel.app",
      credentials: true, // allow cookies/auth if needed
   })
 );
