@@ -9,11 +9,24 @@ const app = express();
 // Middleware
 app.use(express.json());
 
-// CORS configuration
+// ✅ Allowed Origins (Dev + Prod)
+const allowedOrigins = [
+  // "http://localhost:5173", // React Dev
+  "https://krishna-portfolio-fbv8.vercel.app", // Vercel Prod
+];
+
+// ✅ CORS setup
 app.use(
   cors({
-    origin: process.env.FRONTEND_URL|| "https://krishna-portfolio-fbv8.vercel.app",
-     credentials: true, // allow cookies/auth if needed
+    origin: function (origin, callback) {
+      // Allow requests with no origin (like Postman, curl)
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
+    credentials: true,
   })
 );
 
@@ -21,7 +34,7 @@ app.use(
 app.use("/api/contacts", contactRoutes);
 
 // Server listener
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`🚀 Server running on port ${PORT}`);
 });
