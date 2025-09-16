@@ -1,21 +1,32 @@
-const Contact = require("../model/Contact"); // Make sure this path is correct
+const Message = require("../model/Contact");
+const sendEmail = require("../utils/SendEmail");
 
-const addContact = async (req, res) => {
+exports.sendMessage = async (req, res) => {
+  const { name, email, message } = req.body;
+
+  if (!name || !email || !message) {
+    return res.status(400).json({ success: false, error: "All fields are required" });
+  }
+
   try {
-    const { name, email, message } = req.body;
+    // 1️⃣ Save to DB
+    const newMessage = new Message({ name, email, message });
+    await newMessage.save();
 
-    if (!name || !email || !message) {
-      return res.status(400).json({ error: "All fields are required." });
-    }
+    // 2️⃣ Send Email
+    const emailBody = `
+      You have a new message from your portfolio contact form:
 
-    const newContact = new Contact({ name, email, message });
-    await newContact.save();
+      Name: ${name}
+      Email: ${email}
+      Message: ${message}
+    `;
 
-    res.status(201).json({ message: "Contact added successfully." });
+    await sendEmail(process.env.EMAIL_USER, `New Message from ${name}`, emailBody);
+
+    res.status(200).json({ success: true, message: "Message sent and saved successfully!" });
   } catch (error) {
-    console.error("Error in addContact:", error); // This will show in Vercel logs
-    res.status(500).json({ error: "Server error." });
+    console.error("❌ Error in sendMessage:", error.message);
+    res.status(500).json({ success: false, error: "Server Error" });
   }
 };
-
-module.exports = { addContact };
