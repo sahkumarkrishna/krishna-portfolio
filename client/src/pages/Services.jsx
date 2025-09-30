@@ -15,7 +15,8 @@ import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 const services = [
   {
     name: "Frontend Development",
-    description: "Building responsive and interactive UIs using React.js, HTML5, CSS3, and JavaScript.",
+    description:
+      "Building responsive and interactive UIs using React.js, HTML5, CSS3, and JavaScript.",
     icon: SiReact,
     color: "text-cyan-500",
   },
@@ -39,7 +40,8 @@ const services = [
   },
   {
     name: "Containerization & DevOps",
-    description: "Using Docker and CI/CD tools to create portable, reproducible development environments.",
+    description:
+      "Using Docker and CI/CD tools to create portable, reproducible development environments.",
     icon: SiDocker,
     color: "text-blue-600",
   },
@@ -57,32 +59,46 @@ const services = [
   },
   {
     name: "Firebase Services",
-    description: "Using Firebase for real-time databases, authentication, hosting, and analytics.",
+    description:
+      "Using Firebase for real-time databases, authentication, hosting, and analytics.",
     icon: SiFirebase,
     color: "text-orange-500",
   },
 ];
 
-const cardVariants = {
-  hidden: { opacity: 0, y: 40 },
-  visible: (i) => ({
+// Animation for container (stagger children)
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
     opacity: 1,
-    y: 0,
-    transition: { delay: i * 0.15 },
-  }),
+    transition: { staggerChildren: 0.2 },
+  },
 };
 
-const ServiceCard = ({ name, description, Icon, color, index }) => (
+// Animation for each card
+const cardVariants = {
+  hidden: { opacity: 0, y: 40 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: "easeOut" },
+  },
+};
+
+const ServiceCard = ({ name, description, Icon, color }) => (
   <motion.div
-    custom={index}
-    initial="hidden"
-    whileInView="visible"
-    viewport={{ once: true }}
     variants={cardVariants}
+    whileHover={{ scale: 1.05 }}
+    whileTap={{ scale: 0.97 }}
+    transition={{ type: "spring", stiffness: 200 }}
   >
-    <Card className="text-center hover:shadow-xl transition-shadow duration-300">
+    <Card className="text-center hover:shadow-xl transition duration-300 bg-white dark:bg-gray-900">
       <CardHeader>
-        <Icon className={`mx-auto mb-4 ${color}`} size={48} />
+        <Icon
+          aria-label={`${name} icon`}
+          className={`mx-auto mb-4 ${color}`}
+          size={48}
+        />
         <CardTitle className="text-xl">{name}</CardTitle>
       </CardHeader>
       <CardContent>
@@ -92,7 +108,7 @@ const ServiceCard = ({ name, description, Icon, color, index }) => (
   </motion.div>
 );
 
-const Service= () => {
+const Service = () => {
   return (
     <div className="max-w-6xl mx-auto px-6 py-10">
       <motion.h2
@@ -103,6 +119,7 @@ const Service= () => {
         className="text-3xl font-bold text-center mb-4 mt-16"
       >
         My Services
+        <div className="mx-auto h-1 w-40 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full mb-2" />
       </motion.h2>
 
       <motion.p
@@ -116,18 +133,24 @@ const Service= () => {
         solutions that are secure, scalable, and user-centric.
       </motion.p>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        {services.map(({ name, description, icon: Icon, color }, i) => (
+      {/* Staggered animation for the grid */}
+      <motion.div
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
+        {services.map(({ name, description, icon: Icon, color }) => (
           <ServiceCard
             key={name}
             name={name}
             description={description}
             Icon={Icon}
             color={color}
-            index={i}
           />
         ))}
-      </div>
+      </motion.div>
     </div>
   );
 };

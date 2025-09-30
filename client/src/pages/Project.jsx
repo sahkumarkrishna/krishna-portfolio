@@ -22,6 +22,7 @@ const Project = () => {
           <h2 className="text-3xl sm:text-5xl w-full md:w-1/2 flex justify-start md:justify-start mt-20 sm:mt-8 md:mt-10">
             Project
           </h2>
+                  <hr className="border-t-4 border-yellow-500 mb-2 w-16 rounded" />
           <p className="text-gray-700 dark:text-gray-400 text-xl xl:text-base text-left md:text-left">
             I've worked on tons of little projects over the years, but these are
             the ones that I'm most proud of. Many of them are open-source, so

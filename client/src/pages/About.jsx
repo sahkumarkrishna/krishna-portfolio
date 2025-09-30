@@ -110,6 +110,7 @@ const About = () => {
             <h1 className=" text-3xl md:text-4xl font-extrabold text-left">
               About Me
             </h1>
+             <hr className="border-t-4 border-yellow-500 mb-2 w-16 rounded" />
             <p className="mt-4 text-lg text-gray-700 dark:text-gray-400 text-left">
               👋 Hi, I'm{" "}
               <span className=" text-gray-700 dark:text-gray-400">

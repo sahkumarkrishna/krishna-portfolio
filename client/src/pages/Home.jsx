@@ -221,6 +221,7 @@ const Home = () => {
             Hello, I'm <span className="text-green-500">Full-stack</span>{" "}
             Developer
           </h1>
+        
 
           <p className="mt-4 text-lg text-gray-700 dark:text-gray-400 text-left">
             I'm Krishna Kumar, a Full Stack Developer driven by a passion for

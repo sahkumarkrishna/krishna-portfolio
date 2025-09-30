@@ -70,6 +70,8 @@ const ContactForm = () => {
       <motion.div className="w-full lg:w-2/5" custom={0.2} variants={fadeIn}>
         <div className="text-center mb-6">
           <h1 className="text-3xl font-bold mt-16 capitalize">Contact</h1>
+          <div className="mx-auto h-1 w-24 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full mb-2" />
+
           <p className="max-w-md mx-auto text-gray-700 dark:text-gray-400 mb-8">
             I love collaborating with creative folks, so don't hesitate to reach
             out and say hi! 👋
@@ -106,7 +108,7 @@ const ContactForm = () => {
             <p>Your response has been recorded.</p>
           </div>
           <Button className="bg-violet-700 dark:text-white" onClick={() => setSuccessMessage(false)}>
-          Submit another response
+            Submit another response
           </Button>
         </div>
       ) : (
