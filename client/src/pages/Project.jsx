@@ -8,6 +8,8 @@ import job from "../assets/image/job.webp";
 import code from "../assets/image/codeCompare.webp";
 import Blog from "../assets/image/BlogApp.webp";
 import Help from "../assets/image/HelpCode.jpg";
+import Kanban from "../assets/image/Kanban Board.png";
+
 
 const Project = () => {
   return (
@@ -22,7 +24,7 @@ const Project = () => {
           <h2 className="text-3xl sm:text-5xl w-full md:w-1/2 flex justify-start md:justify-start mt-20 sm:mt-8 md:mt-10">
             Project
           </h2>
-                  <hr className="border-t-4 border-yellow-500 mb-2 w-16 rounded" />
+          <hr className="border-t-4 border-yellow-500 mb-2 w-16 rounded" />
           <p className="text-gray-700 dark:text-gray-400 text-xl xl:text-base text-left md:text-left">
             I've worked on tons of little projects over the years, but these are
             the ones that I'm most proud of. Many of them are open-source, so
@@ -133,7 +135,7 @@ const Project = () => {
           transition={{ duration: 0.8 }}
         >
           <h2 className=" text-xl sm:text-2xl font-bold mb-2 dark:text-white">
-             Online Code Compiler{" "}
+            Online Code Compiler{" "}
             <Link
               to="https://github.com/sahkumarkrishna/Online-Compile-Code"
               className="text-blue-600 hover:underline dark:text-blue-400"
@@ -191,83 +193,164 @@ const Project = () => {
         </motion.div>
       </div>
 
-     {/* GrowX Platform */}
-<div className="flex flex-col md:flex-row-reverse items-center md:items-start p-3 sm:p-4 gap-6">
-  <motion.div
-    className="w-full md:w-1/2 flex justify-center md:justify-start mt-20 sm:mt-8 md:mt-20"
-    initial={{ opacity: 0, x: -100 }}
-    animate={{ opacity: 1, x: 0 }}
-    transition={{ duration: 0.8 }}
-  >
-    <img
-      src={job}
-      alt="GrowX Career Platform"
-      className="w-11/12 sm:w-4/5 md:w-3/4 lg:w-2/3 h-auto rounded-xl shadow-lg"
-    />
-  </motion.div>
+      {/* GrowX Platform */}
+      <div className="flex flex-col md:flex-row-reverse items-center md:items-start p-3 sm:p-4 gap-6">
+        <motion.div
+          className="w-full md:w-1/2 flex justify-center md:justify-start mt-20 sm:mt-8 md:mt-20"
+          initial={{ opacity: 0, x: -100 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <img
+            src={job}
+            alt="GrowX Career Platform"
+            className="w-11/12 sm:w-4/5 md:w-3/4 lg:w-2/3 h-auto rounded-xl shadow-lg"
+          />
+        </motion.div>
 
-  <motion.div
-    className="w-full md:w-1/2 text-left mt-8 sm:mt-8 md:mt-16 px-4"
-    initial={{ opacity: 0, x: 100 }}
-    animate={{ opacity: 1, x: 0 }}
-    transition={{ duration: 0.8 }}
-  >
-    <h2 className="text-xl sm:text-2xl font-bold mb-2 dark:text-white">
-      GrowX Platform{" "}
-      <Link
-        to="https://github.com/sahkumarkrishna/GrowX"
-        className="text-blue-600 hover:underline dark:text-blue-400"
-      >
-        [GitHub]
-      </Link>
-      <Link
-        to="https://growx.onrender.com/"
-        className="text-blue-600 hover:underline dark:text-blue-400 ml-2"
-      >
-        [Live]
-      </Link>
-    </h2>
+        <motion.div
+          className="w-full md:w-1/2 text-left mt-8 sm:mt-8 md:mt-16 px-4"
+          initial={{ opacity: 0, x: 100 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <h2 className="text-xl sm:text-2xl font-bold mb-2 dark:text-white">
+            GrowX Platform{" "}
+            <Link
+              to="https://github.com/sahkumarkrishna/GrowX"
+              className="text-blue-600 hover:underline dark:text-blue-400"
+            >
+              [GitHub]
+            </Link>
+            <Link
+              to="https://growx.onrender.com/"
+              className="text-blue-600 hover:underline dark:text-blue-400 ml-2"
+            >
+              [Live]
+            </Link>
+          </h2>
 
-    <p className="text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
-      GrowX is a full-stack career platform integrating{" "}
-      <span className="font-semibold">Learning, Quiz, Internship, and Job modules</span>,
-      designed to serve 500+ users monthly. It empowers job seekers, learners,
-      and employers with tools for career growth, skill development, and efficient hiring.
-    </p>
+          <p className="text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
+            GrowX is a full-stack career platform integrating{" "}
+            <span className="font-semibold">Learning, Quiz, Internship, and Job modules</span>,
+            designed to serve 500+ users monthly. It empowers job seekers, learners,
+            and employers with tools for career growth, skill development, and efficient hiring.
+          </p>
 
-    <h3 className="text-lg sm:text-xl font-semibold mb-2 dark:text-white">
-      🔑 Key Features:
-    </h3>
-    <ul className="list-disc list-inside text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
-      <li>Role-based authentication & secure access control</li>
-      <li>Learning & Quiz modules for skill enhancement</li>
-      <li>Internship & job posting with application tracking</li>
-      <li>Interactive dashboards for employers and seekers</li>
-      <li>Real-time updates, resume uploads, and notifications</li>
-    </ul>
+          <h3 className="text-lg sm:text-xl font-semibold mb-2 dark:text-white">
+            🔑 Key Features:
+          </h3>
+          <ul className="list-disc list-inside text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
+            <li>Role-based authentication & secure access control</li>
+            <li>Learning & Quiz modules for skill enhancement</li>
+            <li>Internship & job posting with application tracking</li>
+            <li>Interactive dashboards for employers and seekers</li>
+            <li>Real-time updates, resume uploads, and notifications</li>
+          </ul>
 
-    <h3 className="text-lg sm:text-xl font-semibold mb-2 dark:text-white">
-      ⚙️ Tech Stack:
-    </h3>
-    <ul className="list-disc list-inside text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
-      <li>Frontend: React.js, Axios, Tailwind CSS, Redux</li>
-      <li>Backend: Node.js, Express.js, MongoDB</li>
-      <li>Cloud & Media: Cloudinary</li>
-      <li>Authentication: JWT</li>
-    </ul>
+          <h3 className="text-lg sm:text-xl font-semibold mb-2 dark:text-white">
+            ⚙️ Tech Stack:
+          </h3>
+          <ul className="list-disc list-inside text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
+            <li>Frontend: React.js, Axios, Tailwind CSS, Redux</li>
+            <li>Backend: Node.js, Express.js, MongoDB</li>
+            <li>Cloud & Media: Cloudinary</li>
+            <li>Authentication: JWT</li>
+          </ul>
 
-    <h3 className="text-lg sm:text-xl font-semibold mb-2 dark:text-white">
-     Project Architecture:
-    </h3>
-    <p className="text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
-      Built with a modular MERN stack architecture, GrowX separates frontend,
-      backend, and database layers for scalability. Redux is integrated for
-      state management, while Cloudinary ensures secure media storage. The
-      platform is deployed on Render with scalable APIs, maintaining 99.9%
-      uptime.
-    </p>
-  </motion.div>
-</div>
+          <h3 className="text-lg sm:text-xl font-semibold mb-2 dark:text-white">
+            Project Architecture:
+          </h3>
+          <p className="text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
+            Built with a modular MERN stack architecture, GrowX separates frontend,
+            backend, and database layers for scalability. Redux is integrated for
+            state management, while Cloudinary ensures secure media storage. The
+            platform is deployed on Render with scalable APIs, maintaining 99.9%
+            uptime.
+          </p>
+        </motion.div>
+      </div>
+
+      {/* Kanban Board Platform */}
+      <div className="flex flex-col md:flex-row-reverse items-center md:items-start p-3 sm:p-4 gap-6">
+        <motion.div
+          className="w-full md:w-1/2 flex justify-center md:justify-start mt-20 sm:mt-8 md:mt-20"
+          initial={{ opacity: 0, x: -100 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <img
+            src={Kanban}
+            alt="Kanban Board Platform"
+            className="w-11/12 sm:w-4/5 md:w-3/4 lg:w-2/3 h-auto rounded-xl shadow-lg"
+          />
+        </motion.div>
+
+        <motion.div
+          className="w-full md:w-1/2 text-left mt-8 sm:mt-8 md:mt-16 px-4"
+          initial={{ opacity: 0, x: 100 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <h2 className="text-xl sm:text-2xl font-bold mb-2 dark:text-white">
+            Kanban Board{" "}
+            <Link
+              to="https://github.com/sahkumarkrishna/Kanban-Board.git"
+              className="text-blue-600 hover:underline dark:text-blue-400"
+            >
+              [GitHub]
+            </Link>
+            <Link
+              to="https://kanban-board-ffmo.onrender.com/"
+              className="text-blue-600 hover:underline dark:text-blue-400"
+            >
+              [Live]
+            </Link>
+          </h2>
+
+          <p className="text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
+            The Kanban Board Platform is a task management tool that helps users
+            organize and track work visually. It supports drag-and-drop cards,
+            task categorization, and team collaboration — enabling seamless project
+            workflow management.
+          </p>
+
+          <p className="text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
+            The backend is powered by Node.js and Express, managing board, list, and
+            task operations efficiently with MongoDB as the database.
+          </p>
+
+          <h3 className="text-lg sm:text-xl font-semibold mb-2 dark:text-white">
+            🔑 Key Features:
+          </h3>
+          <ul className="list-disc list-inside text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
+            <li>Drag-and-Drop Task Management</li>
+            <li>Real-Time Task Updates</li>
+            <li>Collaborative Boards for Teams</li>
+            <li>Intuitive UI and Smooth Animations</li>
+          </ul>
+
+          <h3 className="text-lg sm:text-xl font-semibold mb-2 dark:text-white">
+            ⚙️ Technologies Used:
+          </h3>
+          <ul className="list-disc list-inside text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
+            <li>React.js, Redux Toolkit, Tailwind CSS, Framer Motion</li>
+            <li>Node.js, Express.js, MongoDB</li>
+            <li>Drag-and-Drop via React Beautiful DnD</li>
+          </ul>
+
+          <h3 className="text-lg sm:text-xl font-semibold mb-2 dark:text-white">
+            Project Architecture:
+          </h3>
+          <p className="text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
+            The Kanban Board uses a React frontend with Redux Toolkit for state
+            management and React Beautiful DnD for drag-and-drop functionality.
+            The Node.js and Express backend handles board, list, and task APIs,
+            while MongoDB stores user and task data. All updates sync in real time
+            for a dynamic team workflow experience.
+          </p>
+        </motion.div>
+      </div>
 
 
       {/* Blog Platform */}
