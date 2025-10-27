@@ -8,7 +8,7 @@ import goklyn from "../assets/image/goklyn.png";
 
 const About = () => {
   const handleDownload = () => {
-    const resumeUrl = "/Krishna Resume.pdf";
+    const resumeUrl = "/My Resume.pdf";
     const link = document.createElement("a");
     link.href = resumeUrl;
     link.download = "krishna_Resume.pdf";
@@ -45,21 +45,22 @@ const About = () => {
     {
       company: "Ceeras",
       role: "Frontend Developer",
-      date: "Feb 25 - Present",
+      date: "Feb 2025 - Jun 2025",
       image: ceeras,
       description:
         "Building and enhancing a book recommendation platform with a focus on creating a user-friendly interface and implementing responsive design features to improve the overall user experience.",
       link: "https://www.ceeras.in/",
     },
     {
-      company: "Goklyn",
+      company: "Goklyn Pvt. Ltd.",
       role: "Full Stack Developer & Team Lead",
-      date: "May 15 - Present",
+      date: "Mar 2025 – May 2025",
       image: goklyn,
       description:
-        "Spearheading the development of a comprehensive OYO-style hotel booking platform and e-commerce website. Overseeing both frontend and backend development while ensuring seamless functionality and an intuitive user interface.",
+        "Led the end-to-end development of a full-stack OYO-style hotel booking and e-commerce platform. Oversaw frontend and backend teams to ensure seamless functionality, optimized performance, and an engaging user experience across devices.",
       link: "https://goklyn.in/",
-    },
+    }
+
   ];
 
   const qualifications = [
@@ -110,7 +111,7 @@ const About = () => {
             <h1 className=" text-3xl md:text-4xl font-extrabold text-left">
               About Me
             </h1>
-             <hr className="border-t-4 border-yellow-500 mb-2 w-16 rounded" />
+            <hr className="border-t-4 border-yellow-500 mb-2 w-16 rounded" />
             <p className="mt-4 text-lg text-gray-700 dark:text-gray-400 text-left">
               👋 Hi, I'm{" "}
               <span className=" text-gray-700 dark:text-gray-400">
@@ -153,7 +154,7 @@ const About = () => {
               className="w-full sm:w-auto"
             >
               <Link
-                to="/Krishna Resume.pdf"
+                to="/My Resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className=" flex items-center gap-2 text-gray-800 dark:text-white font-semibold text-lg border px-4 py-2 rounded-lg transition-all"
