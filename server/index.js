@@ -11,8 +11,8 @@ app.use(express.json());
 
 // ✅ Allowed Origins (Dev + Prod)
 const allowedOrigins = [
- "http://localhost:5174", // React Dev
- // "https://krishna-portfolio-fbv8.vercel.app", // Vercel Prod
+ //"http://localhost:5173", // React Dev
+ "https://krishna-portfolio-fbv8.vercel.app", // Vercel Prod
 ];
 
 // ✅ CORS setup
