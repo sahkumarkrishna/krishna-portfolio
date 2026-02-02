@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import { FaGithub, FaExternalLinkAlt, FaCode, FaRocket, FaTimes, FaEye } from "react-icons/fa";
 import Lms from "../assets/image/LMS.jpg";
 import Hospital from "../assets/image/HAS.jpg";
 import Video from "../assets/image/video.png";
@@ -10,661 +11,424 @@ import Blog from "../assets/image/BlogApp.webp";
 import Help from "../assets/image/HelpCode.jpg";
 import Kanban from "../assets/image/Kanban Board.png";
 
-
 const Project = () => {
+  const [selectedProject, setSelectedProject] = useState(null);
+
+  const projects = [
+    {
+      id: 1,
+      title: "Help Code",
+      shortDesc: "AI-powered code review platform with intelligent assistance.",
+      description: "Help Code AI Powered offers intelligent code review with AI assistance. It features syntax highlighting and a smooth, user-friendly editor. Markdown support ensures clean, readable review formatting. The backend is built with Node.js and Express, connecting to Gemini AI for smart code reviews.",
+      image: Help,
+      github: "https://github.com/sahkumarkrishna/HelpCode",
+      live: "https://helpcode-1.onrender.com/",
+      tech: ["React.js", "Node.js", "MongoDB", "AI Integration", "Prism.js", "Markdown"],
+      category: "AI Platform",
+      gradient: "from-purple-500 to-pink-600",
+      features: [
+        "AI-Powered Code Review",
+        "Syntax Highlighting", 
+        "User-Friendly Code Editor",
+        "Markdown Support"
+      ],
+      architecture: "Help Code AI Powered uses a React frontend with Prism.js and Markdown for an intuitive coding interface. The backend is built with Node.js and Express, connecting to Gemini AI for smart code reviews."
+    },
+    {
+      id: 2,
+      title: "Online Code Compiler",
+      shortDesc: "Multi-language code compilation platform with real-time execution.",
+      description: "The compile code platform allows users to write, compile, and run code in multiple programming languages directly in the browser. It provides real-time feedback, syntax highlighting, and supports code execution through backend APIs.",
+      image: code,
+      github: "https://github.com/sahkumarkrishna/Online-Compile-Code",
+      live: "https://online-compile-code-1.onrender.com/",
+      tech: ["React.js", "Node.js", "Express", "Compiler APIs", "JWT"],
+      category: "Development Tool",
+      gradient: "from-blue-500 to-cyan-600",
+      features: [
+        "Online code editor with syntax highlighting",
+        "Support for multiple programming languages",
+        "Real-time code execution and output display",
+        "User authentication and code history saving"
+      ],
+      architecture: "The project follows a layered MERN stack architecture with separate components for frontend, backend, and database. Code execution is handled via backend integration with third-party compiler APIs."
+    },
+    {
+      id: 3,
+      title: "GrowX Platform",
+      shortDesc: "Full-stack career platform serving 500+ users monthly.",
+      description: "GrowX is a full-stack career platform integrating Learning, Quiz, Internship, and Job modules, designed to serve 500+ users monthly. It empowers job seekers, learners, and employers with tools for career growth, skill development, and efficient hiring.",
+      image: job,
+      github: "https://github.com/sahkumarkrishna/GrowX",
+      live: "https://growx.onrender.com/",
+      tech: ["React.js", "Redux", "Node.js", "MongoDB", "Cloudinary", "JWT"],
+      category: "Career Platform",
+      gradient: "from-green-500 to-emerald-600",
+      features: [
+        "Role-based authentication & secure access control",
+        "Learning & Quiz modules for skill enhancement",
+        "Internship & job posting with application tracking",
+        "Interactive dashboards for employers and seekers",
+        "Real-time updates, resume uploads, and notifications"
+      ],
+      architecture: "Built with a modular MERN stack architecture, GrowX separates frontend, backend, and database layers for scalability. Redux is integrated for state management, while Cloudinary ensures secure media storage."
+    },
+    {
+      id: 4,
+      title: "Kanban Board",
+      shortDesc: "Task management tool with drag-and-drop functionality.",
+      description: "The Kanban Board Platform is a task management tool that helps users organize and track work visually. It supports drag-and-drop cards, task categorization, and team collaboration — enabling seamless project workflow management.",
+      image: Kanban,
+      github: "https://github.com/sahkumarkrishna/Kanban-Board.git",
+      live: "https://kanban-board-ffmo.onrender.com/",
+      tech: ["React.js", "Redux", "DnD", "MongoDB", "Framer Motion"],
+      category: "Productivity",
+      gradient: "from-orange-500 to-red-600",
+      features: [
+        "Drag-and-Drop Task Management",
+        "Real-Time Task Updates",
+        "Collaborative Boards for Teams",
+        "Intuitive UI and Smooth Animations"
+      ],
+      architecture: "The Kanban Board uses a React frontend with Redux Toolkit for state management and React Beautiful DnD for drag-and-drop functionality. The Node.js and Express backend handles board, list, and task APIs."
+    },
+    {
+      id: 5,
+      title: "Blog App",
+      shortDesc: "Modern blogging platform with rich text editor.",
+      description: "Share your thoughts and stories effortlessly with our blog app. Express your creativity and connect with readers around the globe. Whether it's a personal journey or professional insights, your voice matters.",
+      image: Blog,
+      github: "https://github.com/sahkumarkrishna/Blog-App",
+      live: "https://blog-app-xqmy.onrender.com/",
+      tech: ["React.js", "Node.js", "MongoDB", "Cloudinary", "shadcn/ui"],
+      category: "Content Platform",
+      gradient: "from-indigo-500 to-purple-600",
+      features: [
+        "Easy-to-use Editor: Write and format posts effortlessly",
+        "Real-time Feedback: See updates and changes instantly",
+        "Multi-language Support: Share content in any language",
+        "Community Engagement: Connect with readers through comments",
+        "Responsive Design: Enjoy seamless blogging on any device"
+      ],
+      architecture: "The application follows a modular architecture using the MERN stack. The backend manages APIs, authentication, and database operations with MongoDB. Cloudinary is integrated for image storage."
+    },
+    {
+      id: 6,
+      title: "Learning Management System",
+      shortDesc: "Comprehensive LMS with course management and progress tracking.",
+      description: "A Learning Management System (LMS) built using the MERN stack. It enables seamless student-teacher interaction, course management, real-time progress tracking, and a user-friendly dashboard.",
+      image: Lms,
+      github: "https://github.com/sahkumarkrishna/LMS",
+      live: null,
+      tech: ["React.js", "Redux", "Node.js", "Socket.io", "MongoDB"],
+      category: "Education",
+      gradient: "from-teal-500 to-green-600",
+      features: [
+        "User Authentication with JWT",
+        "Role-Based Access for students, teachers, and admins",
+        "Real-time progress tracking and notifications",
+        "Course management with lessons and quizzes",
+        "Student-teacher chat and forums",
+        "Admin Dashboard and analytics",
+        "Mobile-friendly design"
+      ],
+      architecture: "Follows a modular MERN stack architecture with REST APIs. React handles the UI, Node/Express manages backend logic, and MongoDB stores course and user data."
+    },
+    {
+      id: 7,
+      title: "Hospital Management",
+      shortDesc: "MERN-based hospital system with appointment management.",
+      description: "A MERN-based system to streamline hospital operations—patient registration, doctor scheduling, real-time notifications, and analytics. Patients can manage appointments; doctors can manage availability and patient records.",
+      image: Hospital,
+      github: "https://github.com/sahkumarkrishna/Hospital_management_system",
+      live: null,
+      tech: ["React.js", "Node.js", "MongoDB", "JWT", "Socket.io"],
+      category: "Healthcare",
+      gradient: "from-red-500 to-pink-600",
+      features: [
+        "Doctor & Patient Registration",
+        "Appointment Management",
+        "Role-Based Access (Admin, Doctor, Patient)",
+        "Real-time Notifications",
+        "Doctor Availability Controls",
+        "Admin Analytics Dashboard",
+        "Mobile-Responsive UI"
+      ],
+      architecture: "MERN-based modular app with REST APIs. MongoDB stores user & appointment data. Secure authentication using JWT and Firebase."
+    },
+    {
+      id: 8,
+      title: "Language Exchange Platform",
+      shortDesc: "Real-time video chat platform for language learning.",
+      description: "A real-time platform for global users to practice languages through chat and video calls — featuring beautiful themes, secure login, and modern technology. Features include AI-powered conversation suggestions and multilingual support.",
+      image: Video,
+      github: "https://github.com/sahkumarkrishna/streamify-video-calls-App",
+      live: null,
+      tech: ["React.js", "WebRTC", "Socket.io", "MongoDB", "JWT"],
+      category: "Communication",
+      gradient: "from-yellow-500 to-orange-600",
+      features: [
+        "Real-time video chat & messaging",
+        "Language exchange matching",
+        "Interactive practice exercises",
+        "User profiles and feedback",
+        "Mobile-friendly design"
+      ],
+      architecture: "MERN-based modular app with REST APIs. MongoDB stores user & Language Exchange Platform data. Secure authentication using JWT and Firebase."
+    },
+  ];
+
   return (
-    <div>
-      <div className="flex flex-col md:flex-row items-end md:items-start p-3 sm:p-4 gap-6">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-blue-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
+      {/* Hero Section */}
+      <div className="container mx-auto px-6 py-20">
         <motion.div
-          className="w-full flex flex-col justify-center md:justify-start sm:mt-40 md:mt-28"
-          initial={{ opacity: 0, x: -100 }}
-          animate={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
+          className="text-center mb-16"
         >
-          <h2 className="text-3xl sm:text-5xl w-full md:w-1/2 flex justify-start md:justify-start mt-20 sm:mt-8 md:mt-10">
-            Project
-          </h2>
-          <hr className="border-t-4 border-yellow-500 mb-2 w-16 rounded" />
-          <p className="text-gray-700 dark:text-gray-400 text-xl xl:text-base text-left md:text-left">
-            I've worked on tons of little projects over the years, but these are
-            the ones that I'm most proud of. Many of them are open-source, so
-            check out the code and contribute.
+          <span className="inline-block px-4 py-2 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 text-sm font-medium mb-4">
+            🚀 My Work
+          </span>
+          <h1 className="text-4xl md:text-5xl font-bold mb-6">
+            Featured <span className="gradient-text">Projects</span>
+          </h1>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Click on any project image to explore detailed information, features, and technical architecture.
           </p>
+        </motion.div>
+
+        {/* Projects Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {projects.map((project, index) => (
+            <motion.div
+              key={project.id}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1 }}
+              whileHover={{ y: -5 }}
+              className="group bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-200 dark:border-gray-700"
+            >
+              {/* Project Image - Clickable */}
+              <div 
+                className="relative overflow-hidden cursor-pointer"
+                onClick={() => setSelectedProject(project)}
+              >
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="bg-white/20 backdrop-blur-sm rounded-full p-3">
+                    <FaEye className="w-6 h-6 text-white" />
+                  </div>
+                </div>
+                <div className="absolute top-4 right-4">
+                  <span className={`px-3 py-1 rounded-full text-xs font-medium text-white bg-gradient-to-r ${project.gradient}`}>
+                    {project.category}
+                  </span>
+                </div>
+              </div>
+
+              {/* Project Content */}
+              <div className="p-6">
+                <h3 className="text-xl font-bold mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                  {project.title}
+                </h3>
+                <p className="text-muted-foreground text-sm mb-4 line-clamp-2">
+                  {project.shortDesc}
+                </p>
+
+                {/* Tech Stack */}
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {project.tech.slice(0, 3).map((tech, techIndex) => (
+                    <span
+                      key={techIndex}
+                      className="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-xs rounded-md text-gray-700 dark:text-gray-300"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                  {project.tech.length > 3 && (
+                    <span className="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-xs rounded-md text-gray-500">
+                      +{project.tech.length - 3}
+                    </span>
+                  )}
+                </div>
+
+                {/* Action Buttons */}
+                <div className="flex gap-3">
+                  <motion.a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="flex items-center gap-2 px-4 py-2 bg-gray-900 dark:bg-gray-700 text-white rounded-lg text-sm font-medium hover:bg-gray-800 dark:hover:bg-gray-600 transition-colors"
+                  >
+                    <FaGithub className="w-4 h-4" />
+                    Code
+                  </motion.a>
+                  {project.live && (
+                    <motion.a
+                      href={project.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      className={`flex items-center gap-2 px-4 py-2 bg-gradient-to-r ${project.gradient} text-white rounded-lg text-sm font-medium hover:shadow-lg transition-all duration-300`}
+                    >
+                      <FaExternalLinkAlt className="w-4 h-4" />
+                      Live Demo
+                    </motion.a>
+                  )}
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Call to Action */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mt-16"
+        >
+          <div className="p-8 rounded-2xl bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 border border-blue-200 dark:border-blue-700/30">
+            <FaRocket className="w-12 h-12 text-blue-600 dark:text-blue-400 mx-auto mb-4" />
+            <h3 className="text-2xl font-bold mb-4">Have a Project in Mind?</h3>
+            <p className="text-muted-foreground mb-6 max-w-md mx-auto">
+              I'm always excited to work on new projects and collaborate with creative minds.
+            </p>
+            <Link
+              to="/contact"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl font-medium hover:shadow-lg transition-all duration-300"
+            >
+              Let's Work Together
+              <FaExternalLinkAlt className="w-4 h-4" />
+            </Link>
+          </div>
         </motion.div>
       </div>
 
-      {/* Help Code Platform */}
-      <div className="flex flex-col md:flex-row-reverse items-center md:items-start p-3 sm:p-4 gap-6">
-        <motion.div
-          className="w-full md:w-1/2 flex justify-center md:justify-start mt-20 sm:mt-8 md:mt-20"
-          initial={{ opacity: 0, x: -100 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-        >
-          <img
-            src={Help}
-            alt="Language Exchange Platform"
-            className="w-11/12 sm:w-4/5 md:w-3/4 lg:w-2/3 h-auto rounded-xl shadow-lg"
-          />
-        </motion.div>
-
-        <motion.div
-          className="w-full md:w-1/2 text-left mt-8 sm:mt-8 md:mt-16 px-4"
-          initial={{ opacity: 0, x: 100 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-        >
-          <h2 className=" text-xl sm:text-2xl font-bold mb-2 dark:text-white">
-            Help Code{" "}
-            <Link
-              to="https://github.com/sahkumarkrishna/HelpCode"
-              className="text-blue-600 hover:underline dark:text-blue-400"
+      {/* Project Detail Modal */}
+      <AnimatePresence>
+        {selectedProject && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+            onClick={() => setSelectedProject(null)}
+          >
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8, y: 50 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.8, y: 50 }}
+              className="bg-white dark:bg-gray-800 rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto"
+              onClick={(e) => e.stopPropagation()}
             >
-              [GitHub]
-            </Link>
-            <Link
-              to="https://helpcode-1.onrender.com/"
-              className="text-blue-600 hover:underline dark:text-blue-400"
-            >
-              [Live]
-            </Link>
-          </h2>
+              {/* Modal Header */}
+              <div className="relative">
+                <img
+                  src={selectedProject.image}
+                  alt={selectedProject.title}
+                  className="w-full h-64 object-cover rounded-t-2xl"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent rounded-t-2xl" />
+                <button
+                  onClick={() => setSelectedProject(null)}
+                  className="absolute top-4 right-4 bg-white/20 backdrop-blur-sm rounded-full p-2 text-white hover:bg-white/30 transition-colors"
+                >
+                  <FaTimes className="w-5 h-5" />
+                </button>
+                <div className="absolute bottom-4 left-6">
+                  <span className={`px-3 py-1 rounded-full text-xs font-medium text-white bg-gradient-to-r ${selectedProject.gradient} mb-2 inline-block`}>
+                    {selectedProject.category}
+                  </span>
+                  <h2 className="text-3xl font-bold text-white">{selectedProject.title}</h2>
+                </div>
+              </div>
 
-          <p className="text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
-            Help Code AI Powered offers intelligent code review with AI
-            assistance. It features syntax highlighting and a smooth,
-            user-friendly editor. Markdown support ensures clean, readable
-            review formatting.
-          </p>
-          <p className="text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
-            The backend is built with Node.js and Express, connecting to Gemini
-            AI for smart code reviews.
-          </p>
+              {/* Modal Content */}
+              <div className="p-6">
+                <p className="text-muted-foreground mb-6 leading-relaxed">
+                  {selectedProject.description}
+                </p>
 
-          <h3 className=" text-lg sm:text-xl font-semibold mb-2 dark:text-white">
-            🔑 Key Features:
-          </h3>
-          <ul className="list-disc list-inside text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
-            <li>AI-Powered Code Review</li>
-            <li>Syntax Highlighting</li>
-            <li>User-Friendly Code Editor</li>
-            <li>Markdown Support</li>
-          </ul>
+                {/* Features */}
+                <div className="mb-6">
+                  <h3 className="text-xl font-bold mb-4">🔑 Key Features</h3>
+                  <div className="grid md:grid-cols-2 gap-3">
+                    {selectedProject.features.map((feature, index) => (
+                      <div key={index} className="flex items-start gap-2">
+                        <div className={`w-2 h-2 rounded-full bg-gradient-to-r ${selectedProject.gradient} mt-2 flex-shrink-0`} />
+                        <span className="text-sm text-muted-foreground">{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
 
-          <h3 className=" text-lg sm:text-xl font-semibold mb-2 dark:text-white">
-            ⚙️ Technologies Used:
-          </h3>
-          <ul className="list-disc list-inside text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
-            <li>React.js, Prism.js, Markdown, Axois Tailwind CSS</li>
-            <li>Node.js, Express, MongoDB, </li>
-            <li>AI Integration</li>
-          </ul>
+                {/* Tech Stack */}
+                <div className="mb-6">
+                  <h3 className="text-xl font-bold mb-4">⚙️ Technologies Used</h3>
+                  <div className="flex flex-wrap gap-2">
+                    {selectedProject.tech.map((tech, index) => (
+                      <span
+                        key={index}
+                        className="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-sm rounded-lg text-gray-700 dark:text-gray-300"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </div>
 
-          <h3 className=" text-lg sm:text-xl font-semibold mb-2 dark:text-white">
-            Project Architecture:
-          </h3>
-          <p className="text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
-            Help Code AI Powered uses a React frontend with Prism.js and
-            Markdown for an intuitive coding interface. The backend is built
-            with Node.js and Express, connecting to Gemini AI for smart code
-            reviews. Code flows from user input to AI feedback, displayed with
-            syntax highlighting and markdown formatting.
-          </p>
-        </motion.div>
-      </div>
+                {/* Architecture */}
+                <div className="mb-6">
+                  <h3 className="text-xl font-bold mb-4">🏗️ Project Architecture</h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    {selectedProject.architecture}
+                  </p>
+                </div>
 
-      {/*  Online Code Compiler*/}
-      <div className="flex flex-col md:flex-row-reverse items-center md:items-start p-3 sm:p-4 gap-6">
-        <motion.div
-          className="w-full md:w-1/2 flex justify-center md:justify-start mt-20 sm:mt-8 md:mt-20"
-          initial={{ opacity: 0, x: -100 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-        >
-          <img
-            src={code}
-            alt="Language Exchange Platform"
-            className="w-11/12 sm:w-4/5 md:w-3/4 lg:w-2/3 h-auto rounded-xl shadow-lg"
-          />
-        </motion.div>
-
-        <motion.div
-          className="w-full md:w-1/2 text-left mt-8 sm:mt-8 md:mt-16 px-4"
-          initial={{ opacity: 0, x: 100 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-        >
-          <h2 className=" text-xl sm:text-2xl font-bold mb-2 dark:text-white">
-            Online Code Compiler{" "}
-            <Link
-              to="https://github.com/sahkumarkrishna/Online-Compile-Code"
-              className="text-blue-600 hover:underline dark:text-blue-400"
-            >
-              [GitHub]
-            </Link>
-            <Link
-              to="https://online-compile-code-1.onrender.com/"
-              className="text-blue-600 hover:underline dark:text-blue-400"
-            >
-              [Live]
-            </Link>
-          </h2>
-
-          <p className="text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
-            The compile code platform allows users to write, compile, and run
-            code in multiple programming languages directly in the browser. It
-            provides real-time feedback, syntax highlighting, and supports code
-            execution through backend APIs.
-          </p>
-          <p className="text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
-            A compile code platform enables users to write, compile, and execute
-            code online with real-time output and multi-language support.
-          </p>
-
-          <h3 className=" text-lg sm:text-xl font-semibold mb-2 dark:text-white">
-            🔑 Key Features:
-          </h3>
-          <ul className="list-disc list-inside text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
-            <li>Online code editor with syntax highlighting</li>
-            <li>Support for multiple programming languages</li>
-            <li>Real-time code execution and output display</li>
-            <li>User authentication and code history saving</li>
-          </ul>
-
-          <h3 className=" text-lg sm:text-xl font-semibold mb-2 dark:text-white">
-            ⚙️ Technologies Used:
-          </h3>
-          <ul className="list-disc list-inside text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
-            <li>React.js, Axois Tailwind CSS</li>
-            <li>Node.js, Express, MongoDB, </li>
-            <li>Third-party Compiler APIs</li>
-            <li>JWT Authentication</li>
-          </ul>
-
-          <h3 className=" text-lg sm:text-xl font-semibold mb-2 dark:text-white">
-            Project Architecture:
-          </h3>
-          <p className="text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
-            The project follows a layered MERN stack architecture with separate
-            components for frontend, backend, and database. Code execution is
-            handled via backend integration with third-party compiler APIs,
-            ensuring secure and scalable performance.
-          </p>
-        </motion.div>
-      </div>
-
-      {/* GrowX Platform */}
-      <div className="flex flex-col md:flex-row-reverse items-center md:items-start p-3 sm:p-4 gap-6">
-        <motion.div
-          className="w-full md:w-1/2 flex justify-center md:justify-start mt-20 sm:mt-8 md:mt-20"
-          initial={{ opacity: 0, x: -100 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-        >
-          <img
-            src={job}
-            alt="GrowX Career Platform"
-            className="w-11/12 sm:w-4/5 md:w-3/4 lg:w-2/3 h-auto rounded-xl shadow-lg"
-          />
-        </motion.div>
-
-        <motion.div
-          className="w-full md:w-1/2 text-left mt-8 sm:mt-8 md:mt-16 px-4"
-          initial={{ opacity: 0, x: 100 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-        >
-          <h2 className="text-xl sm:text-2xl font-bold mb-2 dark:text-white">
-            GrowX Platform{" "}
-            <Link
-              to="https://github.com/sahkumarkrishna/GrowX"
-              className="text-blue-600 hover:underline dark:text-blue-400"
-            >
-              [GitHub]
-            </Link>
-            <Link
-              to="https://growx.onrender.com/"
-              className="text-blue-600 hover:underline dark:text-blue-400 ml-2"
-            >
-              [Live]
-            </Link>
-          </h2>
-
-          <p className="text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
-            GrowX is a full-stack career platform integrating{" "}
-            <span className="font-semibold">Learning, Quiz, Internship, and Job modules</span>,
-            designed to serve 500+ users monthly. It empowers job seekers, learners,
-            and employers with tools for career growth, skill development, and efficient hiring.
-          </p>
-
-          <h3 className="text-lg sm:text-xl font-semibold mb-2 dark:text-white">
-            🔑 Key Features:
-          </h3>
-          <ul className="list-disc list-inside text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
-            <li>Role-based authentication & secure access control</li>
-            <li>Learning & Quiz modules for skill enhancement</li>
-            <li>Internship & job posting with application tracking</li>
-            <li>Interactive dashboards for employers and seekers</li>
-            <li>Real-time updates, resume uploads, and notifications</li>
-          </ul>
-
-          <h3 className="text-lg sm:text-xl font-semibold mb-2 dark:text-white">
-            ⚙️ Tech Stack:
-          </h3>
-          <ul className="list-disc list-inside text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
-            <li>Frontend: React.js, Axios, Tailwind CSS, Redux</li>
-            <li>Backend: Node.js, Express.js, MongoDB</li>
-            <li>Cloud & Media: Cloudinary</li>
-            <li>Authentication: JWT</li>
-          </ul>
-
-          <h3 className="text-lg sm:text-xl font-semibold mb-2 dark:text-white">
-            Project Architecture:
-          </h3>
-          <p className="text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
-            Built with a modular MERN stack architecture, GrowX separates frontend,
-            backend, and database layers for scalability. Redux is integrated for
-            state management, while Cloudinary ensures secure media storage. The
-            platform is deployed on Render with scalable APIs, maintaining 99.9%
-            uptime.
-          </p>
-        </motion.div>
-      </div>
-
-      {/* Kanban Board Platform */}
-      <div className="flex flex-col md:flex-row-reverse items-center md:items-start p-3 sm:p-4 gap-6">
-        <motion.div
-          className="w-full md:w-1/2 flex justify-center md:justify-start mt-20 sm:mt-8 md:mt-20"
-          initial={{ opacity: 0, x: -100 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-        >
-          <img
-            src={Kanban}
-            alt="Kanban Board Platform"
-            className="w-11/12 sm:w-4/5 md:w-3/4 lg:w-2/3 h-auto rounded-xl shadow-lg"
-          />
-        </motion.div>
-
-        <motion.div
-          className="w-full md:w-1/2 text-left mt-8 sm:mt-8 md:mt-16 px-4"
-          initial={{ opacity: 0, x: 100 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-        >
-          <h2 className="text-xl sm:text-2xl font-bold mb-2 dark:text-white">
-            Kanban Board{" "}
-            <Link
-              to="https://github.com/sahkumarkrishna/Kanban-Board.git"
-              className="text-blue-600 hover:underline dark:text-blue-400"
-            >
-              [GitHub]
-            </Link>
-            <Link
-              to="https://kanban-board-ffmo.onrender.com/"
-              className="text-blue-600 hover:underline dark:text-blue-400"
-            >
-              [Live]
-            </Link>
-          </h2>
-
-          <p className="text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
-            The Kanban Board Platform is a task management tool that helps users
-            organize and track work visually. It supports drag-and-drop cards,
-            task categorization, and team collaboration — enabling seamless project
-            workflow management.
-          </p>
-
-          <p className="text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
-            The backend is powered by Node.js and Express, managing board, list, and
-            task operations efficiently with MongoDB as the database.
-          </p>
-
-          <h3 className="text-lg sm:text-xl font-semibold mb-2 dark:text-white">
-            🔑 Key Features:
-          </h3>
-          <ul className="list-disc list-inside text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
-            <li>Drag-and-Drop Task Management</li>
-            <li>Real-Time Task Updates</li>
-            <li>Collaborative Boards for Teams</li>
-            <li>Intuitive UI and Smooth Animations</li>
-          </ul>
-
-          <h3 className="text-lg sm:text-xl font-semibold mb-2 dark:text-white">
-            ⚙️ Technologies Used:
-          </h3>
-          <ul className="list-disc list-inside text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
-            <li>React.js, Redux Toolkit, Tailwind CSS, Framer Motion</li>
-            <li>Node.js, Express.js, MongoDB</li>
-            <li>Drag-and-Drop via React Beautiful DnD</li>
-          </ul>
-
-          <h3 className="text-lg sm:text-xl font-semibold mb-2 dark:text-white">
-            Project Architecture:
-          </h3>
-          <p className="text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
-            The Kanban Board uses a React frontend with Redux Toolkit for state
-            management and React Beautiful DnD for drag-and-drop functionality.
-            The Node.js and Express backend handles board, list, and task APIs,
-            while MongoDB stores user and task data. All updates sync in real time
-            for a dynamic team workflow experience.
-          </p>
-        </motion.div>
-      </div>
-
-
-      {/* Blog Platform */}
-      <div className="flex flex-col md:flex-row-reverse items-center md:items-start p-3 sm:p-4 gap-6">
-        <motion.div
-          className="w-full md:w-1/2 flex justify-center md:justify-start mt-20 sm:mt-8 md:mt-20"
-          initial={{ opacity: 0, x: -100 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-        >
-          <img
-            src={Blog}
-            alt="Language Exchange Platform"
-            className="w-11/12 sm:w-4/5 md:w-3/4 lg:w-2/3 h-auto rounded-xl shadow-lg"
-          />
-        </motion.div>
-
-        <motion.div
-          className="w-full md:w-1/2 text-left mt-8 sm:mt-8 md:mt-16 px-4"
-          initial={{ opacity: 0, x: 100 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-        >
-          <h2 className=" text-xl sm:text-2xl font-bold mb-2 dark:text-white">
-            Blog App{" "}
-            <Link
-              to="https://github.com/sahkumarkrishna/Blog-App"
-              className="text-blue-600 hover:underline dark:text-blue-400"
-            >
-              [GitHub]
-            </Link>
-            <Link
-              to="https://blog-app-xqmy.onrender.com/"
-              className="text-blue-600 hover:underline dark:text-blue-400"
-            >
-              [Live]
-            </Link>
-          </h2>
-
-          <p className="text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
-            Share your thoughts and stories effortlessly with our blog app.
-            Express your creativity and connect with readers around the globe.
-            Whether it’s a personal journey or professional insights, your voice
-            matters. Start blogging today and build your own community of
-            followers.
-          </p>
-          <p className="text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
-            Write, publish, and share your stories with ease using our blog app.
-            Engage with readers through comments and likes. Turn your ideas into
-            impactful posts that inspire and inform.
-          </p>
-
-          <h3 className=" text-lg sm:text-xl font-semibold mb-2 dark:text-white">
-            🔑 Key Features:
-          </h3>
-          <ul className="list-disc list-inside text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
-            <li>Easy-to-use Editor: Write and format posts effortlessly.</li>
-            <li>Real-time Feedback: See updates and changes instantly.</li>
-            <li>Multi-language Support: Share content in any language.</li>
-            <li>
-              Community Engagement: Connect with readers through comments and
-              likes.
-            </li>
-            <li>Responsive Design: Enjoy seamless blogging on any device.</li>
-          </ul>
-
-          <h3 className=" text-lg sm:text-xl font-semibold mb-2 dark:text-white">
-            ⚙️ Technologies Used:
-          </h3>
-          <ul className="list-disc list-inside text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
-            <li>React.js,Axois, Tailwind CSS, shadcn/ui</li>
-            <li>Node.js, Express, MongoDB, </li>
-            <li>Cloudinary</li>
-            <li>JWT Authentication</li>
-          </ul>
-
-          <h3 className=" text-lg sm:text-xl font-semibold mb-2 dark:text-white">
-            Project Architecture:
-          </h3>
-          <p className="text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
-            The application follows a modular architecture using the MERN stack.
-            The backend (Node.js, Express) manages APIs, authentication, and
-            database operations with MongoDB. The frontend (React) handles user
-            interface and state management, using shadcn/ui for components.
-            Cloudinary is integrated for image storage and retrieval.
-          </p>
-        </motion.div>
-      </div>
-
-      {/* LMS Project */}
-      <div className="flex flex-col md:flex-row-reverse items-center md:items-start p-3 sm:p-4 gap-6">
-        <motion.div
-          className="w-full md:w-1/2 flex justify-center md:justify-start mt-20 sm:mt-8 md:mt-10"
-          initial={{ opacity: 0, x: -100 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-        >
-          <img
-            src={Lms}
-            alt="LMS Project"
-            className="w-11/12 sm:w-4/5 md:w-3/4 lg:w-2/3 h-auto rounded-xl shadow-lg mt-12 "
-          />
-        </motion.div>
-
-        <motion.div
-          className="w-full md:w-1/2 text-left mt-16 px-4"
-          initial={{ opacity: 0, x: 100 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-        >
-          <h2 className="text-xl sm:text-2xl font-bold mb-2 dark:text-white lg:mt-16">
-            Learning Management System{" "}
-            <Link
-              to="https://github.com/sahkumarkrishna/LMS"
-              className="hover:underline text-blue-600 dark:text-blue-400"
-            >
-              [GitHub]
-            </Link>
-          </h2>
-          <p className="text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
-            A Learning Management System (LMS) built using the MERN stack. It
-            enables seamless student-teacher interaction, course management,
-            real-time progress tracking, and a user-friendly dashboard.
-          </p>
-          <p className="text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
-            Enhances the learning experience through intuitive tools for course
-            creation, engagement, and performance analysis. Includes
-            personalized feedback, notifications, forums, and assignment
-            submissions.
-          </p>
-
-          <h3 className=" text-lg sm:text-xl font-semibold mb-2 dark:text-white">
-            🔑 Key Features:
-          </h3>
-          <ul className="list-disc list-inside text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
-            <li>User Authentication with JWT</li>
-            <li>Role-Based Access for students, teachers, and admins</li>
-            <li>Real-time progress tracking and notifications</li>
-            <li>Course management with lessons and quizzes</li>
-            <li>Student-teacher chat and forums</li>
-            <li>Admin Dashboard and analytics</li>
-            <li>Mobile-friendly design</li>
-          </ul>
-
-          <h3 className=" text-lg sm:text-xl font-semibold mb-2 dark:text-white">
-            ⚙️ Technologies Used:
-          </h3>
-          <ul className="list-disc list-inside text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
-            <li>Frontend: React.js, Redux, Tailwind CSS, Axios</li>
-            <li>Backend: Node.js, Express.js, MongoDB, Mongoose, JWT</li>
-            <li>Real-time: Socket.io</li>
-            <li>File Storage: Cloudinary</li>
-            <li>Authentication: Bcrypt.js, Multer</li>
-            <li>Additional: Firebase (optional)</li>
-          </ul>
-
-          <h3 className=" text-lg sm:text-xl font-semibold mb-2 dark:text-white">
-            Project Architecture:
-          </h3>
-          <p className="text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
-            Follows a modular MERN stack architecture with REST APIs. React
-            handles the UI, Node/Express manages backend logic, and MongoDB
-            stores course and user data.
-          </p>
-        </motion.div>
-      </div>
-
-      {/* Hospital System Project */}
-      <div className="flex flex-col md:flex-row-reverse items-center md:items-start p-3 sm:p-4 gap-6">
-        <motion.div
-          className="w-full md:w-1/2 flex justify-center md:justify-start mt-20 sm:mt-8 md:mt-20"
-          initial={{ opacity: 0, x: -100 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-        >
-          <img
-            src={Hospital}
-            alt="Hospital Appointment System"
-            className="w-11/12 sm:w-4/5 md:w-3/4 lg:w-2/3 h-auto rounded-xl shadow-lg"
-          />
-        </motion.div>
-
-        <motion.div
-          className="w-full md:w-1/2 text-left mt-8 sm:mt-8 md:mt-16 px-4"
-          initial={{ opacity: 0, x: 100 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-        >
-          <h2 className=" text-xl sm:text-2xl font-bold mb-2 dark:text-white">
-            Hospital Appointment System{" "}
-            <Link
-              to="https://github.com/sahkumarkrishna/Hospital_management_system"
-              className="hover:underline text-blue-600 dark:text-blue-400"
-            >
-              [GitHub]
-            </Link>
-          </h2>
-
-          <p className="text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
-            A MERN-based system to streamline hospital operations—patient
-            registration, doctor scheduling, real-time notifications, and
-            analytics.
-          </p>
-          <p className="text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
-            Patients can manage appointments; doctors can manage availability
-            and patient records. Admins oversee system activity with dashboards.
-          </p>
-
-          <h3 className=" text-lg sm:text-xl font-semibold mb-2 dark:text-white">
-            🔑 Key Features:
-          </h3>
-          <ul className="list-disc list-inside text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
-            <li>Doctor & Patient Registration</li>
-            <li>Appointment Management</li>
-            <li>Role-Based Access (Admin, Doctor, Patient)</li>
-            <li>Real-time Notifications</li>
-            <li>Doctor Availability Controls</li>
-            <li>Admin Analytics Dashboard</li>
-            <li>Mobile-Responsive UI</li>
-          </ul>
-
-          <h3 className=" text-lg sm:text-xl font-semibold mb-2 dark:text-white">
-            ⚙️ Technologies Used:
-          </h3>
-          <ul className="list-disc list-inside text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
-            <li>Frontend: React.js, Redux, Tailwind CSS, Axios</li>
-            <li>Backend: Node.js, Express.js, MongoDB, Mongoose, JWT</li>
-            <li>Real-time: Socket.io</li>
-            <li>File Uploads: Multer, Cloudinary</li>
-            <li>Auth: Firebase Auth, Bcrypt.js</li>
-          </ul>
-
-          <h3 className=" text-lg sm:text-xl font-semibold mb-2 dark:text-white">
-            Project Architecture:
-          </h3>
-          <p className="text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
-            MERN-based modular app with REST APIs. MongoDB stores user &
-            appointment data. Secure authentication using JWT and Firebase.
-          </p>
-        </motion.div>
-      </div>
-
-      {/* Language Exchange Platform */}
-      <div className="flex flex-col md:flex-row-reverse items-center md:items-start p-3 sm:p-4 gap-6">
-        <motion.div
-          className="w-full md:w-1/2 flex justify-center md:justify-start mt-20 sm:mt-8 md:mt-20"
-          initial={{ opacity: 0, x: -100 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-        >
-          <img
-            src={Video}
-            alt="Language Exchange Platform"
-            className="w-11/12 sm:w-4/5 md:w-3/4 lg:w-2/3 h-auto rounded-xl shadow-lg"
-          />
-        </motion.div>
-
-        <motion.div
-          className="w-full md:w-1/2 text-left mt-8 sm:mt-8 md:mt-16 px-4"
-          initial={{ opacity: 0, x: 100 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-        >
-          <h2 className=" text-xl sm:text-2xl font-bold mb-2 dark:text-white">
-            Language Exchange Platform{" "}
-            <Link
-              to="https://github.com/sahkumarkrishna/streamify-video-calls-App"
-              className="text-blue-600 hover:underline dark:text-blue-400"
-            >
-              [GitHub]
-            </Link>
-          </h2>
-
-          <p className="text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
-            A real-time platform for global users to practice languages through
-            chat and video calls — featuring beautiful themes, secure login, and
-            modern technology.
-          </p>
-          <p className="text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
-            Features include AI-powered conversation suggestions, multilingual
-            support, and cross-device syncing.
-          </p>
-
-          <h3 className=" text-lg sm:text-xl font-semibold mb-2 dark:text-white">
-            🔑 Key Features:
-          </h3>
-          <ul className="list-disc list-inside text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
-            <li>Real-time video chat & messaging</li>
-            <li>Language exchange matching</li>
-            <li>Interactive practice exercises</li>
-            <li>User profiles and feedback</li>
-            <li>Mobile-friendly design</li>
-          </ul>
-
-          <h3 className=" text-lg sm:text-xl font-semibold mb-2 dark:text-white">
-            ⚙️ Technologies Used:
-          </h3>
-          <ul className="list-disc list-inside text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
-            <li>React.js, Redux,Axois, Tailwind CSS</li>
-            <li>Node.js, Express, MongoDB, Socket.io</li>
-            <li>WebRTC for video streaming</li>
-            <li>JWT Authentication</li>
-          </ul>
-
-          <h3 className=" text-lg sm:text-xl font-semibold mb-2 dark:text-white">
-            Project Architecture:
-          </h3>
-          <p className="text-gray-700 dark:text-gray-400 mb-4 text-sm sm:text-base">
-            MERN-based modular app with REST APIs. MongoDB stores user &
-            Language Exchange Platform data. Secure authentication using JWT and
-            Firebase.
-          </p>
-        </motion.div>
-      </div>
+                {/* Action Buttons */}
+                <div className="flex gap-4 pt-4 border-t border-gray-200 dark:border-gray-700">
+                  <motion.a
+                    href={selectedProject.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="flex items-center gap-2 px-6 py-3 bg-gray-900 dark:bg-gray-700 text-white rounded-xl font-medium hover:bg-gray-800 dark:hover:bg-gray-600 transition-colors"
+                  >
+                    <FaGithub className="w-5 h-5" />
+                    View Code
+                  </motion.a>
+                  {selectedProject.live && (
+                    <motion.a
+                      href={selectedProject.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      className={`flex items-center gap-2 px-6 py-3 bg-gradient-to-r ${selectedProject.gradient} text-white rounded-xl font-medium hover:shadow-lg transition-all duration-300`}
+                    >
+                      <FaExternalLinkAlt className="w-5 h-5" />
+                      Live Demo
+                    </motion.a>
+                  )}
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };
