@@ -6,6 +6,8 @@ import { FaGraduationCap, FaBriefcase } from "react-icons/fa";
 import profileImage from "../assets/image/krishna.jpg";
 import ceeras from "../assets/image/erras.webp";
 import goklyn from "../assets/image/goklyn.png";
+import VerticalTimeline from "../components/VerticalTimeline";
+import ExperienceTimeline from "../components/ExperienceTimeline";
 
 const About = () => {
   const handleDownload = () => {
@@ -57,7 +59,7 @@ const About = () => {
       image: ceeras,
       description: "Building and enhancing a book recommendation platform with focus on user experience and responsive design.",
       link: "https://www.ceeras.in/",
-      status: "current",
+      status: "completed",
     },
     {
       company: "Goklyn Pvt. Ltd.",
@@ -195,33 +197,11 @@ const About = () => {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl font-bold mb-4">Education</h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-green-500 to-blue-500 mx-auto rounded-full" />
+          <h2 className="text-3xl font-bold mb-4">Qualification</h2>
+          <p className="text-muted-foreground">My personal journey</p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {qualifications.map((qual, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              className="group p-6 rounded-xl bg-white dark:bg-gray-800 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-700"
-            >
-              <div className="flex items-center gap-3 mb-4">
-                <FaGraduationCap className="text-2xl text-green-500" />
-                <span className="text-sm font-medium text-green-600 dark:text-green-400 bg-green-100 dark:bg-green-900/30 px-2 py-1 rounded-full">
-                  {qual.type}
-                </span>
-              </div>
-              <h3 className="font-bold text-lg mb-2">{qual.institution}</h3>
-              <p className="text-muted-foreground mb-1">{qual.degree}</p>
-              <p className="text-sm font-medium mb-2">{qual.field}</p>
-              <p className="text-xs text-muted-foreground">{qual.year}</p>
-            </motion.div>
-          ))}
-        </div>
+        <VerticalTimeline />
       </div>
 
       {/* Services */}
