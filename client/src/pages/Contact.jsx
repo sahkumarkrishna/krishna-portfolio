@@ -30,29 +30,15 @@ const ContactForm = () => {
 
   const onSubmit = async (data) => {
     try {
-      // Primary API URL
-      const primaryUrl = import.meta.env.VITE_API_URL;
-      // Fallback to local development server
-      const fallbackUrl = "https://krishna-portfolio-mocha.vercel.app/api/contacts/add";
-      
-      let response;
-      try {
-        response = await fetch(primaryUrl, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(data),
-        });
-      } catch (fetchError) {
-        console.warn("Primary API failed, trying fallback:", fetchError);
-        response = await fetch(fallbackUrl, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(data),
-        });
-      }
+      const response = await fetch(import.meta.env.VITE_API_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
 
       if (!response.ok) {
-        throw new Error(`Server responded with status: ${response.status}`);
+        const errorData = await response.json();
+        throw new Error(errorData.error || `Server error: ${response.status}`);
       }
 
       toast.success("Message sent successfully!");
