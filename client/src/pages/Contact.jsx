@@ -33,7 +33,7 @@ const ContactForm = () => {
       // Primary API URL
       const primaryUrl = import.meta.env.VITE_API_URL;
       // Fallback to local development server
-      const fallbackUrl = "http://localhost:5000/api/contacts/add";
+      const fallbackUrl = "https://krishna-portfolio-mocha.vercel.app/api/contacts/add";
       
       let response;
       try {
