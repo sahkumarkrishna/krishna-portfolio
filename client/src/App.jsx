@@ -2,6 +2,7 @@ import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { ThemeProvider } from "./components/ThemeProvider";
 import Hero from "./layout/Hero";
+import ThreeBackground from "./components/ThreeBackground";
 
 import Home from "./pages/Home";
 import About from "./pages/About";
@@ -13,16 +14,52 @@ import NotFound from "./NotFound";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Hero />,
+    element: (
+      <>
+        <ThreeBackground isHomePage={true} />
+        <Hero />
+      </>
+    ),
     children: [
       { index: true, element: <Home /> },
-      { path: "about", element: <About /> },
-      { path: "projects", element: <Project /> },
-      { path: "services", element: <Services /> },
-      { path: "contact", element: <Contact /> },
+      { 
+        path: "about", 
+        element: (
+          <>
+            <ThreeBackground isHomePage={false} />
+            <About />
+          </>
+        )
+      },
+      { 
+        path: "projects", 
+        element: (
+          <>
+            <ThreeBackground isHomePage={false} />
+            <Project />
+          </>
+        )
+      },
+      { 
+        path: "services", 
+        element: (
+          <>
+            <ThreeBackground isHomePage={false} />
+            <Services />
+          </>
+        )
+      },
+      { 
+        path: "contact", 
+        element: (
+          <>
+            <ThreeBackground isHomePage={false} />
+            <Contact />
+          </>
+        )
+      },
     ],
   },
-  // This is now outside of <Hero />
   {
     path: "*",
     element: <NotFound />,
