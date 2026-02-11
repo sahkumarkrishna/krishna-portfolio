@@ -66,7 +66,7 @@ const services = [
 const stats = [
   { number: "50+", label: "Projects Completed", icon: FaRocket },
   { number: "500+", label: "Users Served", icon: FaUsers },
-  { number: "3+", label: "Years Experience", icon: FaCog },
+  { number: "Fresher", label: "Experience Level", icon: FaCog },
   { number: "99%", label: "Client Satisfaction", icon: FaCode },
 ];
 
