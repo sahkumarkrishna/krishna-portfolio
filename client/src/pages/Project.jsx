@@ -10,6 +10,7 @@ import code from "../assets/image/codeCompare.webp";
 import Blog from "../assets/image/BlogApp.webp";
 import Help from "../assets/image/HelpCode.jpg";
 import Kanban from "../assets/image/Kanban Board.png";
+import ecommerce from "../assets/image/mock.webp";
 
 const Project = () => {
   const [selectedProject, setSelectedProject] = useState(null);
@@ -17,44 +18,6 @@ const Project = () => {
   const projects = [
     {
       id: 1,
-      title: "Help Code",
-      shortDesc: "AI-powered code review platform with intelligent assistance.",
-      description: "Help Code AI Powered offers intelligent code review with AI assistance. It features syntax highlighting and a smooth, user-friendly editor. Markdown support ensures clean, readable review formatting. The backend is built with Node.js and Express, connecting to Gemini AI for smart code reviews.",
-      image: Help,
-      github: "https://github.com/sahkumarkrishna/HelpCode",
-      live: "https://helpcode-1.onrender.com/",
-      tech: ["React.js", "Node.js", "MongoDB", "AI Integration", "Prism.js", "Markdown"],
-      category: "AI Platform",
-      gradient: "from-purple-500 to-pink-600",
-      features: [
-        "AI-Powered Code Review",
-        "Syntax Highlighting", 
-        "User-Friendly Code Editor",
-        "Markdown Support"
-      ],
-      architecture: "Help Code AI Powered uses a React frontend with Prism.js and Markdown for an intuitive coding interface. The backend is built with Node.js and Express, connecting to Gemini AI for smart code reviews."
-    },
-    {
-      id: 2,
-      title: "Online Code Compiler",
-      shortDesc: "Multi-language code compilation platform with real-time execution.",
-      description: "The compile code platform allows users to write, compile, and run code in multiple programming languages directly in the browser. It provides real-time feedback, syntax highlighting, and supports code execution through backend APIs.",
-      image: code,
-      github: "https://github.com/sahkumarkrishna/Online-Compile-Code",
-      live: "https://online-compile-code-1.onrender.com/",
-      tech: ["React.js", "Node.js", "Express", "Compiler APIs", "JWT"],
-      category: "Development Tool",
-      gradient: "from-blue-500 to-cyan-600",
-      features: [
-        "Online code editor with syntax highlighting",
-        "Support for multiple programming languages",
-        "Real-time code execution and output display",
-        "User authentication and code history saving"
-      ],
-      architecture: "The project follows a layered MERN stack architecture with separate components for frontend, backend, and database. Code execution is handled via backend integration with third-party compiler APIs."
-    },
-    {
-      id: 3,
       title: "GrowX Platform",
       shortDesc: "Full-stack career platform serving 500+ users monthly.",
       description: "GrowX is a full-stack career platform integrating Learning, Quiz, Internship, and Job modules, designed to serve 500+ users monthly. It empowers job seekers, learners, and employers with tools for career growth, skill development, and efficient hiring.",
@@ -73,8 +36,73 @@ const Project = () => {
       ],
       architecture: "Built with a modular MERN stack architecture, GrowX separates frontend, backend, and database layers for scalability. Redux is integrated for state management, while Cloudinary ensures secure media storage."
     },
+
+
+    {
+      id: 2,
+      title: "CompileHub",
+      shortDesc: "Advanced multi-language compiler with collaborative features.",
+      description: "CompileHub is an advanced online code compilation platform supporting multiple programming languages. It features real-time collaboration, code sharing, and an intuitive interface for developers to write, test, and debug code efficiently.",
+      image: code,
+      github: "https://github.com/sahkumarkrishna/CompileHub",
+      live: "https://compilehub-acul.onrender.com/",
+      tech: ["React.js", "Node.js", "Express", "WebSocket", "MongoDB"],
+      category: "Development Tool",
+      gradient: "from-cyan-500 to-blue-600",
+      features: [
+        "Multi-language code compilation support",
+        "Real-time collaborative coding",
+        "Code sharing and version history",
+        "Syntax highlighting and auto-completion",
+        "Secure code execution environment"
+      ],
+      architecture: "Built with MERN stack and WebSocket for real-time features. The backend handles code compilation through secure sandboxed environments, while MongoDB stores user code and session data."
+    },
+
+    {
+      id: 3,
+      title: "Learning Management System",
+      shortDesc: "Comprehensive LMS with course management and progress tracking.",
+      description: "A Learning Management System (LMS) built using the MERN stack. It enables seamless student-teacher interaction, course management, real-time progress tracking, and a user-friendly dashboard.",
+      image: Lms,
+      github: "hhttps://github.com/sahkumarkrishna/Learning-Management-System",
+      live: "https://learning-management-system-ie59.onrender.com/",
+      tech: ["React.js", "Redux", "Node.js", "Socket.io", "MongoDB"],
+      category: "Education",
+      gradient: "from-teal-500 to-green-600",
+      features: [
+        "User Authentication with JWT",
+        "Role-Based Access for students, teachers, and admins",
+        "Real-time progress tracking and notifications",
+        "Course management with lessons and quizzes",
+        "Student-teacher chat and forums",
+        "Admin Dashboard and analytics",
+        "Mobile-friendly design"
+      ],
+      architecture: "Follows a modular MERN stack architecture with REST APIs. React handles the UI, Node/Express manages backend logic, and MongoDB stores course and user data."
+    },
     {
       id: 4,
+      title: "Help Code",
+      shortDesc: "AI-powered code review platform with intelligent assistance.",
+      description: "Help Code AI Powered offers intelligent code review with AI assistance. It features syntax highlighting and a smooth, user-friendly editor. Markdown support ensures clean, readable review formatting. The backend is built with Node.js and Express, connecting to Gemini AI for smart code reviews.",
+      image: Help,
+      github: "https://github.com/sahkumarkrishna/HelpCode",
+      live: "https://helpcode-1.onrender.com/",
+      tech: ["React.js", "Node.js", "MongoDB", "AI Integration", "Prism.js", "Markdown"],
+      category: "AI Platform",
+      gradient: "from-purple-500 to-pink-600",
+      features: [
+        "AI-Powered Code Review",
+        "Syntax Highlighting",
+        "User-Friendly Code Editor",
+        "Markdown Support"
+      ],
+      architecture: "Help Code AI Powered uses a React frontend with Prism.js and Markdown for an intuitive coding interface. The backend is built with Node.js and Express, connecting to Gemini AI for smart code reviews."
+    },
+
+    {
+      id: 5,
       title: "Kanban Board",
       shortDesc: "Task management tool with drag-and-drop functionality.",
       description: "The Kanban Board Platform is a task management tool that helps users organize and track work visually. It supports drag-and-drop cards, task categorization, and team collaboration — enabling seamless project workflow management.",
@@ -93,7 +121,7 @@ const Project = () => {
       architecture: "The Kanban Board uses a React frontend with Redux Toolkit for state management and React Beautiful DnD for drag-and-drop functionality. The Node.js and Express backend handles board, list, and task APIs."
     },
     {
-      id: 5,
+      id: 6,
       title: "Blog App",
       shortDesc: "Modern blogging platform with rich text editor.",
       description: "Share your thoughts and stories effortlessly with our blog app. Express your creativity and connect with readers around the globe. Whether it's a personal journey or professional insights, your voice matters.",
@@ -112,30 +140,71 @@ const Project = () => {
       ],
       architecture: "The application follows a modular architecture using the MERN stack. The backend manages APIs, authentication, and database operations with MongoDB. Cloudinary is integrated for image storage."
     },
-    {
-      id: 6,
-      title: "Learning Management System",
-      shortDesc: "Comprehensive LMS with course management and progress tracking.",
-      description: "A Learning Management System (LMS) built using the MERN stack. It enables seamless student-teacher interaction, course management, real-time progress tracking, and a user-friendly dashboard.",
-      image: Lms,
-      github: "https://github.com/sahkumarkrishna/LMS",
-      live: null,
-      tech: ["React.js", "Redux", "Node.js", "Socket.io", "MongoDB"],
-      category: "Education",
-      gradient: "from-teal-500 to-green-600",
-      features: [
-        "User Authentication with JWT",
-        "Role-Based Access for students, teachers, and admins",
-        "Real-time progress tracking and notifications",
-        "Course management with lessons and quizzes",
-        "Student-teacher chat and forums",
-        "Admin Dashboard and analytics",
-        "Mobile-friendly design"
-      ],
-      architecture: "Follows a modular MERN stack architecture with REST APIs. React handles the UI, Node/Express manages backend logic, and MongoDB stores course and user data."
-    },
+
     {
       id: 7,
+      title: "E-commerce Website",
+      shortDesc: "Full-featured online shopping platform with payment integration.",
+      description: "A comprehensive e-commerce platform built with the MERN stack. Features include product catalog, shopping cart, order management, payment integration, and admin dashboard for inventory management.",
+      image: "https://magesolution.com/wp-content/uploads/2022/07/ecommerce-website-design-examples-1024x768.jpg",
+      github: "https://github.com/sahkumarkrishna/Ecommerce-website",
+      live: "https://pragra-shop.onrender.com/",
+      tech: ["React.js", "Redux", "Node.js", "MongoDB", "Stripe", "Cloudinary"],
+      category: "E-commerce",
+      gradient: "from-yellow-500 to-orange-600",
+      features: [
+        "Product catalog with search and filters",
+        "Shopping cart and wishlist functionality",
+        "Secure payment integration with Stripe",
+        "Order tracking and management",
+        "Admin dashboard for inventory control",
+        "User reviews and ratings",
+        "Responsive design for all devices"
+      ],
+      architecture: "Built with MERN stack architecture. Redux manages global state, Stripe handles payments, and Cloudinary stores product images. RESTful APIs connect frontend and backend."
+    },
+    {
+      id: 8,
+      title: "Tic-Tac-Toe Game",
+      shortDesc: "Interactive Tic-Tac-Toe game with AI opponent.",
+      description: "A classic Tic-Tac-Toe game built with HTML, CSS, and JavaScript. Features include player vs player mode, smooth animations, and responsive design for all devices.",
+      image: "https://media.istockphoto.com/id/1443725051/photo/business-marketing-strategy-planning-concept-hand-holding-wooden-block-tic-tac-toe-board-game.jpg?s=612x612&w=0&k=20&c=SfxA8EJpY2lx9tYxNEiiTQSBsGHxNBfor6eElQ1kPXs=",
+      github: "https://github.com/sahkumarkrishna/Tic-Tac-Toe",
+      live: "https://sahkumarkrishna.github.io/Tic-Tac-Toe/",
+      tech: ["HTML5", "CSS3", "JavaScript"],
+      category: "Game",
+      gradient: "from-pink-500 to-rose-600",
+      features: [
+        "Player vs Player mode",
+        "Win detection algorithm",
+        "Smooth animations and transitions",
+        "Responsive design",
+        "Score tracking"
+      ],
+      architecture: "Built with vanilla JavaScript using DOM manipulation. Game logic implements win detection algorithms and state management for player turns."
+    },
+    {
+      id: 9,
+      title: "Professional Tax Calculator",
+      shortDesc: "Advanced tax calculation tool with detailed breakdowns.",
+      description: "A professional tax calculator application that helps users calculate taxes with detailed breakdowns. Features include multiple tax slabs, deductions, and comprehensive tax reports.",
+      image: "https://cdn.pixabay.com/photo/2017/08/30/07/56/money-2696229_1280.jpg",
+
+      live: "https://professional-tax-man-prez.bolt.host/",
+      tech: ["React.js", "Tailwind CSS", "JavaScript"],
+      category: "Finance Tool",
+      gradient: "from-emerald-500 to-teal-600",
+      features: [
+        "Multiple tax slab calculations",
+        "Deduction management",
+        "Detailed tax breakdown reports",
+        "Export to PDF functionality",
+        "Responsive and user-friendly interface"
+      ],
+      architecture: "Built with React.js for dynamic UI updates. Implements complex tax calculation logic with support for various deductions and tax slabs. Tailwind CSS provides responsive styling."
+    },
+    {
+      id: 10,
       title: "Hospital Management",
       shortDesc: "MERN-based hospital system with appointment management.",
       description: "A MERN-based system to streamline hospital operations—patient registration, doctor scheduling, real-time notifications, and analytics. Patients can manage appointments; doctors can manage availability and patient records.",
@@ -157,25 +226,26 @@ const Project = () => {
       architecture: "MERN-based modular app with REST APIs. MongoDB stores user & appointment data. Secure authentication using JWT and Firebase."
     },
     {
-      id: 8,
-      title: "Language Exchange Platform",
-      shortDesc: "Real-time video chat platform for language learning.",
-      description: "A real-time platform for global users to practice languages through chat and video calls — featuring beautiful themes, secure login, and modern technology. Features include AI-powered conversation suggestions and multilingual support.",
+      id: 11,
+      title: "Video Streaming Platform",
+      shortDesc: "Netflix-style video streaming with user management.",
+      description: "A video streaming platform similar to Netflix, built with the MERN stack. Features include user authentication, video upload, streaming, and personalized recommendations.",
       image: Video,
-      github: "https://github.com/sahkumarkrishna/streamify-video-calls-App",
+      github: "https://github.com/sahkumarkrishna/video-streaming",
       live: null,
-      tech: ["React.js", "WebRTC", "Socket.io", "MongoDB", "JWT"],
-      category: "Communication",
-      gradient: "from-yellow-500 to-orange-600",
+      tech: ["React.js", "Node.js", "MongoDB", "AWS S3", "JWT"],
+      category: "Entertainment",
+      gradient: "from-red-600 to-orange-600",
       features: [
-        "Real-time video chat & messaging",
-        "Language exchange matching",
-        "Interactive practice exercises",
-        "User profiles and feedback",
-        "Mobile-friendly design"
+        "User authentication and profiles",
+        "Video upload and streaming",
+        "Search and filter functionality",
+        "Personalized recommendations",
+        "Responsive video player"
       ],
-      architecture: "MERN-based modular app with REST APIs. MongoDB stores user & Language Exchange Platform data. Secure authentication using JWT and Firebase."
+      architecture: "Built with MERN stack, using AWS S3 for video storage and streaming. MongoDB handles user data and video metadata."
     },
+
   ];
 
   return (
@@ -212,7 +282,7 @@ const Project = () => {
               className="group bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-200 dark:border-gray-700"
             >
               {/* Project Image - Clickable */}
-              <div 
+              <div
                 className="relative overflow-hidden cursor-pointer"
                 onClick={() => setSelectedProject(project)}
               >
