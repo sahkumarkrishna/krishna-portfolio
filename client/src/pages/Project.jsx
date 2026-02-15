@@ -38,6 +38,8 @@ const Project = () => {
     },
 
 
+   
+
     {
       id: 2,
       title: "CompileHub",
@@ -58,9 +60,30 @@ const Project = () => {
       ],
       architecture: "Built with MERN stack and WebSocket for real-time features. The backend handles code compilation through secure sandboxed environments, while MongoDB stores user code and session data."
     },
+     {
+      id: 3,
+      title: "SkillSwap",
+      shortDesc: "Peer-to-peer skill exchange platform connecting learners and experts.",
+      description: "SkillSwap is a peer-to-peer skill exchange platform that connects individuals who want to learn new skills with those willing to teach. Users can offer their expertise in exchange for learning something new, creating a collaborative learning community without monetary transactions.",
+      image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&q=80",
+      github: "https://github.com/sahkumarkrishna/SkillSwap",
+      live: "https://skillswap-ps3y.onrender.com/",
+      tech: ["React.js", "Node.js", "MongoDB", "Socket.io", "JWT", "Cloudinary"],
+      category: "Education Platform",
+      gradient: "from-violet-500 to-purple-600",
+      features: [
+        "Skill-based user profiles with expertise listings",
+        "Real-time chat and video call integration",
+        "Smart matching algorithm for skill exchange",
+        "Session scheduling and calendar management",
+        "Rating and review system for quality assurance",
+        "Community forums and discussion boards"
+      ],
+      architecture: "Built with MERN stack architecture. Socket.io enables real-time messaging and notifications. JWT handles secure authentication, while MongoDB stores user profiles, skills, and exchange history. Cloudinary manages profile images and skill-related media."
+    },
 
     {
-      id: 3,
+      id: 4,
       title: "Learning Management System",
       shortDesc: "Comprehensive LMS with course management and progress tracking.",
       description: "A Learning Management System (LMS) built using the MERN stack. It enables seamless student-teacher interaction, course management, real-time progress tracking, and a user-friendly dashboard.",
@@ -82,7 +105,7 @@ const Project = () => {
       architecture: "Follows a modular MERN stack architecture with REST APIs. React handles the UI, Node/Express manages backend logic, and MongoDB stores course and user data."
     },
     {
-      id: 4,
+      id: 5,
       title: "Help Code",
       shortDesc: "AI-powered code review platform with intelligent assistance.",
       description: "Help Code AI Powered offers intelligent code review with AI assistance. It features syntax highlighting and a smooth, user-friendly editor. Markdown support ensures clean, readable review formatting. The backend is built with Node.js and Express, connecting to Gemini AI for smart code reviews.",
@@ -102,7 +125,7 @@ const Project = () => {
     },
 
     {
-      id: 5,
+      id: 6,
       title: "Kanban Board",
       shortDesc: "Task management tool with drag-and-drop functionality.",
       description: "The Kanban Board Platform is a task management tool that helps users organize and track work visually. It supports drag-and-drop cards, task categorization, and team collaboration — enabling seamless project workflow management.",
@@ -121,7 +144,7 @@ const Project = () => {
       architecture: "The Kanban Board uses a React frontend with Redux Toolkit for state management and React Beautiful DnD for drag-and-drop functionality. The Node.js and Express backend handles board, list, and task APIs."
     },
     {
-      id: 6,
+      id: 7,
       title: "Blog App",
       shortDesc: "Modern blogging platform with rich text editor.",
       description: "Share your thoughts and stories effortlessly with our blog app. Express your creativity and connect with readers around the globe. Whether it's a personal journey or professional insights, your voice matters.",
@@ -142,7 +165,7 @@ const Project = () => {
     },
 
     {
-      id: 7,
+      id: 8,
       title: "E-commerce Website",
       shortDesc: "Full-featured online shopping platform with payment integration.",
       description: "A comprehensive e-commerce platform built with the MERN stack. Features include product catalog, shopping cart, order management, payment integration, and admin dashboard for inventory management.",
@@ -164,7 +187,7 @@ const Project = () => {
       architecture: "Built with MERN stack architecture. Redux manages global state, Stripe handles payments, and Cloudinary stores product images. RESTful APIs connect frontend and backend."
     },
     {
-      id: 8,
+      id: 9,
       title: "Tic-Tac-Toe Game",
       shortDesc: "Interactive Tic-Tac-Toe game with AI opponent.",
       description: "A classic Tic-Tac-Toe game built with HTML, CSS, and JavaScript. Features include player vs player mode, smooth animations, and responsive design for all devices.",
@@ -184,7 +207,7 @@ const Project = () => {
       architecture: "Built with vanilla JavaScript using DOM manipulation. Game logic implements win detection algorithms and state management for player turns."
     },
     {
-      id: 9,
+      id: 10,
       title: "Professional Tax Calculator",
       shortDesc: "Advanced tax calculation tool with detailed breakdowns.",
       description: "A professional tax calculator application that helps users calculate taxes with detailed breakdowns. Features include multiple tax slabs, deductions, and comprehensive tax reports.",
@@ -204,7 +227,7 @@ const Project = () => {
       architecture: "Built with React.js for dynamic UI updates. Implements complex tax calculation logic with support for various deductions and tax slabs. Tailwind CSS provides responsive styling."
     },
     {
-      id: 10,
+      id: 11,
       title: "Hospital Management",
       shortDesc: "MERN-based hospital system with appointment management.",
       description: "A MERN-based system to streamline hospital operations—patient registration, doctor scheduling, real-time notifications, and analytics. Patients can manage appointments; doctors can manage availability and patient records.",
@@ -226,7 +249,7 @@ const Project = () => {
       architecture: "MERN-based modular app with REST APIs. MongoDB stores user & appointment data. Secure authentication using JWT and Firebase."
     },
     {
-      id: 11,
+      id: 12,
       title: "Video Streaming Platform",
       shortDesc: "Netflix-style video streaming with user management.",
       description: "A video streaming platform similar to Netflix, built with the MERN stack. Features include user authentication, video upload, streaming, and personalized recommendations.",
