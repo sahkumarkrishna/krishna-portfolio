@@ -314,7 +314,7 @@ const Home = () => {
                   <span className="font-medium">LinkedIn</span>
                 </ExternalLink>
 
-                <ExternalLink to="/Krishna kumar.pdf">
+                <ExternalLink to="/Krishna Resume.pdf">
                   <AiOutlineFilePdf className="w-5 h-5" />
                   <span className="font-medium">Resume</span>
                 </ExternalLink>

@@ -165,7 +165,7 @@ const About = () => {
             <div className="flex flex-col sm:flex-row gap-4">
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <Link
-                  to="/Krishna kumar.pdf"
+                  to="/Krishna Resume.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-xl font-medium hover:shadow-lg transition-all duration-300"
