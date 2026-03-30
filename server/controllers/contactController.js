@@ -10,20 +10,34 @@ exports.sendMessage = async (req, res) => {
       return res.status(400).json({ success: false, error: "All fields are required" });
     }
 
-    // 1️⃣ Save to DB
     const newMessage = new Message({ name, email, message });
     await newMessage.save();
     console.log("Message saved to DB");
 
-    // 2️⃣ Send Email (optional - don't fail if email fails)
     try {
       const emailBody = `
-        You have a new message from your portfolio contact form:
-
-        Name: ${name}
-        Email: ${email}
-        Message: ${message}
-      `;
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>New Message</title>
+</head>
+<body style="margin: 0; padding: 20px; background: #f0f2f5; font-family: Arial, sans-serif;">
+  <div style="max-width: 480px; margin: 0 auto; background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+    <div style="background: #2563eb; padding: 25px; text-align: center;">
+      <h1 style="color: #fff; font-size: 22px; margin: 0;">New Message</h1>
+    </div>
+    <div style="padding: 25px;">
+      <h3 style="color: #333; margin: 0 0 15px; font-size: 16px;">From: ${name}</h3>
+      <p style="color: #666; margin: 0 0 5px; font-size: 14px;">Email: <a href="mailto:${email}" style="color: #2563eb;">${email}</a></p>
+      <p style="color: #999; margin: 0 0 20px; font-size: 12px;">${new Date().toLocaleDateString()}</p>
+      <div style="background: #f8f9fa; padding: 15px; border-radius: 6px; border-left: 3px solid #2563eb;">
+        <p style="color: #444; margin: 0; font-size: 14px; line-height: 1.6; white-space: pre-wrap;">${message}</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>`;
 
       await sendEmail(process.env.EMAIL_USER, `New Message from ${name}`, emailBody);
       console.log("Email sent successfully");

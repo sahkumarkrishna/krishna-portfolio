@@ -154,21 +154,35 @@ const ContactForm = () => {
               <motion.div
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
-                className="text-center p-8 rounded-2xl bg-white dark:bg-gray-800 shadow-xl border border-gray-200 dark:border-gray-700"
+                className="relative text-center p-10 rounded-3xl bg-white dark:bg-gray-800 shadow-2xl border border-gray-100 dark:border-gray-700 overflow-hidden"
               >
-                <div className="w-16 h-16 rounded-full bg-gradient-to-r from-green-500 to-emerald-600 flex items-center justify-center mx-auto mb-6">
-                  <FaCheckCircle className="w-8 h-8 text-white" />
+                <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-green-400 via-emerald-500 to-teal-500"></div>
+                <div className="absolute -top-12 -right-12 w-32 h-32 bg-gradient-to-br from-green-400/20 to-emerald-500/20 rounded-full blur-2xl"></div>
+                <div className="absolute -bottom-12 -left-12 w-32 h-32 bg-gradient-to-tr from-teal-400/20 to-green-500/20 rounded-full blur-2xl"></div>
+                
+                <div className="relative z-10">
+                  <div className="w-24 h-24 rounded-full bg-gradient-to-br from-green-400 to-emerald-600 flex items-center justify-center mx-auto mb-6 shadow-xl shadow-green-500/30 ring-4 ring-green-100 dark:ring-green-900/50">
+                    <FaCheckCircle className="w-12 h-12 text-white" />
+                  </div>
+                  <h2 className="text-3xl font-bold mb-3 bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">
+                    Message Sent!
+                  </h2>
+                  <p className="text-gray-600 dark:text-gray-300 text-lg mb-2">
+                    Thank you for reaching out!
+                  </p>
+                  <p className="text-gray-500 dark:text-gray-400 mb-8">
+                    I'll get back to you soon.
+                  </p>
+                  <button
+                    onClick={() => setSuccessMessage(false)}
+                    className="group relative px-8 py-3 bg-gradient-to-r from-green-500 to-emerald-600 text-white font-semibold rounded-full shadow-lg shadow-green-500/30 hover:shadow-xl hover:shadow-green-500/40 transition-all duration-300 hover:scale-105 overflow-hidden"
+                  >
+                    <span className="relative z-10 flex items-center gap-2">
+                      Send Another Message
+                      <FaPaperPlane className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    </span>
+                  </button>
                 </div>
-                <h2 className="text-2xl font-bold mb-4">Message Sent Successfully! 🎉</h2>
-                <p className="text-muted-foreground mb-6">
-                  Thank you for reaching out! I'll get back to you as soon as possible.
-                </p>
-                <Button
-                  onClick={() => setSuccessMessage(false)}
-                  className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white"
-                >
-                  Send Another Message
-                </Button>
               </motion.div>
             ) : (
               <div className="p-8 rounded-2xl bg-white dark:bg-gray-800 shadow-xl border border-gray-200 dark:border-gray-700">
@@ -213,25 +227,25 @@ const ContactForm = () => {
                     )}
                   </div>
 
-                  <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-                    <Button
-                      type="submit"
-                      disabled={isSubmitting}
-                      className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white py-3 text-lg font-medium"
-                    >
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="group relative w-full px-8 py-4 bg-gradient-to-r from-green-500 to-emerald-600 text-white font-semibold rounded-full shadow-lg shadow-green-500/30 hover:shadow-xl hover:shadow-green-500/40 transition-all duration-300 hover:scale-[1.02] overflow-hidden disabled:opacity-70"
+                  >
+                    <span className="relative z-10 flex items-center justify-center gap-2">
                       {isSubmitting ? (
-                        <div className="flex items-center gap-2">
-                          <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                        <>
+                          <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
                           Sending...
-                        </div>
+                        </>
                       ) : (
-                        <div className="flex items-center gap-2">
-                          <FaPaperPlane className="w-4 h-4" />
+                        <>
                           Send Message
-                        </div>
+                          <FaPaperPlane className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                        </>
                       )}
-                    </Button>
-                  </motion.div>
+                    </span>
+                  </button>
                 </form>
               </div>
             )}
