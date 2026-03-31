@@ -23,7 +23,7 @@ const Project = () => {
       description: "GrowX is a full-stack career platform integrating Learning, Quiz, Internship, and Job modules, designed to serve 500+ users monthly. It empowers job seekers, learners, and employers with tools for career growth, skill development, and efficient hiring.",
       image: job,
       github: "https://github.com/sahkumarkrishna/GrowX",
-      live: "https://growx.onrender.com/",
+      live: "https://growx-platform.onrender.com/",
       tech: ["React.js", "Redux", "Node.js", "MongoDB", "Cloudinary", "JWT"],
       category: "Career Platform",
       gradient: "from-green-500 to-emerald-600",
