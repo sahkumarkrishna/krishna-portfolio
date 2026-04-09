@@ -2,7 +2,8 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { AiOutlineExport } from "react-icons/ai";
 import { IoMdDownload } from "react-icons/io";
-import { FaGraduationCap, FaBriefcase, FaCertificate, FaBuilding, FaMapMarkerAlt, FaExternalLinkAlt, FaLaptopCode, FaUsers, FaTrophy } from "react-icons/fa";
+import { FaGraduationCap, FaBriefcase, FaBuilding, FaMapMarkerAlt, FaLaptopCode, FaUsers, FaTrophy, FaExternalLinkAlt } from "react-icons/fa";
+import { FaCertificate } from "react-icons/fa6";
 import { BsFilePdf } from "react-icons/bs";
 import profileImage from "../assets/image/krishna.jpg";
 import ceeras from "../assets/image/erras.webp";
@@ -62,6 +63,7 @@ const About = () => {
       link: "https://www.ceeras.in/",
       status: "completed",
     },
+
     {
       company: "Goklyn Pvt. Ltd.",
       role: "Full Stack Developer & Team Lead",
@@ -117,7 +119,7 @@ const About = () => {
     {
       id: 3,
       title: "Participation Certificate",
-      issuer: "Tech Event",
+      issuer: "Ceeras It Services",
       description: "Active participation certificate from Ceeras",
       file: "/- Krishna Kumar - Participation Certificate.pdf",
       date: "2025",
@@ -125,11 +127,12 @@ const About = () => {
     {
       id: 4,
       title: "Frontend Development",
-      issuer: "Ceeras It Services ",
+      issuer: "Ceeras It Services",
       description: "Frontend Developer certification from Ceeras",
       file: "/RTY70675 - Krishna Kumar.pdf",
       date: "2025",
     },
+  
   ];
 
   return (
@@ -471,16 +474,16 @@ const About = () => {
               <h3 className="text-lg font-bold mb-2">{cert.title}</h3>
               <p className="text-sm text-muted-foreground mb-1">{cert.issuer}</p>
               <p className="text-xs text-muted-foreground mb-4">{cert.description}</p>
-              <div className="flex items-center justify-between">
+              <div className="flex items-center justify-between flex-wrap gap-2">
                 <span className="text-xs text-green-600 dark:text-green-400 font-medium">{cert.date}</span>
                 <Link
                   to={cert.file}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 px-3 py-1.5 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 rounded-lg text-sm font-medium hover:bg-green-200 dark:hover:bg-green-900/50 transition-colors"
+                  className="flex items-center gap-2 px-4 py-2 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 rounded-lg text-sm font-medium hover:bg-green-200 dark:hover:bg-green-900/50 transition-colors"
                 >
                   <BsFilePdf className="w-4 h-4" />
-                  View
+                  View PDF
                 </Link>
               </div>
             </motion.div>

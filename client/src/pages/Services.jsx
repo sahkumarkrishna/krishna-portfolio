@@ -12,6 +12,15 @@ import {
 import { FaCode, FaRocket, FaPalette, FaServer, FaCloud, FaDesktop, FaCheckCircle, FaArrowRight, FaLightbulb, FaCogs, FaRocket as FaLaunch, FaStar } from "react-icons/fa";
 
 const services = [
+   {
+    name: "Full Stack Solutions",
+    description: "End-to-end web application development combining frontend and backend technologies seamlessly.",
+    icon: FaCode,
+    gradient: "from-purple-500 to-pink-600",
+    bgGradient: "from-purple-500/10 to-pink-500/10",
+    features: ["MERN Stack", "Full Stack", "Integration", "Deployment"],
+    badge: "Featured",
+  },
   {
     name: "Frontend Development",
     description: "Building responsive and interactive UIs using React.js, HTML5, CSS3, and modern JavaScript frameworks.",
@@ -39,15 +48,7 @@ const services = [
     features: ["MongoDB", "MySQL", "Data Modeling", "Query Optimization"],
     badge: null,
   },
-  {
-    name: "Full Stack Solutions",
-    description: "End-to-end web application development combining frontend and backend technologies seamlessly.",
-    icon: FaCode,
-    gradient: "from-purple-500 to-pink-600",
-    bgGradient: "from-purple-500/10 to-pink-500/10",
-    features: ["MERN Stack", "Full Stack", "Integration", "Deployment"],
-    badge: "Featured",
-  },
+ 
   {
     name: "Cloud & DevOps",
     description: "Deploying and managing scalable applications using AWS, Docker, and modern DevOps practices.",
