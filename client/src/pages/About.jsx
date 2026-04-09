@@ -2,7 +2,8 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { AiOutlineExport } from "react-icons/ai";
 import { IoMdDownload } from "react-icons/io";
-import { FaGraduationCap, FaBriefcase } from "react-icons/fa";
+import { FaGraduationCap, FaBriefcase, FaCertificate, FaBuilding, FaMapMarkerAlt, FaExternalLinkAlt, FaLaptopCode, FaUsers, FaTrophy } from "react-icons/fa";
+import { BsFilePdf } from "react-icons/bs";
 import profileImage from "../assets/image/krishna.jpg";
 import ceeras from "../assets/image/erras.webp";
 import goklyn from "../assets/image/goklyn.png";
@@ -53,8 +54,8 @@ const About = () => {
 
   const experiences = [
     {
-      company: "Ceeras",
-      role: "Frontend Developer",
+      company: "Ceeras It Services",
+      role: "Mern Stack Developer & Team Lead",
       date: "Feb 2025 - Jun 2025",
       image: ceeras,
       description: "Building and enhancing a book recommendation platform with focus on user experience and responsive design.",
@@ -93,6 +94,41 @@ const About = () => {
       field: "General Studies",
       year: "2018 - 2020",
       type: "school",
+    },
+  ];
+
+  const certificates = [
+    {
+      id: 1,
+      title: "GeeksforGeeks Certificate",
+      issuer: "GeeksforGeeks",
+      description: "Completed certification from GeeksforGeeks",
+      file: "/GeeksforGeeks.pdf",
+      date: "2024",
+    },
+    {
+      id: 2,
+      title: "Full Stack Development",
+      issuer: "Goklyn Pvt. Ltd.",
+      description: "Full Stack Developer certification from Goklyn",
+      file: "/Krishna_Goklyn_Certificate .pdf",
+      date: "2025",
+    },
+    {
+      id: 3,
+      title: "Participation Certificate",
+      issuer: "Tech Event",
+      description: "Active participation certificate from Ceeras",
+      file: "/- Krishna Kumar - Participation Certificate.pdf",
+      date: "2025",
+    },
+    {
+      id: 4,
+      title: "Frontend Development",
+      issuer: "Ceeras It Services ",
+      description: "Frontend Developer certification from Ceeras",
+      file: "/RTY70675 - Krishna Kumar.pdf",
+      date: "2025",
     },
   ];
 
@@ -190,57 +226,220 @@ const About = () => {
       </div>
 
       {/* Qualifications */}
-      <div className="container mx-auto px-6 py-16">
+      <div className="container mx-auto px-4 sm:px-6 py-12 sm:py-16">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-12"
+          className="text-center mb-10 sm:mb-16"
         >
-          <h2 className="text-3xl font-bold mb-4">Qualification</h2>
-          <p className="text-muted-foreground">My personal journey</p>
+          <span className="inline-block px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 text-xs sm:text-sm font-medium mb-3 sm:mb-4">
+            Education
+          </span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4">
+            My <span className="gradient-text">Qualifications</span>
+          </h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto text-base sm:text-lg px-2">
+            My educational journey and achievements that have shaped my technical expertise.
+          </p>
         </motion.div>
 
         <VerticalTimeline />
       </div>
 
       {/* Services */}
-      <div className="container mx-auto px-6 py-16">
+      <div className="container mx-auto px-4 sm:px-6 py-12 sm:py-16">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-12"
+          className="text-center mb-10 sm:mb-16"
         >
-          <h2 className="text-3xl font-bold mb-4">What I Do</h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-green-500 to-blue-500 mx-auto rounded-full mb-4" />
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+          <span className="inline-block px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 text-xs sm:text-sm font-medium mb-3 sm:mb-4">
+            Services
+          </span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4">
+            What I <span className="gradient-text">Offer</span>
+          </h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto text-base sm:text-lg px-2">
             I offer comprehensive development services from concept to deployment, specializing in modern web technologies and user-centered design.
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 lg:gap-8">
           {services.map((service, index) => (
             <motion.div
               key={service.id}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              whileHover={{ y: -5 }}
-              className="group p-6 rounded-xl bg-white dark:bg-gray-800 shadow-lg hover:shadow-xl transition-all duration-300"
+              transition={{ delay: index * 0.15, duration: 0.5 }}
+              whileHover={{ scale: 1.02 }}
+              className="group relative overflow-hidden rounded-xl sm:rounded-2xl bg-white dark:bg-gray-800 shadow-lg sm:shadow-xl hover:shadow-2xl transition-all duration-500"
             >
-              <div className={`w-16 h-16 rounded-xl bg-gradient-to-r ${service.gradient} flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform duration-300`}>
-                {service.icon}
+              <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-500`} />
+              <div className="absolute -top-10 -right-10 sm:top-0 sm:right-0 w-24 h-24 sm:w-32 sm:h-32 bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-700 dark:to-gray-800 rounded-full sm:-translate-y-1/2 sm:translate-x-1/2 group-hover:scale-150 transition-transform duration-700" />
+              
+              <div className="relative p-5 sm:p-8">
+                <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 sm:gap-6 text-center sm:text-left">
+                  <motion.div
+                    whileHover={{ rotate: 360 }}
+                    transition={{ duration: 0.8 }}
+                    className={`flex-shrink-0 w-16 h-16 sm:w-20 sm:h-20 rounded-xl sm:rounded-2xl bg-gradient-to-br ${service.gradient} flex items-center justify-center text-2xl sm:text-3xl shadow-lg`}
+                  >
+                    {service.icon}
+                  </motion.div>
+                  
+                  <div className="flex-1">
+                    <h3 className="text-xl sm:text-2xl font-bold mb-2 sm:mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-green-500 group-hover:to-blue-500 transition-all duration-300">
+                      {service.title}
+                    </h3>
+                    <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+                      {service.description}
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="mt-4 sm:mt-6 pt-4 sm:pt-6 border-t border-gray-100 dark:border-gray-700">
+                  <div className="flex items-center justify-center sm:justify-start gap-2">
+                    <div className={`w-2 h-2 rounded-full bg-gradient-to-r ${service.gradient}`} />
+                    <span className="text-xs sm:text-sm text-muted-foreground">Available for projects</span>
+                  </div>
+                </div>
               </div>
-              <h3 className="text-xl font-bold mb-3">{service.title}</h3>
-              <p className="text-muted-foreground">{service.description}</p>
             </motion.div>
           ))}
         </div>
       </div>
 
-      {/* Experience */}
+      {/* Work Experience */}
+      <div className="container mx-auto px-4 sm:px-6 py-12 sm:py-16">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-10 sm:mb-16"
+        >
+          <span className="inline-block px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 text-xs sm:text-sm font-medium mb-3 sm:mb-4">
+            Career
+          </span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4">
+            Work <span className="gradient-text">Experience</span>
+          </h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto text-base sm:text-lg px-2">
+            My professional journey and the amazing companies I've had the privilege to work with.
+          </p>
+        </motion.div>
+
+        {/* Timeline */}
+        <div className="max-w-5xl mx-auto relative">
+          
+          {/* Center Line */}
+          <div className="absolute left-8 md:left-1/2 md:transform md:-translate-x-1/2 top-0 bottom-0 w-[3px] bg-gradient-to-b from-green-500 via-blue-500 to-purple-500 rounded-full" />
+          
+          <div className="space-y-8 md:space-y-0">
+            {experiences.map((exp, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.3, duration: 0.6 }}
+                className={`relative flex flex-col md:flex-row items-start md:items-center ${
+                  index % 2 === 0 ? 'md:justify-start' : 'md:justify-end'
+                }`}
+              >
+                
+                {/* Card */}
+                <motion.div
+                  whileHover={{ scale: 1.02 }}
+                  className={`ml-16 md:ml-0 md:w-5/12 ${
+                    index % 2 === 0 ? 'md:pr-12 md:text-right' : 'md:pl-12 md:text-left md:ml-auto'
+                  }`}
+                >
+                  <div className={`group relative p-5 sm:p-6 rounded-2xl bg-white dark:bg-gray-800 shadow-xl hover:shadow-2xl transition-all duration-500 border border-gray-100 dark:border-gray-700 overflow-hidden ${
+                    index % 2 === 0 ? '' : 'md:ml-auto'
+                  }`}>
+                    
+                    {/* Gradient Glow */}
+                    <div className={`absolute ${index % 2 === 0 ? '-right-10' : '-left-10'} top-1/2 -translate-y-1/2 w-32 h-32 rounded-full bg-gradient-to-br ${
+                      index === 0 ? 'from-green-400/20 to-emerald-500/20' : 'from-blue-400/20 to-indigo-500/20'
+                    } blur-2xl`} />
+                    
+                    {/* Status Badge */}
+                    <div className={`flex items-center gap-2 mb-3 ${index % 2 === 0 ? 'md:justify-end' : 'justify-start'}`}>
+                      <span className={`px-3 py-1 rounded-full text-xs font-bold bg-gradient-to-r ${
+                        index === 0 ? 'from-green-500 to-emerald-600' : 'from-blue-500 to-indigo-600'
+                      } text-white`}>
+                        {exp.status === 'current' ? 'Current' : 'Completed'}
+                      </span>
+                      <span className="flex items-center gap-1 text-xs text-muted-foreground">
+                        <span className={`w-2 h-2 rounded-full ${
+                          index === 0 ? 'bg-green-500' : 'bg-blue-500'
+                        } animate-pulse`} />
+                        {exp.date}
+                      </span>
+                    </div>
+                    
+                    {/* Company */}
+                    <div className={`flex items-center gap-3 mb-2 ${index % 2 === 0 ? 'md:flex-row-reverse' : ''}`}>
+                      <div className="w-10 h-10 rounded-xl overflow-hidden shadow-md ring-2 ring-white dark:ring-gray-800">
+                        <img src={exp.image} alt={exp.company} className="w-full h-full object-cover" />
+                      </div>
+                      <h3 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-green-500 group-hover:to-blue-500 transition-all duration-300">
+                        {exp.company}
+                      </h3>
+                    </div>
+                    
+                    {/* Role */}
+                    <p className={`text-sm sm:text-base font-medium ${
+                      index === 0 ? 'text-green-600 dark:text-green-400' : 'text-blue-600 dark:text-blue-400'
+                    } mb-3`}>
+                      {exp.role}
+                    </p>
+                    
+                    {/* Description */}
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+                      {exp.description}
+                    </p>
+                    
+                    {/* Action */}
+                    <div className={`pt-3 border-t border-gray-100 dark:border-gray-700 ${index % 2 === 0 ? 'md:text-right' : ''}`}>
+                      <Link
+                        to={exp.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`inline-flex items-center gap-2 text-sm font-medium ${
+                          index === 0 ? 'text-green-600 hover:text-green-700' : 'text-blue-600 hover:text-blue-700'
+                        } dark:text-green-400 transition-colors group/link`}
+                      >
+                        Visit Website
+                        <FaExternalLinkAlt className="w-3 h-3 group-hover/link:translate-x-1 transition-transform" />
+                      </Link>
+                    </div>
+                  </div>
+                </motion.div>
+                
+                {/* Center Icon */}
+                <motion.div
+                  whileHover={{ scale: 1.3, rotate: 360 }}
+                  transition={{ type: "spring", stiffness: 260, damping: 20 }}
+                  className={`absolute left-4 md:left-1/2 md:transform md:-translate-x-1/2 z-20 w-12 h-12 md:w-14 md:h-14 rounded-full bg-gradient-to-br ${
+                    index === 0 ? 'from-green-500 to-emerald-600' : 'from-blue-500 to-indigo-600'
+                  } flex items-center justify-center shadow-xl ring-4 ring-white dark:ring-gray-900`}
+                >
+                  <span className="text-white">
+                    <FaBuilding className="w-5 h-5 md:w-6 md:h-6" />
+                  </span>
+                </motion.div>
+                
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Certificates */}
       <div className="container mx-auto px-6 py-16">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -248,50 +447,41 @@ const About = () => {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl font-bold mb-4">Work Experience</h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-green-500 to-blue-500 mx-auto rounded-full" />
+          <h2 className="text-3xl font-bold mb-4">Certificates</h2>
+          <div className="w-20 h-1 bg-gradient-to-r from-green-500 to-blue-500 mx-auto rounded-full mb-4" />
+          <p className="text-muted-foreground max-w-2xl mx-auto">
+            My professional certifications and achievements that validate my skills and expertise.
+          </p>
         </motion.div>
 
-        <div className="space-y-8">
-          {experiences.map((exp, index) => (
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {certificates.map((cert, index) => (
             <motion.div
-              key={index}
-              initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              key={cert.id}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.2 }}
+              transition={{ delay: index * 0.1 }}
+              whileHover={{ y: -5 }}
               className="group p-6 rounded-xl bg-white dark:bg-gray-800 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-700"
             >
-              <div className="flex flex-col md:flex-row gap-6 items-start">
-                <div className="flex-shrink-0">
-                  <img
-                    src={exp.image}
-                    alt={exp.company}
-                    className="w-20 h-20 rounded-xl object-cover border-2 border-gray-200 dark:border-gray-600"
-                  />
-                </div>
-                <div className="flex-1">
-                  <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-3">
-                    <h3 className="text-xl font-bold">
-                      <button
-                        onClick={() => window.open(exp.link, "_blank", "noopener,noreferrer")}
-                        className="text-blue-600 dark:text-blue-400 hover:underline cursor-pointer"
-                      >
-                        {exp.company}
-                      </button>
-                    </h3>
-                    <span className={`px-3 py-1 rounded-full text-xs font-medium ${
-                      exp.status === 'current' 
-                        ? 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300'
-                        : 'bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300'
-                    }`}>
-                      {exp.status === 'current' ? 'Current' : 'Completed'}
-                    </span>
-                  </div>
-                  <p className="font-medium text-muted-foreground mb-2">{exp.role}</p>
-                  <p className="text-sm text-muted-foreground mb-3">{exp.date}</p>
-                  <p className="text-muted-foreground">{exp.description}</p>
-                </div>
+              <div className="w-16 h-16 rounded-xl bg-gradient-to-r from-green-500 to-emerald-600 flex items-center justify-center text-white mb-4 group-hover:scale-110 transition-transform duration-300">
+                <FaCertificate className="w-8 h-8" />
+              </div>
+              <h3 className="text-lg font-bold mb-2">{cert.title}</h3>
+              <p className="text-sm text-muted-foreground mb-1">{cert.issuer}</p>
+              <p className="text-xs text-muted-foreground mb-4">{cert.description}</p>
+              <div className="flex items-center justify-between">
+                <span className="text-xs text-green-600 dark:text-green-400 font-medium">{cert.date}</span>
+                <Link
+                  to={cert.file}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 px-3 py-1.5 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 rounded-lg text-sm font-medium hover:bg-green-200 dark:hover:bg-green-900/50 transition-colors"
+                >
+                  <BsFilePdf className="w-4 h-4" />
+                  View
+                </Link>
               </div>
             </motion.div>
           ))}
