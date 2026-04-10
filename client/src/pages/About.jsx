@@ -13,7 +13,7 @@ import ExperienceTimeline from "../components/ExperienceTimeline";
 
 const About = () => {
   const handleDownload = () => {
-    const resumeUrl = "/Krishna kumar.pdf";
+    const resumeUrl = "/Krishna Resume.pdf";
     const link = document.createElement("a");
     link.href = resumeUrl;
     link.download = "krishna_Resume.pdf";
