@@ -13,7 +13,7 @@ import ExperienceTimeline from "../components/ExperienceTimeline";
 
 const About = () => {
   const handleDownload = () => {
-    const resumeUrl = "/Krishna Resume.pdf";
+    const resumeUrl = "/Krishna%20Resume.pdf";
     const link = document.createElement("a");
     link.href = resumeUrl;
     link.download = "krishna_Resume.pdf";
@@ -204,7 +204,7 @@ const About = () => {
             <div className="flex flex-col sm:flex-row gap-4">
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <Link
-                  to="/Krishna Resume.pdf"
+                  to="/Krishna%20Resume.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-xl font-medium hover:shadow-lg transition-all duration-300"
