@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://krishna-kumar-portfolio.vercel.app/sitemap.xml
