@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://krishna-kumar-portfolio.vercel.app/sitemap.xml
+Sitemap: https://krishna-portfolio-fbv8.vercel.app/sitemap.xml
