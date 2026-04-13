@@ -156,8 +156,29 @@ const Project = () => {
       ],
       architecture: "The application follows a modular architecture using the MERN stack. The backend manages APIs, authentication, and database operations with MongoDB. Cloudinary is integrated for image storage."
     },
-    {
+        {
       id: 8,
+      title: "Online Quiz",
+      shortDesc: "Interactive quiz platform with real-time scoring and performance analytics.",
+      description: "An interactive online quiz platform that allows users to take quizzes on various topics, track their scores in real-time, and analyze their performance with detailed analytics. Features timed quizzes, multiple question types, instant feedback, and user/admin role-based access control.",
+      image: "https://www.jotform.com/blog/wp-content/uploads/2020/05/The-ultimate-guide-to-creating-online-quizzes-and-assignments-Featured-Image.png",
+      github: "https://github.com/sahkumarkrishna/Online-Quiz-",
+      live: "https://relaxed-mandazi-c44db7.netlify.app/",
+      tech: ["HTML", "CSS", "JavaScript"],
+      category: "Web App",
+      gradient: "from-amber-500 to-orange-600",
+      features: [
+        "User/Admin role-based authentication system",
+        "Multiple quiz categories and difficulty levels",
+        "Real-time score tracking and countdown timer",
+        "Detailed performance analytics and reports",
+        "Instant feedback on answers",
+        "Admin dashboard for managing quizzes and questions"
+      ],
+      architecture: "Built with HTML, CSS, and JavaScript for a clean and responsive interface. Features role-based access control where admins can create and manage quizzes while users can attempt quizzes and view their performance history."
+    },
+    {
+      id: 9,
       title: "Hospital Management",
       shortDesc: "MERN-based hospital system with appointment management.",
       description: "A MERN-based system to streamline hospital operations—patient registration, doctor scheduling, real-time notifications, and analytics. Patients can manage appointments; doctors can manage availability and patient records.",
@@ -178,7 +199,7 @@ const Project = () => {
       architecture: "MERN-based modular app with REST APIs. MongoDB stores user & appointment data. Secure authentication using JWT and Firebase."
     },
     {
-      id: 9,
+      id: 10,
       title: "Video Streaming Platform",
       shortDesc: "Netflix-style video streaming with user management.",
       description: "A video streaming platform similar to Netflix, built with the MERN stack. Features include user authentication, video upload, streaming, and personalized recommendations.",
@@ -197,6 +218,7 @@ const Project = () => {
       ],
       architecture: "Built with MERN stack, using AWS S3 for video storage and streaming. MongoDB handles user data and video metadata."
     },
+
   ];
 
   const categories = ["All", "Web App", "AI Tool"];
